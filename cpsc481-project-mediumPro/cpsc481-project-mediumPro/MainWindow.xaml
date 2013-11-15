@@ -34,12 +34,6 @@
 		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button">
 			<BeginStoryboard x:Name="closeAdd_BeginStoryboard" Storyboard="{StaticResource closeAdd}"/>
 		</EventTrigger>
-		<EventTrigger RoutedEvent="MenuItem.Click" SourceName="menuItem1">
-			<BeginStoryboard x:Name="showEdit_BeginStoryboard" Storyboard="{StaticResource showEdit}"/>
-		</EventTrigger>
-		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button1">
-			<BeginStoryboard x:Name="closeEdit_BeginStoryboard" Storyboard="{StaticResource closeEdit}"/>
-		</EventTrigger>
 	</Window.Triggers>
 
 	<ScrollViewer x:Name="mainScroll" Margin="0,0,-8,-2">
@@ -52,7 +46,6 @@
 				</MenuItem>
 				<MenuItem Header="Patient" Width="59.95">
 					<MenuItem x:Name="menuItem" Header="New Patient"/>
-					<MenuItem x:Name="menuItem1" Header="Edit Patient"/>
 				</MenuItem>
 				<MenuItem Header="Appt" Width="60.913">
 					<MenuItem Header="Cancel Booking"/>
@@ -133,9 +126,6 @@
 					</Grid>
 				</Grid>
 			</ScrollViewer>
-			<ScrollViewer x:Name="infoScroll" Height="110" Margin="89.5,0,104,88" VerticalAlignment="Bottom" Background="White">
-				<TextBlock TextWrapping="Wrap" Text="Information"/>
-			</ScrollViewer>
 			<Popup/>
 			<Grid x:Name="addNew" Background="#FFE5E5E5" Margin="205,242,605.5,432" Visibility="Hidden">
 				<TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" Text="Add New Patient" VerticalAlignment="Top" FontSize="16"/>
@@ -173,37 +163,41 @@
 				<Button Content="No" HorizontalAlignment="Left" Margin="21.5,0,0,18.58" VerticalAlignment="Bottom" Width="75"/>
 				<Button Content="Yes" HorizontalAlignment="Right" Margin="0,0,24.5,18.58" Width="75" VerticalAlignment="Bottom"/>
 			</Grid>
-			<Grid x:Name="editPatient" Background="#FFE5E5E5" Margin="205,242,605.5,432" Visibility="Hidden">
-				<TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" Text="Edit Patient Information" VerticalAlignment="Top" FontSize="16"/>
-				<TextBlock HorizontalAlignment="Left" Margin="179.5,31.78,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
-				<TextBlock HorizontalAlignment="Left" Margin="8,33.28,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
-				<TextBox HorizontalAlignment="Left" Margin="8,49.24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
-				<TextBox Margin="179,51.74,136,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-				<TextBlock HorizontalAlignment="Left" Margin="8,75.2,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"/>
-				<TextBox Margin="8,95.16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="181.9"/>
-				<TextBlock Margin="222.5,77.7,134,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top"/>
-				<TextBox Margin="222.5,97.66,190.6,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-				<TextBox HorizontalAlignment="Right" Margin="0,97.66,25,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
-				<TextBlock HorizontalAlignment="Left" Margin="8.423,121.12,0,0" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top"/>
-				<TextBox HorizontalAlignment="Left" Margin="8,141.08,0,135.96" TextWrapping="Wrap" Width="154" d:LayoutOverrides="Height"/>
-				<TextBox Margin="179,141.08,234.1,135.96" TextWrapping="Wrap" d:LayoutOverrides="Height"/>
-				<TextBlock HorizontalAlignment="Left" Margin="179,121.12,0,0" TextWrapping="Wrap" Text="Province" VerticalAlignment="Top"/>
-				<TextBox Margin="0,139.58,56.81,137.46" TextWrapping="Wrap" HorizontalAlignment="Right" Width="154" d:LayoutOverrides="Height"/>
-				<TextBlock Margin="0,123.62,190.6,0" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-				<TextBlock HorizontalAlignment="Left" Margin="8.423,0,0,116" TextWrapping="Wrap" Text="Date of Birth yyyy/mm/dd" VerticalAlignment="Bottom"/>
-				<TextBox Margin="9.183,0,0,90.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9"/>
-				<TextBox Margin="71.173,0,0,90.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9"/>
-				<TextBox Margin="134,0,0,90.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9"/>
-				<TextBlock HorizontalAlignment="Left" Margin="9.183,0,0,70.08" TextWrapping="Wrap" Text="Health Care No." VerticalAlignment="Bottom"/>
-				<TextBox HorizontalAlignment="Left" Margin="9.183,0,0,48.12" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="154"/>
-				<Button Content="Add" HorizontalAlignment="Right" Margin="0,0,17.5,26.16" VerticalAlignment="Bottom" Width="75"/>
-				<Button x:Name="button1" Content="Cancel" HorizontalAlignment="Right" Margin="0,0,121,26.16" VerticalAlignment="Bottom" Width="75"/>
-				<TextBlock HorizontalAlignment="Right" Margin="0,31.78,91.81,0" TextWrapping="Wrap" Text="Sex" VerticalAlignment="Top"/>
-				<ComboBox HorizontalAlignment="Right" Margin="0,51.74,56.81,0" VerticalAlignment="Top" Width="53.157">
-					<ComboBoxItem Content="M"/>
-					<ComboBoxItem Content="F"/>
-				</ComboBox>
-			</Grid>
+			<ScrollViewer x:Name="patientInfo" Height="110" Margin="0,0,104,88" VerticalAlignment="Bottom" Background="White" HorizontalAlignment="Right" Width="504.5">
+				<TextBlock TextWrapping="Wrap" Text="Appointment Information"/>
+			</ScrollViewer>
+			<ScrollViewer x:Name="appointmentInfo" Height="216" Margin="89.5,0,0,26" VerticalAlignment="Bottom" Background="White" HorizontalAlignment="Left" Width="504.5">
+				<Grid x:Name="editPatient" Background="#FFE5E5E5" Height="298.25" Width="498">
+					<TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" Text="Edit Patient Information" VerticalAlignment="Top" FontSize="16"/>
+					<TextBlock HorizontalAlignment="Left" Margin="179.5,31.78,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
+					<TextBlock HorizontalAlignment="Left" Margin="8,33.28,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
+					<TextBox HorizontalAlignment="Left" Margin="8,49.24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+					<TextBox Margin="179,51.74,136,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+					<TextBlock HorizontalAlignment="Left" Margin="8,75.2,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"/>
+					<TextBox Margin="8,95.16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="181.9"/>
+					<TextBlock Margin="222.5,77.7,134,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top"/>
+					<TextBox Margin="222.5,97.66,190.6,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+					<TextBox HorizontalAlignment="Right" Margin="0,97.66,25,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+					<TextBlock HorizontalAlignment="Left" Margin="8.423,121.12,0,0" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top"/>
+					<TextBox HorizontalAlignment="Left" Margin="8,141.08,0,135.96" TextWrapping="Wrap" Width="154" d:LayoutOverrides="Height"/>
+					<TextBox Margin="179,141.08,234.1,135.96" TextWrapping="Wrap" d:LayoutOverrides="Height"/>
+					<TextBlock HorizontalAlignment="Left" Margin="179,121.12,0,0" TextWrapping="Wrap" Text="Province" VerticalAlignment="Top"/>
+					<TextBox Margin="0,139.58,56.81,137.46" TextWrapping="Wrap" HorizontalAlignment="Right" Width="154" d:LayoutOverrides="Height"/>
+					<TextBlock Margin="0,123.62,190.6,0" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+					<TextBlock HorizontalAlignment="Left" Margin="8.423,0,0,116" TextWrapping="Wrap" Text="Date of Birth yyyy/mm/dd" VerticalAlignment="Bottom"/>
+					<TextBox Margin="9.183,0,0,90.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9"/>
+					<TextBox Margin="71.173,0,0,90.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9"/>
+					<TextBox Margin="134,0,0,90.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9"/>
+					<TextBlock HorizontalAlignment="Left" Margin="9.183,0,0,70.08" TextWrapping="Wrap" Text="Health Care No." VerticalAlignment="Bottom"/>
+					<TextBox HorizontalAlignment="Left" Margin="9.183,0,0,48.12" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="154"/>
+					<Button Content="Save" HorizontalAlignment="Right" Margin="0,0,17.5,26.16" VerticalAlignment="Bottom" Width="75"/>
+					<TextBlock HorizontalAlignment="Right" Margin="0,31.78,91.81,0" TextWrapping="Wrap" Text="Sex" VerticalAlignment="Top"/>
+					<ComboBox HorizontalAlignment="Right" Margin="0,51.74,56.81,0" VerticalAlignment="Top" Width="53.157">
+						<ComboBoxItem Content="M"/>
+						<ComboBoxItem Content="F"/>
+					</ComboBox>
+				</Grid>
+			</ScrollViewer>
 		</Grid>
 	</ScrollViewer>
 </Window>
