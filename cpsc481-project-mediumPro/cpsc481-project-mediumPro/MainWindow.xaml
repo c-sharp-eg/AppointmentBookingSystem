@@ -63,8 +63,8 @@
 					<MenuItem Header="Open Billing"/>
 				</MenuItem>
 			</Menu>
-			<Calendar Margin="973,44,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-			<Grid Background="White" Margin="0,250,128,259" HorizontalAlignment="Right" Width="179">
+			<Calendar Margin="997,114.9,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+			<Grid Background="White" Margin="0,334,104,262.5" HorizontalAlignment="Right" Width="179">
 				<TextBlock HorizontalAlignment="Left" Margin="18.001,29.667,0,0" TextWrapping="Wrap" Text="Patient" VerticalAlignment="Top"/>
 				<TextBox Margin="18.001,52.96,39.999,0" TextWrapping="Wrap" Text="&#xa;" VerticalAlignment="Top" Height="24.42"/>
 				<TextBlock HorizontalAlignment="Left" Margin="20.999,89.833,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top"/>
@@ -73,18 +73,18 @@
 					<ComboBoxItem Content="Doctor 2" Style="{DynamicResource SimpleComboBoxItem}"/>
 				</ComboBox>
 				<DatePicker Margin="18.001,160.666,40.002,0" VerticalAlignment="Top"/>
-				<TextBlock HorizontalAlignment="Left" Margin="20.999,208.917,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top"/>
-				<ComboBox Margin="20.999,228.877,37.002,209.953">
+				<TextBlock HorizontalAlignment="Left" Margin="20.999,0,0,163.545" TextWrapping="Wrap" Text="Time" VerticalAlignment="Bottom"/>
+				<ComboBox Margin="17.999,0,40.002,135.125" Height="24.42" VerticalAlignment="Bottom">
 					<ComboBoxItem Content="9:00 - 9:20" Style="{DynamicResource SimpleComboBoxItem}"/>
 					<ComboBoxItem Content="11:20 - 11:40" Style="{DynamicResource SimpleComboBoxItem}"/>
 				</ComboBox>
-				<Button Content="Clear" Margin="8,0,0,72.413" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
-				<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,72.413" VerticalAlignment="Bottom" Width="75"/>
+				<Button Content="Clear" Margin="8,0,0,54.413" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
+				<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,54.413" VerticalAlignment="Bottom" Width="75"/>
 				<TextBlock TextWrapping="Wrap" Text="Book New" FontSize="16" Margin="8,0,-6,0" Height="25.667" VerticalAlignment="Top"/>
-				<CheckBox Content="Double Book" HorizontalAlignment="Left" Margin="20.999,0,0,169.165" VerticalAlignment="Bottom"/>
+				<CheckBox Content="Double Book" HorizontalAlignment="Left" Margin="18.001,0,0,97.165" VerticalAlignment="Bottom"/>
 			</Grid>
 			<DatePickerTextBox HorizontalAlignment="Left" Margin="250,75.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Date" FontSize="16"/>
-			<ScrollViewer x:Name="schedScroll" Margin="65.5,116.78,359.5,259" HorizontalScrollBarVisibility="Auto">
+			<ScrollViewer x:Name="schedScroll" Margin="89.5,116.78,335.5,259" HorizontalScrollBarVisibility="Auto">
 				<Grid Height="677" Width="909.162" Background="White">
 					<Grid x:Name="doctor1" Margin="8,8,0,-102.46" Background="White" HorizontalAlignment="Left" Width="177.5">
 						<DataGridColumnHeader Content="Doctor 1" Height="23.96" VerticalAlignment="Bottom" Margin="-6.5,0,6.5,753"/>
@@ -133,11 +133,11 @@
 					</Grid>
 				</Grid>
 			</ScrollViewer>
-			<ScrollViewer x:Name="infoScroll" Height="110" Margin="65.5,0,128,88" VerticalAlignment="Bottom" Background="White">
+			<ScrollViewer x:Name="infoScroll" Height="110" Margin="89.5,0,104,88" VerticalAlignment="Bottom" Background="White">
 				<TextBlock TextWrapping="Wrap" Text="Information"/>
 			</ScrollViewer>
 			<Popup/>
-			<Grid x:Name="addNew" Background="#FFE5E5E5" Margin="205,242,605.5,432">
+			<Grid x:Name="addNew" Background="#FFE5E5E5" Margin="205,242,605.5,432" Visibility="Hidden">
 				<TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" Text="Add New Patient" VerticalAlignment="Top" FontSize="16"/>
 				<TextBlock HorizontalAlignment="Left" Margin="179.5,31.78,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
 				<TextBlock HorizontalAlignment="Left" Margin="8,33.28,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
@@ -173,12 +173,12 @@
 				<Button Content="No" HorizontalAlignment="Left" Margin="21.5,0,0,18.58" VerticalAlignment="Bottom" Width="75"/>
 				<Button Content="Yes" HorizontalAlignment="Right" Margin="0,0,24.5,18.58" Width="75" VerticalAlignment="Bottom"/>
 			</Grid>
-			<Grid x:Name="editPatient" Background="#FFE5E5E5" Margin="205,242,605.5,432">
+			<Grid x:Name="editPatient" Background="#FFE5E5E5" Margin="205,242,605.5,432" Visibility="Hidden">
 				<TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" Text="Edit Patient Information" VerticalAlignment="Top" FontSize="16"/>
 				<TextBlock HorizontalAlignment="Left" Margin="179.5,31.78,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
 				<TextBlock HorizontalAlignment="Left" Margin="8,33.28,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
 				<TextBox HorizontalAlignment="Left" Margin="8,49.24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
-				<TextBox Margin="181,51.74,134,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+				<TextBox Margin="179,51.74,136,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 				<TextBlock HorizontalAlignment="Left" Margin="8,75.2,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"/>
 				<TextBox Margin="8,95.16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="181.9"/>
 				<TextBlock Margin="222.5,77.7,134,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top"/>
