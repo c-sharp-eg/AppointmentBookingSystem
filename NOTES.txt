@@ -1,0 +1,6 @@
+- why use this instead of existing software?
+- double booking
+- patient info (viewing)
+- gender
+- full screen?
+- past visits?
