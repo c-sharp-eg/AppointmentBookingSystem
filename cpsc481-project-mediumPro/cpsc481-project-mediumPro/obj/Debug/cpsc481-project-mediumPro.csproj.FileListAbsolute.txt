@@ -117,3 +117,44 @@ E:\Daniel\Homework\CPSC 481\workingOnVersion\cpsc481-project-mediumPro\cpsc481-p
 E:\Daniel\Homework\CPSC 481\workingOnVersion\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro.g.resources
 E:\Daniel\Homework\CPSC 481\workingOnVersion\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro.exe
 E:\Daniel\Homework\CPSC 481\workingOnVersion\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro.pdb
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\cpsc481-project-mediumPro.exe
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\cpsc481-project-mediumPro.pdb
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\System.Windows.Interactivity.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\Microsoft.Expression.Drawing.xml
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\System.Windows.Interactivity.xml
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\ResolveAssemblyReference.cache
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\login.baml
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\MainWindow.baml
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\Simple Styles.baml
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\App.baml
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\login.g.cs
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\MainWindow.g.cs
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\App.g.cs
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro_MarkupCompile.cache
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro_MarkupCompile.lref
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\SampleData\SampleDataSource\SampleDataSource.baml
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro.g.resources
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro.exe
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro.pdb
