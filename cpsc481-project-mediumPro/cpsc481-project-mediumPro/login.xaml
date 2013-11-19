@@ -11,12 +11,12 @@
 	</Window.Triggers>
 
 	<Grid x:Name="LayoutRoot" Background="White">
-		<Border BorderBrush="Black" BorderThickness="1" Background="#FFC6C1C1" Margin="361,313,374,336"/>
-		<TextBlock HorizontalAlignment="Left" Margin="431,367,0,0" TextWrapping="Wrap" Width="61.897" VerticalAlignment="Top"><Run Text="Username:"/></TextBlock>
-		<TextBox Margin="514,367,457,0" TextWrapping="Wrap" RenderTransformOrigin="3.395,3.133" Height="23.8" VerticalAlignment="Top"/>
-		<TextBlock HorizontalAlignment="Left" Margin="434.34,404.997,0,0" TextWrapping="Wrap" Text="Password:" Width="58.557" Height="21.96" VerticalAlignment="Top"/>
-		<PasswordBox Margin="514,404.997,457,0" Height="23.8" VerticalAlignment="Top"/>
-		<Button Content="Exit" Height="24" Margin="434.34,0,0,380" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="73.103"/>
-		<Button x:Name="button" Height="24" Margin="0,0,457,380" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="73.103" Content="Login"/>
+		<Border BorderBrush="Black" BorderThickness="1" Background="#FFC6C1C1" Margin="369,276,366,284"/>
+		<TextBlock HorizontalAlignment="Left" Margin="431,324.84,0,0" TextWrapping="Wrap" Width="61.897" VerticalAlignment="Top" RenderTransformOrigin="0.533,0.261"><Run Text="Username:"/></TextBlock>
+		<TextBox Margin="514,324.84,457,0" TextWrapping="Wrap" RenderTransformOrigin="3.395,3.133" Height="23.8" VerticalAlignment="Top"/>
+		<TextBlock HorizontalAlignment="Left" Margin="431,361,0,0" TextWrapping="Wrap" Text="Password:" Width="58.557" Height="21.96" VerticalAlignment="Top"/>
+		<PasswordBox Margin="514,359.16,457,0" Height="23.8" VerticalAlignment="Top"/>
+		<Button Content="Exit" Height="24" Margin="528.34,0,582.557,325" VerticalAlignment="Bottom"/>
+		<Button x:Name="button" Height="24" Margin="0,0,477,325" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="73.103" Content="Login"/>
 	</Grid>
 </Window>
