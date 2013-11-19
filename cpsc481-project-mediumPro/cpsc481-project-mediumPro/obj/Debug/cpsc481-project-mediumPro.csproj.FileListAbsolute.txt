@@ -158,3 +158,5 @@ C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediu
 C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro.g.resources
 C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro.exe
 C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\cpsc481-project-mediumPro.pdb
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\Window1.baml
+C:\Temp\AppointmentBookingSystem\cpsc481-project-mediumPro\cpsc481-project-mediumPro\obj\Debug\Window1.g.cs

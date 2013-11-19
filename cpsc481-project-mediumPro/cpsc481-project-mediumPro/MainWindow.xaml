@@ -51,6 +51,10 @@
 		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button1">
 			<BeginStoryboard x:Name="OnClick1_BeginStoryboard" Storyboard="{StaticResource OnClick1}"/>
 		</EventTrigger>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button2">
+			<BeginStoryboard Storyboard="{StaticResource showAdd}"/>
+		</EventTrigger>
 		<EventTrigger RoutedEvent="MenuItem.Click" SourceName="menuItem1">
 			<BeginStoryboard x:Name="OnClick1_BeginStoryboard1" Storyboard="{StaticResource OnClick1}"/>
 		</EventTrigger>
@@ -62,8 +66,8 @@
 	<ScrollViewer x:Name="mainScroll" Margin="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
 
 		<Grid x:Name="LayoutRoot" Background="#FF8893AD" Width="1263" Height="961.382" d:LayoutOverrides="Margin">
-			<Menu x:Name="menuBar" Height="22" VerticalAlignment="Top">
-				<MenuItem Header="File" Width="59.95">
+			<Menu x:Name="menuBar" Height="22" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1263">
+				<MenuItem Header="File" Width="41.95" Height="22">
 					<MenuItem Header="Log Out"/>
 					<MenuItem Header="Exit"/>
 				</MenuItem>
@@ -71,7 +75,7 @@
 					<MenuItem x:Name="menuItem" Header="New Patient"/>
 					<MenuItem x:Name="menuItem1" Header="View Past Appointments"/>
 				</MenuItem>
-				<MenuItem Header="Appt" Width="60.913">
+				<MenuItem Header="Appt" Width="52.913">
 					<MenuItem Header="Cancel Booking"/>
 					<MenuItem Header="Reschedule"/>
 					<MenuItem Header="Check In"/>
@@ -80,12 +84,11 @@
 					<MenuItem Header="Open Billing"/>
 				</MenuItem>
 			</Menu>
-			<Calendar Margin="997,114.9,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+			<Calendar Margin="980,116.9,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 			<Grid Background="White" Margin="0,334,104,262.5" HorizontalAlignment="Right" Width="179">
 				<TextBlock HorizontalAlignment="Left" Margin="18.001,29.667,0,0" TextWrapping="Wrap" Text="Patient" VerticalAlignment="Top"/>
-				<TextBox Margin="18.001,52.96,39.999,0" TextWrapping="Wrap" Text="&#xa;" VerticalAlignment="Top" Height="24.42"/>
-				<TextBlock HorizontalAlignment="Left" Margin="20.999,89.833,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top"/>
-				<ComboBox Margin="18.002,109.793,39.999,0" VerticalAlignment="Top" Height="24.42">
+				<TextBlock HorizontalAlignment="Left" Margin="20.999,91.833,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top"/>
+				<ComboBox Margin="18.002,111.793,39.999,0" VerticalAlignment="Top" Height="24.42">
 					<ComboBoxItem Content="Doctor 1" Style="{DynamicResource SimpleComboBoxItem}"/>
 					<ComboBoxItem Content="Doctor 2" Style="{DynamicResource SimpleComboBoxItem}"/>
 				</ComboBox>
@@ -99,23 +102,145 @@
 				<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,54.413" VerticalAlignment="Bottom" Width="75"/>
 				<TextBlock TextWrapping="Wrap" Text="Book New" FontSize="16" Margin="8,0,-6,0" Height="25.667" VerticalAlignment="Top"/>
 				<CheckBox Content="Double Book" HorizontalAlignment="Left" Margin="18.001,0,0,97.165" VerticalAlignment="Bottom"/>
+				<Button x:Name="button2" Content="Select Patient" Margin="20.999,61.587,72.339,0" VerticalAlignment="Top" FontSize="10.667" Height="21.96"/>
+				<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983"/>
 			</Grid>
 			<ScrollViewer x:Name="schedScroll" Margin="222.611,95.28,320.5,244.25" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
-				<Grid Height="597.032" Width="889.662" Background="White">
-					<Grid x:Name="doctor1" Margin="0,0,0,-112.46" Background="White" HorizontalAlignment="Left" Width="177.5">
-						<DataGridColumnHeader Content="Doctor 1" Height="23.96" VerticalAlignment="Bottom" Margin="0,0,0,685.532"/>
+				<Grid Height="597.032" Width="787.662" Background="White">
+					<Grid x:Name="doctor1" Margin="0,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
+						<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032"/>
+						<DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25"/>
+						<DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032"/>
 					</Grid>
-					<Grid x:Name="doctor2" Margin="177.5,0,0,-112.46" Background="White" HorizontalAlignment="Left" Width="177.5" VerticalAlignment="Bottom">
-						<DataGridColumnHeader Content="Doctor 2" Height="23.96" VerticalAlignment="Bottom" Margin="0,0,0,685.532"/>
+					<Grid x:Name="doctor2" Margin="159,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
+						<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032"/>
+						<DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25"/>
+						<DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="Doctor 2" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032"/>
 					</Grid>
-					<Grid x:Name="doctor3" Margin="355,0,357.162,-112.46" Background="White" VerticalAlignment="Bottom">
-						<DataGridColumnHeader Content="Doctor 3" Height="23.96" VerticalAlignment="Bottom" Margin="0,0,0,685.532"/>
+					<Grid x:Name="doctor3" Margin="318,0,314.662,8" Background="White">
+						<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032"/>
+						<DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25"/>
+						<DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="Doctor 3" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032"/>
 					</Grid>
-					<Grid x:Name="doctor4" Margin="0,0,179.662,-112.46" Background="White" HorizontalAlignment="Right" Width="177.5">
-						<DataGridColumnHeader Content="Doctor 4" Height="23.96" VerticalAlignment="Bottom" Margin="0,0,0,685.532"/>
+					<Grid x:Name="doctor4" Margin="0,0,159.662,8" Background="White" HorizontalAlignment="Right" Width="155">
+						<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032"/>
+						<DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25"/>
+						<DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="Doctor 4" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032"/>
 					</Grid>
-					<Grid x:Name="doctor5" Margin="0,0,2.162,-112.46" Background="White" HorizontalAlignment="Right" Width="177.5">
-						<DataGridColumnHeader Content="Doctor 5" Height="23.96" VerticalAlignment="Bottom" Margin="0,0,0,685.532"/>
+					<Grid x:Name="doctor5" Margin="0,0,0.662,8" Background="White" HorizontalAlignment="Right" Width="155">
+						<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032"/>
+						<DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top"/>
+						<DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25"/>
+						<DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="Doctor 5" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032"/>
 					</Grid>
 				</Grid>
 			</ScrollViewer>
@@ -192,10 +317,6 @@
 					<ei:MouseDragElementBehavior/>
 				</i:Interaction.Behaviors>
 				<TextBlock HorizontalAlignment="Left" Margin="8,0,0,0" TextWrapping="Wrap" Text="Past Appointments" VerticalAlignment="Top" FontSize="16"/>
-				<TextBlock HorizontalAlignment="Left" Margin="8,25.28,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
-				<TextBlock HorizontalAlignment="Left" Margin="155,25.28,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
-				<TextBox Margin="8,41.24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19.96" HorizontalAlignment="Left" Width="97.967"/>
-				<TextBox Margin="155,41.24,136.033,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19.96"/>
 				<ScrollViewer Margin="8,71.2,8,48">
 					<DataGrid>
 						<DataGrid.Columns>
@@ -207,7 +328,9 @@
 					</DataGrid>
 				</ScrollViewer>
 				<Button x:Name="button1" Content="Close" HorizontalAlignment="Right" Margin="0,0,28,11" VerticalAlignment="Bottom" Width="75"/>
-				<Button Content="Show" HorizontalAlignment="Right" Margin="0,39.24,28,0" VerticalAlignment="Top" Width="75"/>
+				<TextBlock HorizontalAlignment="Left" Margin="8,21.28,0,0" TextWrapping="Wrap" Text="Patient" VerticalAlignment="Top"/>
+				<Button x:Name="button2_Copy" Content="Select Patient" Margin="8,41.24,0,0" VerticalAlignment="Top" FontSize="10.667" Height="21.96" HorizontalAlignment="Left" Width="85.662"/>
+				<TextBlock HorizontalAlignment="Left" Margin="48.933,20.22,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983" d:LayoutOverrides="HorizontalAlignment"/>
 			</Grid>
 			<Grid x:Name="addNew" Background="#FFE5E5E5" Margin="205,242,605.5,418.5" Visibility="Hidden">
 				<i:Interaction.Behaviors>
@@ -247,6 +370,26 @@
 				<TextBlock Margin="89,29,0,0" TextWrapping="Wrap" Text="Cancel Appointment?" VerticalAlignment="Top"/>
 				<Button Content="No" HorizontalAlignment="Left" Margin="21.5,0,0,18.58" VerticalAlignment="Bottom" Width="75"/>
 				<Button Content="Yes" HorizontalAlignment="Right" Margin="0,0,24.5,18.58" Width="75" VerticalAlignment="Bottom"/>
+			</Grid>
+			<Grid x:Name="searchPatient" Margin="387.5,262.125,486.5,432" Background="#FFE5E5E5" Visibility="Hidden">
+				<i:Interaction.Behaviors>
+					<ei:MouseDragElementBehavior/>
+				</i:Interaction.Behaviors>
+				<TextBlock HorizontalAlignment="Left" Margin="8,0,0,0" TextWrapping="Wrap" Text="Select Patient" VerticalAlignment="Top" FontSize="16"/>
+				<TextBlock HorizontalAlignment="Left" Margin="8,21.28,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment"/>
+				<TextBox Margin="8,41.24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19.96" HorizontalAlignment="Left" Width="178.967"/>
+				<ScrollViewer Margin="8,71.2,8,48">
+					<DataGrid>
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="First Name"/>
+							<DataGridTextColumn Header="Last Name"/>
+							<DataGridTextColumn Header="Address"/>
+							<DataGridTextColumn Header="Phone Number"/>
+						</DataGrid.Columns>
+					</DataGrid>
+				</ScrollViewer>
+				<Button x:Name="button3" Content="Select" HorizontalAlignment="Right" Margin="0,0,28,11" VerticalAlignment="Bottom" Width="75"/>
+				<Button Content="Search" HorizontalAlignment="Right" Margin="0,39.24,28,0" VerticalAlignment="Top" Width="75"/>
 			</Grid>
 		</Grid>
 	</ScrollViewer>
