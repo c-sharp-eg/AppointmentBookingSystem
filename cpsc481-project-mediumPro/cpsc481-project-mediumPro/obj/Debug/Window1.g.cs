@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Expression.Blend.SampleData.SampleDataSource;
 using System;
 using System.Diagnostics;
 using System.Windows;

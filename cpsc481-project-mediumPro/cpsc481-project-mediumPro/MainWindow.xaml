@@ -31,6 +31,18 @@
 				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
 			</ObjectAnimationUsingKeyFrames>
 		</Storyboard>
+		<Storyboard x:Key="OnClick3">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="searchPatient">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="OnClick4">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="searchPatient">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="selectPatient"/>
 	</Window.Resources>
 	<Window.Triggers>
 		<EventTrigger RoutedEvent="MenuItem.Click" SourceName="menuItem">
@@ -43,9 +55,6 @@
 			<BeginStoryboard x:Name="OnClick1_BeginStoryboard" Storyboard="{StaticResource OnClick1}"/>
 		</EventTrigger>
 		<EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
-		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button2">
-			<BeginStoryboard Storyboard="{StaticResource showAdd}"/>
-		</EventTrigger>
 		<EventTrigger RoutedEvent="MenuItem.Click" SourceName="menuItem1">
 			<BeginStoryboard x:Name="OnClick1_BeginStoryboard1" Storyboard="{StaticResource OnClick1}"/>
 		</EventTrigger>
@@ -54,6 +63,12 @@
 		</EventTrigger>
 		<EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
 		<EventTrigger RoutedEvent="FrameworkElement.Loaded" SourceName="checkIn"/>
+		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button2_Copy">
+			<BeginStoryboard x:Name="OnClick3_BeginStoryboard" Storyboard="{StaticResource OnClick3}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button2">
+			<BeginStoryboard x:Name="selectPatient_BeginStoryboard" Storyboard="{StaticResource selectPatient}"/>
+		</EventTrigger>
 	</Window.Triggers>
 
 	<ScrollViewer x:Name="mainScroll" Margin="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
@@ -97,8 +112,8 @@
 				<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,54.413" VerticalAlignment="Bottom" Width="75"/>
 				<TextBlock TextWrapping="Wrap" Text="Book New" FontSize="16" Margin="8,0,-6,0" Height="25.667" VerticalAlignment="Top"/>
 				<CheckBox Content="Double Book" HorizontalAlignment="Left" Margin="18.001,0,0,97.165" VerticalAlignment="Bottom"/>
-				<Button x:Name="button2" Content="Select Patient" Margin="20.999,61.587,72.339,0" VerticalAlignment="Top" FontSize="10.667" Height="21.96"/>
 				<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983"/>
+				<Button x:Name="button2" Content="Select Patient" Margin="20.999,62.587,75.339,0" VerticalAlignment="Top"/>
 			</Grid>
 			<ScrollViewer x:Name="schedScroll" Margin="222.611,95.28,320.5,244.25" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
 				<Grid Height="597.032" Width="787.662" Background="White">
@@ -342,13 +357,14 @@
 						<DataGrid.Columns>
 							<DataGridTextColumn Header="First Name"/>
 							<DataGridTextColumn Header="Last Name"/>
-							<DataGridTextColumn Header="Address"/>
+							<DataGridTextColumn Header="Address" Width="100"/>
 							<DataGridTextColumn Header="Phone Number"/>
 						</DataGrid.Columns>
 					</DataGrid>
 				</ScrollViewer>
 				<Button x:Name="button3" Content="Select" HorizontalAlignment="Right" Margin="0,0,28,11" VerticalAlignment="Bottom" Width="75"/>
 				<Button Content="Search" HorizontalAlignment="Right" Margin="0,39.24,28,0" VerticalAlignment="Top" Width="75"/>
+				<TextBox Margin="12.346,94.566,28,0" TextWrapping="Wrap" Text="John            Smith           123 Main Street     123-4567" Height="27.191" VerticalAlignment="Top"/>
 			</Grid>
 			<Grid x:Name="editPatient1" Background="#FFE5E5E5" Margin="198.5,288,566.5,343.132" Visibility="Hidden">
 				<TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" Text="Edit Patient Information" VerticalAlignment="Top" FontSize="16"/>
