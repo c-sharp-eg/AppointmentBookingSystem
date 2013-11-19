@@ -66,7 +66,8 @@
 	<ScrollViewer x:Name="mainScroll" Margin="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
 
 		<Grid x:Name="LayoutRoot" Background="#FF8893AD" Width="1263" Height="961.382" d:LayoutOverrides="Margin">
-			<Menu x:Name="menuBar" Height="22" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1263">
+			<Menu HorizontalAlignment="Left" Height="22" Margin="-83.5,0,0,0" VerticalAlignment="Top" Width="100"/>
+			<Menu x:Name="menuBar" Height="22" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1359" Margin="0,0,-96,0">
 				<MenuItem Header="File" Width="41.95" Height="22">
 					<MenuItem Header="Log Out"/>
 					<MenuItem Header="Exit"/>
