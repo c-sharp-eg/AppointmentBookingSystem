@@ -165,7 +165,7 @@
 						<DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top"/>
 						<DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032"/>
 						<DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom"/>
-						<DataGridColumnHeader Content="Alberta" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom"/>
+						<DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom"/>
 						<DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25"/>
 						<DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032"/>
 						<DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom"/>
@@ -381,7 +381,7 @@
 				<Button Content="Search" HorizontalAlignment="Right" Margin="0,39.24,28,0" VerticalAlignment="Top" Width="75"/>
 				<TextBox Margin="12.346,94.566,28,0" TextWrapping="Wrap" Text="John            Smith           123 Main Street     123-4567" Height="27.191" VerticalAlignment="Top"/>
 			</Grid>
-			<Grid x:Name="editPatient1" Background="#FFE5E5E5" Margin="198.5,288,566.5,343.132" Visibility="Hidden">
+			<Grid x:Name="editPatient1" Background="#FFE5E5E5" Margin="198.5,288,566.5,343.132">
 				<TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" Text="Edit Patient Information" VerticalAlignment="Top" FontSize="16"/>
 				<TextBlock HorizontalAlignment="Left" Margin="179.5,31.78,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
 				<TextBlock HorizontalAlignment="Left" Margin="8,33.28,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
@@ -414,6 +414,8 @@
 					<TextBox TextWrapping="Wrap" Height="93.98" Width="208.734"/>
 				</ScrollViewer>
 				<Button Content="Save" Margin="0,0,53.5,13" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+				<Button Content="Cancel" Margin="232.4,0,190.6,13" VerticalAlignment="Bottom"/>
+				<Button Content="Select Patient" Margin="188.9,7.32,219.1,0" VerticalAlignment="Top"/>
 			</Grid>
 			<Button x:Name="checkIn" Content="Check - In" Margin="436.5,0,626.5,47.5" VerticalAlignment="Bottom" Height="27.96"/>
 		</Grid>
