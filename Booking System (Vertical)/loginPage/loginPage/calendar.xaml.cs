@@ -22,5 +22,25 @@ namespace loginPage
         {
             InitializeComponent();
         }
+
+        //logging out in file menu
+        private void fileLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow loginScreen = new MainWindow();
+            loginScreen.Show();
+            this.Close();
+        }
+
+        //closing program from file menu
+        private void fileExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void billOpen_Click(object sender, RoutedEventArgs e)
+        {
+            billing billingScreen = new billing();
+            billingScreen.Show();
+        }
     }
 }

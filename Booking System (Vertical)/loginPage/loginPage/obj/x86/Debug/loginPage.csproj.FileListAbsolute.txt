@@ -13,3 +13,5 @@ E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\l
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage.pdb
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\calendar.baml
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\calendar.g.cs
+E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\billing.baml
+E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\billing.g.cs
