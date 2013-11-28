@@ -1,0 +1,8 @@
+﻿<Window x:Class="loginPage.calendar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Appointment Booking System" Height="1024" Width="1280" WindowState="Maximized" Foreground="#FF8893AD" Background="#FF8893AD">
+    <Grid Background="#FF8893AD">
+        
+    </Grid>
+</Window>
