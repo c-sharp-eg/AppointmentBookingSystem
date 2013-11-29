@@ -56,7 +56,7 @@ namespace loginPage
         {
             //hardcoded username/password
             //probably want this blank when we're testing
-            if ((usernameField.Text == "username") && (passwordField.Password == "password"))
+            if ((usernameField.Text == "") && (passwordField.Password == ""))
             {
                 statusText.Foreground = Brushes.Green;
                 statusText.Text = "Logging in...";

@@ -37,10 +37,34 @@ namespace loginPage
             this.Close();
         }
 
+        //opens the billing window (message)
         private void billOpen_Click(object sender, RoutedEventArgs e)
         {
             billing billingScreen = new billing();
             billingScreen.Show();
         }
+
+        private void monthCalendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            datebox.Text = monthCalendar.SelectedDate.Value.ToString("MM'/'dd'/'yyyy");
+        }
+
+        private void nextDay_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            string date;
+            date = DateTime.Now.AddDays(1);
+            
+            //DateTime tomorrow = DateTime.Now.AddDays(1);
+             
+        }
+
+
+
+
+
+
+
+
+
     }
 }

@@ -1,30 +1,35 @@
-﻿<Window x:Class="loginPage.calendar"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="loginPage.calendar"
         Title="Appointment Booking System" Width="1280" Height="1024" Foreground="#FF8893AD" Background="#FF8893AD" Padding="2,0" WindowState="Maximized">
     
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <Canvas Width="1280" Height="1024">
-                <Menu Canvas.Left="-2" Canvas.Top="0" Height="24" Name="menu" Width="1426">
-                	<MenuItem Header="File" Width="41.95" Height="22" Name="fileMenu">
-                		<MenuItem Header="Log Out" Name="fileLogOut" Click="fileLogOut_Click" />
-                		<MenuItem Header="Exit" Name="fileExit" Click="fileExit_Click" />
+                <Menu Canvas.Left="-2" Canvas.Top="0" Height="24" x:Name="menu" Width="1426">
+                	<MenuItem Header="File" Width="41.95" Height="22" x:Name="fileMenu">
+                		<MenuItem Header="Log Out" x:Name="fileLogOut" Click="fileLogOut_Click" />
+                		<MenuItem Header="Exit" x:Name="fileExit" Click="fileExit_Click" />
                 	</MenuItem>
-                	<MenuItem Header="Patient" Width="59.95" Name="patientMenu">
+                	<MenuItem Header="Patient" Width="59.95" x:Name="patientMenu">
                 		<MenuItem x:Name="patientNew" Header="New Patient"/>
                         <MenuItem x:Name="patientEdit" Header="Edit Patient "/>
                 		<MenuItem x:Name="patientPast" Header="View Past Appointments"/>
                 		
                 	</MenuItem>
-                	<MenuItem Header="Appt" Width="52.913" Name="apptMenu">
-                        <MenuItem Header="Check In" Name="apptCheckIn" />
-                		<MenuItem Header="Cancel Booking" Name="apptCancel" />		
+                	<MenuItem Header="Appt" Width="52.913" x:Name="apptMenu">
+                        <MenuItem Header="Check In" x:Name="apptCheckIn" />
+                		<MenuItem Header="Cancel Booking" x:Name="apptCancel" />		
                 	</MenuItem>
-                	<MenuItem Header="Bill" Width="60.6" Name="billMenu">
-                		<MenuItem Header="Open Billing" Name="billOpen" Click="billOpen_Click" />
+                	<MenuItem Header="Bill" Width="60.6" x:Name="billMenu">
+                		<MenuItem Header="Open Billing" x:Name="billOpen" Click="billOpen_Click" />
                 	</MenuItem>
                 </Menu>
+                <TextBox Canvas.Left="462" Canvas.Top="87" Height="24" x:Name="datebox" Width="120" />
+                <Calendar Canvas.Left="988" Canvas.Top="74" Height="170" x:Name="monthCalendar" Width="180" SelectedDatesChanged="monthCalendar_SelectedDatesChanged" />
+            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="334" Orientation="Left" Stroke="Black" Canvas.Top="74" Width="100" Name="previousDay" />
+            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="608" Orientation="Right" Stroke="Black" Canvas.Top="74" Width="100" Name="nextDay" PreviewMouseUp="nextDay_PreviewMouseUp" />
             </Canvas>
         </ScrollViewer>      
     </Grid>
