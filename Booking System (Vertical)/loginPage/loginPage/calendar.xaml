@@ -28,8 +28,8 @@
                 </Menu>
                 <TextBox Canvas.Left="462" Canvas.Top="87" Height="24" x:Name="datebox" Width="120" />
                 <Calendar Canvas.Left="988" Canvas.Top="74" Height="170" x:Name="monthCalendar" Width="180" SelectedDatesChanged="monthCalendar_SelectedDatesChanged" />
-            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="334" Orientation="Left" Stroke="Black" Canvas.Top="74" Width="100" Name="previousDay" />
-            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="608" Orientation="Right" Stroke="Black" Canvas.Top="74" Width="100" Name="nextDay" PreviewMouseUp="nextDay_PreviewMouseUp" />
+            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="334" Orientation="Left" Stroke="Black" Canvas.Top="74" Width="100" Name="previousDay" MouseLeftButtonUp="previousDay_MouseLeftButtonUp" />
+            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="608" Orientation="Right" Stroke="Black" Canvas.Top="74" Width="100" Name="nextDay" PreviewMouseLeftButtonUp="nextDay_PreviewMouseLeftButtonUp" />
             </Canvas>
         </ScrollViewer>      
     </Grid>

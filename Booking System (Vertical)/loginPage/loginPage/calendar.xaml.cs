@@ -22,6 +22,7 @@ namespace loginPage
         {
             InitializeComponent();
             datebox.Text = DateTime.Now.ToString("MM'/'dd'/'yyyy");
+            monthCalendar.SelectedDate = DateTime.Now;
         }
 
         //logging out in file menu
@@ -50,12 +51,22 @@ namespace loginPage
             datebox.Text = monthCalendar.SelectedDate.Value.ToString("MM'/'dd'/'yyyy");
         }
 
-        private void nextDay_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        //right arrow button for next day
+        private void nextDay_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            //monthCalendar.SelectedDate = 
-            //monthCalendar.SelectedDate = DateTime.Now.AddDays(1);
-
+            DateTime currentDate = monthCalendar.SelectedDate.GetValueOrDefault();
+            monthCalendar.SelectedDate = currentDate.AddDays(1);
+            monthCalendar.DisplayDate = currentDate.AddDays(1);
         }
+
+        //left arrow button for previous day
+        private void previousDay_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            DateTime currentDate = monthCalendar.SelectedDate.GetValueOrDefault();
+            monthCalendar.SelectedDate = currentDate.AddDays(-1);
+            monthCalendar.DisplayDate = currentDate.AddDays(-1);
+        }
+
 
 
 
