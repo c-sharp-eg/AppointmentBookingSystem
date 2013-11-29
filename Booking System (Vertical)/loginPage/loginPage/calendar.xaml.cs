@@ -21,8 +21,9 @@ namespace loginPage
         public calendar()
         {
             InitializeComponent();
-            datebox.Text = DateTime.Now.ToString("MM'/'dd'/'yyyy");
+
             monthCalendar.SelectedDate = DateTime.Now;
+            dateBox.SelectedDate = DateTime.Now;
         }
 
         //logging out in file menu
@@ -48,7 +49,7 @@ namespace loginPage
 
         private void monthCalendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
-            datebox.Text = monthCalendar.SelectedDate.Value.ToString("MM'/'dd'/'yyyy");
+            dateBox.SelectedDate = monthCalendar.SelectedDate;
         }
 
         //right arrow button for next day
@@ -56,6 +57,7 @@ namespace loginPage
         {
             DateTime currentDate = monthCalendar.SelectedDate.GetValueOrDefault();
             monthCalendar.SelectedDate = currentDate.AddDays(1);
+            //this "refreshes" the month calendar
             monthCalendar.DisplayDate = currentDate.AddDays(1);
         }
 
@@ -64,7 +66,13 @@ namespace loginPage
         {
             DateTime currentDate = monthCalendar.SelectedDate.GetValueOrDefault();
             monthCalendar.SelectedDate = currentDate.AddDays(-1);
+            //this "refreshes" the month calendar
             monthCalendar.DisplayDate = currentDate.AddDays(-1);
+        }
+
+        private void dateBox_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            monthCalendar.SelectedDate = dateBox.SelectedDate;
         }
 
 
