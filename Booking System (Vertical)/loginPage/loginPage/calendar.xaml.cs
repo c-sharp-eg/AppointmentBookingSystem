@@ -21,6 +21,7 @@ namespace loginPage
         public calendar()
         {
             InitializeComponent();
+            datebox.Text = DateTime.Now.ToString("MM'/'dd'/'yyyy");
         }
 
         //logging out in file menu
@@ -51,11 +52,9 @@ namespace loginPage
 
         private void nextDay_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
-            string date;
-            date = DateTime.Now.AddDays(1);
-            
-            //DateTime tomorrow = DateTime.Now.AddDays(1);
-             
+            //monthCalendar.SelectedDate = 
+            //monthCalendar.SelectedDate = DateTime.Now.AddDays(1);
+
         }
 
 
