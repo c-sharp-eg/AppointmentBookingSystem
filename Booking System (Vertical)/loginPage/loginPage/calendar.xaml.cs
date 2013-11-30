@@ -81,6 +81,12 @@ namespace loginPage
             newPat.Show();
         }
 
+        private void patientEdit_Click(object sender, RoutedEventArgs e)
+        {
+            editPatient editPat = new editPatient();
+            editPat.Show();
+        }
+
 
 
 

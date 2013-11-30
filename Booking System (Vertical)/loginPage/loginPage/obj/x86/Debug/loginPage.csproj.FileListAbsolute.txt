@@ -19,3 +19,5 @@ E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\l
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\bin\Debug\Microsoft.Expression.Drawing.xml
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\addPatient.baml
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\addPatient.g.cs
+E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\editPatient.baml
+E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\editPatient.g.cs
