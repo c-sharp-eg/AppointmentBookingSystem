@@ -75,6 +75,12 @@ namespace loginPage
             monthCalendar.SelectedDate = dateBox.SelectedDate;
         }
 
+        private void patientNew_Click(object sender, RoutedEventArgs e)
+        {
+            addPatient newPat = new addPatient();
+            newPat.Show();
+        }
+
 
 
 
