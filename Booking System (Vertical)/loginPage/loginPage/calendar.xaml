@@ -15,7 +15,7 @@
                 	<MenuItem Header="Patient" Width="59.95" x:Name="patientMenu">
                 		<MenuItem x:Name="patientNew" Header="New Patient" Click="patientNew_Click" />
                         <MenuItem x:Name="patientEdit" Header="Edit Patient " Click="patientEdit_Click" />
-                		<MenuItem x:Name="patientPast" Header="View Past Appointments"/>
+                		<MenuItem x:Name="patientPast" Header="View Past Appointments" Click="patientPast_Click" />
                 		
                 	</MenuItem>
                 	<MenuItem Header="Appt" Width="52.913" x:Name="apptMenu">

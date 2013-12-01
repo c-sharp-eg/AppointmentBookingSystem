@@ -34,6 +34,6 @@
         </ScrollViewer>
         <Button Content="Save" Margin="0,0,53.5,13" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Name="editSaveButton"  />
         <Button Content="Cancel" Margin="232.4,0,0,13" VerticalAlignment="Bottom" Name="editCancelButton" HorizontalAlignment="Left" Width="77" Click="editCancelButton_Click" />
-        <Button Content="Select Patient" Height="23" HorizontalAlignment="Left" Margin="134,6,0,0" Name="button1" VerticalAlignment="Top" Width="90" Click="button1_Click" />
+        <Button Content="Select Patient" Height="23" HorizontalAlignment="Left" Margin="134,6,0,0" Name="editSelectButton" VerticalAlignment="Top" Width="90" Click="editSelectButton_Click" />
     </Grid>
 </Window>

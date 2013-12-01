@@ -14,25 +14,20 @@ using System.Windows.Shapes;
 namespace loginPage
 {
     /// <summary>
-    /// Interaction logic for editPatient.xaml
+    /// Interaction logic for searchPatient.xaml
     /// </summary>
-    public partial class editPatient : Window
+    public partial class searchPatient : Window
     {
-        public editPatient()
+        public searchPatient()
         {
             InitializeComponent();
         }
 
-        private void editCancelButton_Click(object sender, RoutedEventArgs e)
+        private void searchCancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void editSelectButton_Click(object sender, RoutedEventArgs e)
-        {
-            searchPatient searchPat = new searchPatient();
-            searchPat.Show();
-        }
 
 
 

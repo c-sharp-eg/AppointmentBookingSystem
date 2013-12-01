@@ -87,6 +87,12 @@ namespace loginPage
             editPat.Show();
         }
 
+        private void patientPast_Click(object sender, RoutedEventArgs e)
+        {
+            pastAppointments pastAppt = new pastAppointments();
+            pastAppt.Show();
+        }
+
 
 
 

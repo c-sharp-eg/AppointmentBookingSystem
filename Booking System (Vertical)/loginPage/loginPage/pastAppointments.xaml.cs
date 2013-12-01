@@ -14,27 +14,18 @@ using System.Windows.Shapes;
 namespace loginPage
 {
     /// <summary>
-    /// Interaction logic for editPatient.xaml
+    /// Interaction logic for pastAppointments.xaml
     /// </summary>
-    public partial class editPatient : Window
+    public partial class pastAppointments : Window
     {
-        public editPatient()
+        public pastAppointments()
         {
             InitializeComponent();
         }
 
-        private void editCancelButton_Click(object sender, RoutedEventArgs e)
+        private void pastCloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
-        private void editSelectButton_Click(object sender, RoutedEventArgs e)
-        {
-            searchPatient searchPat = new searchPatient();
-            searchPat.Show();
-        }
-
-
-
     }
 }
