@@ -14,7 +14,7 @@
 				</DataGrid.Columns>
 			</DataGrid>
 		</ScrollViewer>
-		<Button x:Name="selectButton" Content="Select" HorizontalAlignment="Right" Margin="0,0,28,11" VerticalAlignment="Bottom" Width="75" Height="24" />
+		<Button x:Name="selectButton" Content="Select" HorizontalAlignment="Right" Margin="0,0,28,11" VerticalAlignment="Bottom" Width="75" Height="24" Click="selectButton_Click_1" />
 		<Button Content="Search" HorizontalAlignment="Right" Margin="0,39.24,28,0" VerticalAlignment="Top" Width="75" Name="searchButton" />
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="187,242.257,0,0" Name="searchCancelButton" VerticalAlignment="Top" Width="75" Click="searchCancelButton_Click_1" />
     </Grid>

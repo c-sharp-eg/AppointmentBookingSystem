@@ -18,14 +18,6 @@ namespace loginPage
     /// </summary>
     public partial class editPatient : Window
     {
-        searchPatient searchPat = new searchPatient();
-
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-            searchPat.Close();
-        }
-
         public editPatient()
         {
             InitializeComponent();
@@ -33,21 +25,20 @@ namespace loginPage
 
         private void editCancelButton_Click(object sender, RoutedEventArgs e)
         {
-            searchPat.Close();
             this.Close();
         }
 
         private void editSelectButton_Click(object sender, RoutedEventArgs e)
         {
-            searchPat.Close();
-            searchPat = new searchPatient(this);
+            searchPatient searchPat = new searchPatient(this);
             searchPat.Show();
+
         }
 
         private void editSaveButton_Click(object sender, RoutedEventArgs e)
         {
             Patient p = new Patient(this.editFirst.Text, this.editLast.Text,
-                this.editMale.IsSelected ? "M" : "F", this.editAddress.Text, int.Parse(this.editArea.Text),
+                this.editMale.IsSelected ? "M":"F", this.editAddress.Text, int.Parse(this.editArea.Text),
                 int.Parse(this.editPhone.Text), this.editCountry.Text, this.editProvince.Text,
                 this.editCity.Text, int.Parse(this.editMonthBox.Text), int.Parse(this.editDayBox.Text),
                 int.Parse(this.editYearBox.Text), int.Parse(this.editNo.Text), this.editNotes.Text);
@@ -55,6 +46,7 @@ namespace loginPage
             var mb = MessageBox.Show(p.ToString());
             this.Close();
         }
+
         public void ShowPatient(Patient p)
         {
              
@@ -75,7 +67,6 @@ namespace loginPage
             this.editNotes.Text = p.notes;
               
         }
-
 
 
     }
