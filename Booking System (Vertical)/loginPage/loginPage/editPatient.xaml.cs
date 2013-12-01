@@ -18,6 +18,14 @@ namespace loginPage
     /// </summary>
     public partial class editPatient : Window
     {
+        searchPatient searchPat = new searchPatient();
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            searchPat.Close();
+        }
+
         public editPatient()
         {
             InitializeComponent();
@@ -25,12 +33,14 @@ namespace loginPage
 
         private void editCancelButton_Click(object sender, RoutedEventArgs e)
         {
+            searchPat.Close();
             this.Close();
         }
 
         private void editSelectButton_Click(object sender, RoutedEventArgs e)
         {
-            searchPatient searchPat = new searchPatient();
+            searchPat.Close();
+            searchPat = new searchPatient();
             searchPat.Show();
         }
 

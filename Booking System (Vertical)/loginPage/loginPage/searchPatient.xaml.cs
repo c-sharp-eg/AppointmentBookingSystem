@@ -28,6 +28,13 @@ namespace loginPage
             this.Close();
         }
 
+        private void searchCancelButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+
+
 
 
 

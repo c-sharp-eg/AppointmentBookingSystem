@@ -19,6 +19,12 @@ namespace loginPage
     /// </summary>
     public partial class MainWindow : Window
     {
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -42,7 +48,7 @@ namespace loginPage
         // exit button will close the program
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         //login button will call the function to check fields
@@ -64,7 +70,7 @@ namespace loginPage
                 //opens the main booking window and closes the login screen 
                 calendar cal = new calendar();
                 cal.Show();
-                this.Close();
+                this.Hide();
             }
 
             else

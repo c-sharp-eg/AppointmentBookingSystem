@@ -18,6 +18,13 @@ namespace loginPage
     /// </summary>
     public partial class calendar : Window
     {
+        MainWindow loginScreen = new MainWindow();
+        billing billingScreen = new billing();
+        addPatient newPat = new addPatient();
+        editPatient editPat = new editPatient();
+        searchPatient searchPat = new searchPatient();
+        pastAppointments pastAppt = new pastAppointments();
+
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
@@ -35,12 +42,15 @@ namespace loginPage
         //logging out in file menu
         private void fileLogOut_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow loginScreen = new MainWindow();
-            //LOGOUT CURRENTLY DOESN'T WORK BECAUSE OF THE SHUTDOWN
+            loginScreen = new MainWindow();
             loginScreen.Show();
-            this.Close();
-            //Probably have to use this instead:
-            //System.Diagnostics.Process.Start("program.exe");
+
+            this.Hide();
+            billingScreen.Close();
+            newPat.Close();
+            editPat.Close();
+            searchPat.Close();
+            pastAppt.Close();
         }
 
         //closing program from file menu
@@ -52,7 +62,8 @@ namespace loginPage
         //opens the billing window (message)
         private void billOpen_Click(object sender, RoutedEventArgs e)
         {
-            billing billingScreen = new billing();
+            billingScreen.Close();
+            billingScreen = new billing();
             billingScreen.Show();
         }
 
@@ -86,19 +97,22 @@ namespace loginPage
 
         private void patientNew_Click(object sender, RoutedEventArgs e)
         {
-            addPatient newPat = new addPatient();
+            newPat.Close();
+            newPat = new addPatient();
             newPat.Show();
         }
 
         private void patientEdit_Click(object sender, RoutedEventArgs e)
         {
-            editPatient editPat = new editPatient();
+            editPat.Close();
+            editPat = new editPatient();
             editPat.Show();
         }
 
         private void patientPast_Click(object sender, RoutedEventArgs e)
         {
-            pastAppointments pastAppt = new pastAppointments();
+            pastAppt.Close();
+            pastAppt = new pastAppointments();
             pastAppt.Show();
         }
 
