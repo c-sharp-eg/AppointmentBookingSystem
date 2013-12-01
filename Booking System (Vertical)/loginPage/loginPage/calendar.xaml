@@ -83,10 +83,10 @@
                 	<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983" Foreground="Black" />
                 	<Button x:Name="button2" Content="Select Patient" Margin="20.999,62.587,75.339,0" VerticalAlignment="Top"/>
                 </Grid>
-                <ScrollViewer x:Name="appointmentInfo" Height="110" Background="White" Canvas.Left="108.5" Canvas.Top="751.382" Width="834">
+                <ScrollViewer x:Name="appointmentInfo" Height="110" Background="White" Canvas.Left="108.5" Canvas.Top="788" Width="834">
                 	<TextBlock TextWrapping="Wrap" FontSize="16" Name="apptInfoBox" Foreground="Black" Width="815"><Run Text="Appointment Information"/><LineBreak/><Run FontSize="12" Text="Patient:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Doctor:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Time:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Notes:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run/></TextBlock>
                 </ScrollViewer>
-                <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="436.5" Canvas.Top="885.922" Width="200"/>
+                <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="436.5" Canvas.Top="922" Width="200"/>
             </Canvas>
         </ScrollViewer>      
     </Grid>
