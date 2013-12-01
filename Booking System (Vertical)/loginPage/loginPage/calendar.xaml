@@ -65,22 +65,22 @@
             	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="608" Orientation="Right" Stroke="Black" Canvas.Top="74" Width="100" x:Name="nextDay" PreviewMouseLeftButtonUp="nextDay_PreviewMouseLeftButtonUp" />
                 <DatePicker Canvas.Left="464" Canvas.Top="86" Height="24" x:Name="dateBox" Width="116" SelectedDateChanged="dateBox_SelectedDateChanged" />
                 <Grid Background="White" Width="180" Height="364.882" Canvas.Left="988" Canvas.Top="292">
-                	<TextBlock HorizontalAlignment="Left" Margin="18.001,29.667,0,0" TextWrapping="Wrap" Text="Patient" VerticalAlignment="Top"/>
-                	<TextBlock HorizontalAlignment="Left" Margin="20.999,91.833,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top"/>
+                	<TextBlock HorizontalAlignment="Left" Margin="18.001,29.667,0,0" TextWrapping="Wrap" Text="Patient" VerticalAlignment="Top" Foreground="Black" />
+                	<TextBlock HorizontalAlignment="Left" Margin="20.999,91.833,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Foreground="Black" />
                 	<ComboBox Margin="18.002,111.793,39.999,0" VerticalAlignment="Top" Height="24.42" Name="bookDoctor">
                 		<ComboBoxItem Content="Doctor 1" Style="{DynamicResource SimpleComboBoxItem}"/>
                 		<ComboBoxItem Content="Doctor 2" Style="{DynamicResource SimpleComboBoxItem}"/>
                 	</ComboBox>
                 	<DatePicker Margin="18.001,154.666,40.002,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Name="bookDate" />
-                	<TextBlock HorizontalAlignment="Left" Margin="20.999,0,0,163.545" TextWrapping="Wrap" Text="Time" VerticalAlignment="Bottom"/>
+                	<TextBlock HorizontalAlignment="Left" Margin="20.999,0,0,163.545" TextWrapping="Wrap" Text="Time" VerticalAlignment="Bottom" Foreground="Black" />
                 	<ComboBox Margin="17.999,0,40.002,135.125" Height="24.42" VerticalAlignment="Bottom" Name="bookTime">
 
                 	</ComboBox>
                 	<Button Content="Clear" Margin="8,0,0,54.413" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Name="bookClearButton" />
                 	<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,54.413" VerticalAlignment="Bottom" Width="75" Name="bookAddButton" />
-                	<TextBlock TextWrapping="Wrap" Text="Book New" FontSize="16" Margin="8,0,-6,0" Height="25.667" VerticalAlignment="Top"/>
+                	<TextBlock TextWrapping="Wrap" Text="Book New" FontSize="16" Margin="8,0,-6,0" Height="25.667" VerticalAlignment="Top" Foreground="Black" />
                 	<CheckBox Content="Double Book" HorizontalAlignment="Left" Margin="18.001,0,0,97.165" VerticalAlignment="Bottom" Name="bookDouble" />
-                	<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983"/>
+                	<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983" Foreground="Black" />
                 	<Button x:Name="button2" Content="Select Patient" Margin="20.999,62.587,75.339,0" VerticalAlignment="Top"/>
                 </Grid>
             </Canvas>
