@@ -25,3 +25,4 @@ E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\l
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\searchPatient.g.cs
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\pastAppointments.baml
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\pastAppointments.g.cs
+E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\App.baml

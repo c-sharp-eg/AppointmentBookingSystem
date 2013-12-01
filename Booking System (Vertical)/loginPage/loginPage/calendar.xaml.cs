@@ -18,6 +18,12 @@ namespace loginPage
     /// </summary>
     public partial class calendar : Window
     {
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
+        }
+
         public calendar()
         {
             InitializeComponent();
@@ -30,8 +36,11 @@ namespace loginPage
         private void fileLogOut_Click(object sender, RoutedEventArgs e)
         {
             MainWindow loginScreen = new MainWindow();
+            //LOGOUT CURRENTLY DOESN'T WORK BECAUSE OF THE SHUTDOWN
             loginScreen.Show();
             this.Close();
+            //Probably have to use this instead:
+            //System.Diagnostics.Process.Start("program.exe");
         }
 
         //closing program from file menu
