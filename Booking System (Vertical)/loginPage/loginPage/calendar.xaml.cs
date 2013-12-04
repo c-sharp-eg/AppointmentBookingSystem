@@ -154,15 +154,30 @@ namespace loginPage
             DataGridColumnHeader calButton = sender as DataGridColumnHeader;
             currentSlot = calButton;
 
+            if (currentSlot.Background == greenGradient)
+            {
+                checkInButton.Content = "Cancel Check - In";
+            }
+            else if (currentSlot.Background == null)
+            {
+                checkInButton.Content = "Check - In";
+            }
  
         }
 
         private void checkInButton_Click(object sender, RoutedEventArgs e)
         {
-            if (currentSlot.Background == greenGradient)
-                currentSlot.Background = null;
-            else if (currentSlot.Background == null)
-                currentSlot.Background = greenGradient;
+            if (currentSlot != null)
+            {
+                if (currentSlot.Background == greenGradient)
+                {
+                    currentSlot.Background = null;
+                }
+                else if (currentSlot.Background == null)
+                {
+                    currentSlot.Background = greenGradient;
+                }
+            }
         }
 
 
