@@ -10,6 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
+
 
 namespace loginPage
 {
@@ -24,6 +26,8 @@ namespace loginPage
         editPatient editPat = new editPatient();
         searchPatient searchPat = new searchPatient();
         pastAppointments pastAppt = new pastAppointments();
+
+        DataGridColumnHeader previous;
 
         protected override void OnClosed(EventArgs e)
         {
@@ -131,6 +135,15 @@ namespace loginPage
             bookDate.SelectedDate = DateTime.Now; 
             bookTime.Text = "";
             bookDouble.IsChecked = false;
+        }
+
+        private void calendarDatesClicked(object sender, EventArgs e)
+        {
+            DataGridColumnHeader calButton = sender as DataGridColumnHeader;
+            previous = calButton;
+             
+            //calButton.Background = Brushes.Lime;
+            
         }
 
 
