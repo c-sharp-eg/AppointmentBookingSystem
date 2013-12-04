@@ -44,7 +44,7 @@ namespace loginPage
             this.notes = notes;
         }
 
-        public string ToString()
+        override public string ToString()
         {
             return "Patient: "+ firstName + " " +  lastName + " " +  sex + " " +
                      address + " " +  areaCode + " " +  phoneNumber + " " +  country + " " +

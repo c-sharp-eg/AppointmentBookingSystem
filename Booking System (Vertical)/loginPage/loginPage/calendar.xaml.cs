@@ -37,6 +37,7 @@ namespace loginPage
 
             monthCalendar.SelectedDate = DateTime.Now;
             dateBox.SelectedDate = DateTime.Now;
+            bookDate.SelectedDate = DateTime.Now;
         }
 
         //logging out in file menu
@@ -116,14 +117,21 @@ namespace loginPage
             pastAppt.Show();
         }
 
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            searchPat.Close();
+            searchPat = new searchPatient();
+            searchPat.Show();
+        }
 
-
-
-
-
-
-
-
+        private void bookClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            bookNewName.Text = "<patient name>";
+            bookDoctor.Text = "";
+            bookDate.SelectedDate = DateTime.Now; 
+            bookTime.Text = "";
+            bookDouble.IsChecked = false;
+        }
 
 
     }

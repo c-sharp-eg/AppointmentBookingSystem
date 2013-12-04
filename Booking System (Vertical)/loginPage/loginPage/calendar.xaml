@@ -68,20 +68,23 @@
                 	<TextBlock HorizontalAlignment="Left" Margin="18.001,29.667,0,0" TextWrapping="Wrap" Text="Patient" VerticalAlignment="Top" Foreground="Black" />
                 	<TextBlock HorizontalAlignment="Left" Margin="20.999,91.833,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Foreground="Black" />
                 	<ComboBox Margin="18.002,111.793,39.999,0" VerticalAlignment="Top" Height="24.42" Name="bookDoctor">
-                		<ComboBoxItem Content="Doctor 1" Style="{DynamicResource SimpleComboBoxItem}"/>
-                		<ComboBoxItem Content="Doctor 2" Style="{DynamicResource SimpleComboBoxItem}"/>
-                	</ComboBox>
+                		<ComboBoxItem Content="Dr.Phillips" Style="{DynamicResource SimpleComboBoxItem}" Name="d1Dropdown" />
+                		<ComboBoxItem Content="Dr.Strumpfer" Style="{DynamicResource SimpleComboBoxItem}" Name="d2Dropdown" />
+                        <ComboBoxItem Content="Dr.Cole" Style="{DynamicResource SimpleComboBoxItem}" Name="d3Dropdown" />
+                        <ComboBoxItem Content="Nurse Ratched" Style="{DynamicResource SimpleComboBoxItem}" Name="d4Dropdown" />
+                        <ComboBoxItem Content="Dr.Honeydew" Style="{DynamicResource SimpleComboBoxItem}" Name="d5Dropdown" />
+                    </ComboBox>
                 	<DatePicker Margin="18.001,154.666,40.002,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Name="bookDate" />
                 	<TextBlock HorizontalAlignment="Left" Margin="20.999,0,0,163.545" TextWrapping="Wrap" Text="Time" VerticalAlignment="Bottom" Foreground="Black" />
                 	<ComboBox Margin="17.999,0,40.002,135.125" Height="24.42" VerticalAlignment="Bottom" Name="bookTime">
 
                 	</ComboBox>
-                	<Button Content="Clear" Margin="8,0,0,54.413" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Name="bookClearButton" />
+                	<Button Content="Clear" Margin="8,0,0,54.413" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Name="bookClearButton" Click="bookClearButton_Click" />
                 	<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,54.413" VerticalAlignment="Bottom" Width="75" Name="bookAddButton" />
                 	<TextBlock TextWrapping="Wrap" Text="Book New" FontSize="16" Margin="8,0,-6,0" Height="25.667" VerticalAlignment="Top" Foreground="Black" />
                 	<CheckBox Content="Double Book" HorizontalAlignment="Left" Margin="18.001,0,0,97.165" VerticalAlignment="Bottom" Name="bookDouble" />
-                	<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983" Foreground="Black" />
-                	<Button x:Name="button2" Content="Select Patient" Margin="20.999,62.587,75.339,0" VerticalAlignment="Top"/>
+                	<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983" Foreground="Black" Name="bookNewName" />
+                	<Button x:Name="button2" Content="Select Patient" Margin="20.999,62.587,75.339,0" VerticalAlignment="Top" Click="button2_Click" />
                 </Grid>
                 <ScrollViewer x:Name="appointmentInfo" Height="110" Background="White" Canvas.Left="108.5" Canvas.Top="788" Width="834">
                 	<TextBlock TextWrapping="Wrap" FontSize="16" Name="apptInfoBox" Foreground="Black" Width="815"><Run Text="Appointment Information"/><LineBreak/><Run FontSize="12" Text="Patient:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Doctor:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Time:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Notes:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run/></TextBlock>
