@@ -89,7 +89,7 @@
                 <ScrollViewer x:Name="appointmentInfo" Height="110" Background="White" Canvas.Left="108.5" Canvas.Top="788" Width="834">
                 	<TextBlock TextWrapping="Wrap" FontSize="16" Name="apptInfoBox" Foreground="Black" Width="815"><Run Text="Appointment Information"/><LineBreak/><Run FontSize="12" Text="Patient:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Doctor:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Time:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Notes:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run/></TextBlock>
                 </ScrollViewer>
-                <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="436.5" Canvas.Top="922" Width="200"/>
+                <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="436.5" Canvas.Top="922" Width="200" Click="checkInButton_Click" />
                 <ScrollViewer x:Name="schedScroll" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Height="621.852" Canvas.Left="222.611" Canvas.Top="135.28" Width="719.889">
                 	<Grid Height="597.032" Width="787.662" Background="White">
                 		<Grid x:Name="doctor1" Margin="0,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
@@ -142,7 +142,7 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t1400" Click="calendarDatesClicked"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t1420" Click="calendarDatesClicked"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t1440" Click="calendarDatesClicked"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,12" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t1500" Click="calendarDatesClicked"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t1500" Click="calendarDatesClicked"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t1520" Click="calendarDatesClicked"/>
                 			<DataGridColumnHeader Content="Dr. Strumpfer" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
                 		</Grid>
@@ -167,7 +167,7 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t1320" Click="calendarDatesClicked"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t1340" Click="calendarDatesClicked"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t1400" Click="calendarDatesClicked"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,0,64.032" Height="25" VerticalAlignment="Bottom" BorderThickness="3,3,3,4" Foreground="Black" Name="d3t1420" Click="calendarDatesClicked"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,0,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t1420" Click="calendarDatesClicked"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t1440" Click="calendarDatesClicked"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t1500" Click="calendarDatesClicked"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t1520" Click="calendarDatesClicked"/>

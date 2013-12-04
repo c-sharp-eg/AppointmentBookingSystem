@@ -27,7 +27,8 @@ namespace loginPage
         searchPatient searchPat = new searchPatient();
         pastAppointments pastAppt = new pastAppointments();
 
-        DataGridColumnHeader previous;
+        DataGridColumnHeader previousSlot;
+        DataGridColumnHeader currentSlot;
 
         protected override void OnClosed(EventArgs e)
         {
@@ -137,13 +138,31 @@ namespace loginPage
             bookDouble.IsChecked = false;
         }
 
+
+        SolidColorBrush customGreen = new SolidColorBrush();
+        LinearGradientBrush greenGradient = new LinearGradientBrush();
+
         private void calendarDatesClicked(object sender, EventArgs e)
         {
+            customGreen.Color = Color.FromArgb(255, 175, 255, 0);
+
+            greenGradient.StartPoint = new Point(0.5,0);
+            greenGradient.EndPoint = new Point(0.5,1);
+            greenGradient.GradientStops.Add(new GradientStop(Colors.LimeGreen,0.0));
+            greenGradient.GradientStops.Add(new GradientStop(Colors.Lime,1.0));
+
             DataGridColumnHeader calButton = sender as DataGridColumnHeader;
-            previous = calButton;
-             
-            //calButton.Background = Brushes.Lime;
-            
+            currentSlot = calButton;
+
+ 
+        }
+
+        private void checkInButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentSlot.Background == greenGradient)
+                currentSlot.Background = null;
+            else if (currentSlot.Background == null)
+                currentSlot.Background = greenGradient;
         }
 
 
