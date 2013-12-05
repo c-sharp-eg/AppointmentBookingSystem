@@ -152,7 +152,13 @@ namespace loginPage
             greenGradient.GradientStops.Add(new GradientStop(Colors.Lime,1.0));
 
             DataGridColumnHeader calButton = sender as DataGridColumnHeader;
+            previousSlot = currentSlot;
             currentSlot = calButton;
+
+            if (previousSlot != null)
+                previousSlot.BorderBrush = null;
+
+            currentSlot.BorderBrush = Brushes.Aqua;
 
             if (currentSlot.Background == greenGradient)
             {
@@ -178,6 +184,8 @@ namespace loginPage
                     currentSlot.Background = greenGradient;
                 }
             }
+            //reseting to "default"
+            checkInButton.Content = "Check - In";
         }
 
 
