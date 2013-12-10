@@ -109,6 +109,7 @@ namespace loginPage
         private void dateBox_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             monthCalendar.SelectedDate = dateBox.SelectedDate;
+            monthCalendar.DisplayDate = monthCalendar.SelectedDate.GetValueOrDefault();
         }
 
         private void patientNew_Click(object sender, RoutedEventArgs e)
