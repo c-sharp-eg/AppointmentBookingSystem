@@ -171,7 +171,7 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t20" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t21" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t22" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
-                            <DataGridColumnHeader Content="Dr. Cole" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="Dr. Cole" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" BorderThickness="4,2,18,2"/>
                 		</Grid>
                 		<Grid x:Name="doctor4" Margin="0,0,159.662,8" Background="White" HorizontalAlignment="Right" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>

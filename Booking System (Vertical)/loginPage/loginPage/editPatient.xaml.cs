@@ -46,13 +46,20 @@ namespace loginPage
 
         private void editSaveButton_Click(object sender, RoutedEventArgs e)
         {
-            Patient p = new Patient(this.editFirst.Text, this.editLast.Text,
-                this.editMale.IsSelected ? "M" : "F", this.editAddress.Text, int.Parse(this.editArea.Text),
-                int.Parse(this.editPhone.Text), this.editCountry.Text, this.editProvince.Text,
-                this.editCity.Text, int.Parse(this.editMonthBox.Text), int.Parse(this.editDayBox.Text),
-                int.Parse(this.editYearBox.Text), int.Parse(this.editNo.Text), this.editNotes.Text);
+            try
+            {
+                Patient p = new Patient(this.editFirst.Text, this.editLast.Text,
+                    this.editMale.IsSelected ? "M" : "F", this.editAddress.Text, int.Parse(this.editArea.Text),
+                    int.Parse(this.editPhone.Text), this.editCountry.Text, this.editProvince.Text,
+                    this.editCity.Text, int.Parse(this.editMonthBox.Text), int.Parse(this.editDayBox.Text),
+                    int.Parse(this.editYearBox.Text), int.Parse(this.editNo.Text), this.editNotes.Text);
 
-            var mb = MessageBox.Show(p.ToString());
+                var mb = MessageBox.Show(p.ToString());
+            }
+            catch(Exception err)
+            {
+                var mb = MessageBox.Show("TODO: add error message");
+            }
             this.Close();
         }
         public void ShowPatient(Patient p)

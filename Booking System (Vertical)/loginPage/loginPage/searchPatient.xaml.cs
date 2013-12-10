@@ -43,7 +43,10 @@ namespace loginPage
         private void selectButton_Click_1(object sender, RoutedEventArgs e)
         {
             patient = new Patient("first", "last", "sex", "address", 123, 5555555, "cntry", "prvnce", "cty", 11, 22, 1999, 12345, "blab,bla,lba");
-            caller.ShowPatient(patient);
+            if (caller != null)
+            {
+                caller.ShowPatient(patient);
+            }
             this.Close();
 
         }
