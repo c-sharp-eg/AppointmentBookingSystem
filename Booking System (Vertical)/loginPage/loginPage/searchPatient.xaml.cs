@@ -58,6 +58,7 @@ namespace loginPage
                     editPatient temp = new editPatient();
                     temp = (editPatient)caller;
                     temp.ShowPatient(patient);
+                    temp.patientSelected = true;
                 }
                 else if (caller.GetType() == typeof(mainCalendarDisplayWindow))
                 {

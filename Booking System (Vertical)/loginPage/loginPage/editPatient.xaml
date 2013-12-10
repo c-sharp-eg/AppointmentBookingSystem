@@ -4,32 +4,32 @@
         <TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" Text="Edit New Patient" VerticalAlignment="Top" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="179,33,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="8,33.28,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="8,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Text="" Name="editFirst" />
-        <TextBox Margin="0,52,167,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="" HorizontalAlignment="Right" Width="154" Name="editLast" />
-        <TextBlock HorizontalAlignment="Left" Margin="8,78,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"/>
-        <TextBox Margin="8,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="181.9" Text="" Name="editAddress" />
+        <TextBox HorizontalAlignment="Left" Margin="8,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Text="" Name="editFirst" GotFocus="errorMsgNoPatientSelected" />
+        <TextBox Margin="0,52,167,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="" HorizontalAlignment="Right" Width="154" Name="editLast" GotFocus="errorMsgNoPatientSelected"/>
+        <TextBlock HorizontalAlignment="Left" Margin="8,78,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" GotFocus="errorMsgNoPatientSelected"/>
+        <TextBox Margin="8,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="181.9" Text="" Name="editAddress" GotFocus="errorMsgNoPatientSelected"/>
         <TextBlock Margin="222.5,77.7,134,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top"/>
-        <TextBox Margin="0,97.66,219.1,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="" Name="editArea" HorizontalAlignment="Right" Width="58" />
-        <TextBox HorizontalAlignment="Right" Margin="0,97.66,53.5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Text="" Name="editPhone" />
+        <TextBox Margin="0,97.66,219.1,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="" Name="editArea" HorizontalAlignment="Right" Width="58" GotFocus="errorMsgNoPatientSelected"/>
+        <TextBox HorizontalAlignment="Right" Margin="0,97.66,53.5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Text="" Name="editPhone" GotFocus="errorMsgNoPatientSelected"/>
         <TextBlock HorizontalAlignment="Left" Margin="8.423,121.12,0,0" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="8,141.08,0,0" TextWrapping="Wrap" Width="154" VerticalAlignment="Top" Text="" Name="editCountry" />
-        <TextBox Margin="0,141.08,234.1,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="" HorizontalAlignment="Right" Width="87" Name="editProvince" />
+        <TextBox HorizontalAlignment="Left" Margin="8,141.08,0,0" TextWrapping="Wrap" Width="154" VerticalAlignment="Top" Text="" Name="editCountry" GotFocus="errorMsgNoPatientSelected"/>
+        <TextBox Margin="0,141.08,234.1,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="" HorizontalAlignment="Right" Width="87" Name="editProvince" GotFocus="errorMsgNoPatientSelected"/>
         <TextBlock HorizontalAlignment="Left" Margin="179,121.12,0,0" TextWrapping="Wrap" Text="Province" VerticalAlignment="Top"/>
-        <TextBox Margin="0,139.58,56.81,0" TextWrapping="Wrap" HorizontalAlignment="Right" Width="154" VerticalAlignment="Top" Text="" Name="editCity" />
+        <TextBox Margin="0,139.58,56.81,0" TextWrapping="Wrap" HorizontalAlignment="Right" Width="154" VerticalAlignment="Top" Text="" Name="editCity" GotFocus="errorMsgNoPatientSelected"/>
         <TextBlock Margin="0,123.62,190.6,0" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" HorizontalAlignment="Right"/>
         <TextBlock HorizontalAlignment="Left" Margin="8.423,0,0,148" TextWrapping="Wrap" Text="Date of Birth mm/dd/yyyy" VerticalAlignment="Bottom"/>
-        <TextBox Margin="9.183,0,0,122.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9" Text="" Name="editMonthBox" />
-        <TextBox Margin="71.173,0,0,122.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9" Text="" Name="editDayBox" />
-        <TextBox Margin="134,0,0,122.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9" Text="" Name="editYearBox" />
-        <TextBlock HorizontalAlignment="Left" Margin="9.183,0,0,102.08" TextWrapping="Wrap" Text="Health Care No." VerticalAlignment="Bottom"/>
-        <TextBox HorizontalAlignment="Left" Margin="9.183,0,0,80.12" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="154" Text="" Name="editNo" />
+        <TextBox Margin="9.183,0,0,122.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9" Text="" Name="editMonthBox" GotFocus="errorMsgNoPatientSelected"/>
+        <TextBox Margin="71.173,0,0,122.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9" Text="" Name="editDayBox" GotFocus="errorMsgNoPatientSelected"/>
+        <TextBox Margin="134,0,0,122.04" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.9" Text="" Name="editYearBox" GotFocus="errorMsgNoPatientSelected"/>
+        <TextBlock HorizontalAlignment="Left" Margin="9.183,0,0,102.08" TextWrapping="Wrap" Text="Health Care No." VerticalAlignment="Bottom" />
+        <TextBox HorizontalAlignment="Left" Margin="9.183,0,0,80.12" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="154" Text="" Name="editNo" GotFocus="errorMsgNoPatientSelected"/>
         <TextBlock HorizontalAlignment="Right" Margin="0,31.78,91.81,0" TextWrapping="Wrap" Text="Sex" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Right" Margin="0,51.74,56.81,0" VerticalAlignment="Top" Width="53.157" Name="editSex">
+        <ComboBox HorizontalAlignment="Right" Margin="0,51.74,56.81,0" VerticalAlignment="Top" Width="53.157" Name="editSex" GotFocus="errorMsgNoPatientSelected">
             <ComboBoxItem Content="M" Name="editMale" />
             <ComboBoxItem Content="F" Name="editFemale" />
         </ComboBox>
         <TextBlock Margin="232.456,0,234.1,148" TextWrapping="Wrap" Text="Notes" VerticalAlignment="Bottom" d:LayoutOverrides="Width"/>
-        <ScrollViewer Height="100" Margin="232.456,0,53.5,48" VerticalAlignment="Bottom">
+        <ScrollViewer Height="100" Margin="232.456,0,53.5,48" VerticalAlignment="Bottom" GotFocus="errorMsgNoPatientSelected">
             <TextBox TextWrapping="Wrap" Height="100" Width="209" Name="editNotes" />
         </ScrollViewer>
         <Button Content="Save" Margin="0,0,53.5,13" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Name="editSaveButton" Click="editSaveButton_Click" />

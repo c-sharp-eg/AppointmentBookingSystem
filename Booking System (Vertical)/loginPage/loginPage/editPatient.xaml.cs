@@ -18,6 +18,7 @@ namespace loginPage
     /// </summary>
     public partial class editPatient : Window
     {
+        public Boolean patientSelected;
         searchPatient searchPat = new searchPatient();
 
         protected override void OnClosed(EventArgs e)
@@ -29,6 +30,8 @@ namespace loginPage
         public editPatient()
         {
             InitializeComponent();
+            patientSelected = false;
+     
         }
 
         private void editCancelButton_Click(object sender, RoutedEventArgs e)
@@ -81,6 +84,16 @@ namespace loginPage
             this.editNo.Text = p.healthcare.ToString("G");
             this.editNotes.Text = p.notes;
               
+        }
+
+
+        public void errorMsgNoPatientSelected(object sender, EventArgs e)
+        {
+            if (!patientSelected)
+            {
+                var mb = MessageBox.Show("Please click \"Selected Patient\" first to select a patient to edit");
+                editSelectButton.Focus();
+            }
         }
 
 

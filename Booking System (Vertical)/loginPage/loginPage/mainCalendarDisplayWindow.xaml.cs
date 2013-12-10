@@ -12,14 +12,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 
-
 namespace loginPage
 {
+
     /// <summary>
     /// Interaction logic for calendar.xaml
     /// </summary>
     public partial class mainCalendarDisplayWindow : Window
     {
+        public IList<Patient> patients = new List<Patient>();
+        
         MainWindow loginScreen = new MainWindow();
         billing billingScreen = new billing();
         addPatient newPat = new addPatient();
@@ -32,8 +34,6 @@ namespace loginPage
 
         DataGridColumnHeader[] d0Slots = new DataGridColumnHeader[23];
         DataGridColumnHeader[][] dateSlots = new DataGridColumnHeader[31][];
-
-
 
         protected override void OnClosed(EventArgs e)
         {
