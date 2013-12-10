@@ -18,7 +18,7 @@ namespace loginPage
     /// <summary>
     /// Interaction logic for calendar.xaml
     /// </summary>
-    public partial class calendar : Window
+    public partial class mainCalendarDisplayWindow : Window
     {
         MainWindow loginScreen = new MainWindow();
         billing billingScreen = new billing();
@@ -41,7 +41,7 @@ namespace loginPage
             Application.Current.Shutdown();
         }
 
-        public calendar()
+        public mainCalendarDisplayWindow()
         {
             InitializeComponent();
 
@@ -133,10 +133,10 @@ namespace loginPage
             pastAppt.Show();
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void selectPatientButton_Click(object sender, RoutedEventArgs e)
         {
             searchPat.Close();
-            searchPat = new searchPatient();
+            searchPat = new searchPatient(this);
             searchPat.Show();
         }
 

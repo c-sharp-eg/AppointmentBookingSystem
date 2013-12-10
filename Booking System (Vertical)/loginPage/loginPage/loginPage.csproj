@@ -73,7 +73,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="calendar.xaml">
+    <Page Include="mainCalendarDisplayWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,8 +95,8 @@
     <Compile Include="billing.xaml.cs">
       <DependentUpon>billing.xaml</DependentUpon>
     </Compile>
-    <Compile Include="calendar.xaml.cs">
-      <DependentUpon>calendar.xaml</DependentUpon>
+    <Compile Include="mainCalendarDisplayWindow.xaml.cs">
+      <DependentUpon>mainCalendarDisplayWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="editPatient.xaml.cs">
       <DependentUpon>editPatient.xaml</DependentUpon>

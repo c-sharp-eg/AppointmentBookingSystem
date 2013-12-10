@@ -68,7 +68,7 @@ namespace loginPage
                 statusText.Text = "Logging in...";
 
                 //opens the main booking window and closes the login screen 
-                calendar cal = new calendar();
+                mainCalendarDisplayWindow cal = new mainCalendarDisplayWindow();
                 cal.Show();
                 this.Hide();
             }

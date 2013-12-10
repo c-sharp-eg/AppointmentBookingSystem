@@ -18,7 +18,7 @@ namespace loginPage
     /// </summary>
     public partial class searchPatient : Window
     {
-        editPatient caller;
+        Object caller;
         public Patient patient;
 
         public searchPatient()
@@ -26,9 +26,17 @@ namespace loginPage
             InitializeComponent();
         }
 
-        public searchPatient(editPatient caller)
+        public searchPatient(editPatient input)
         {
-            this.caller = caller;
+            this.caller = new editPatient();
+            this.caller = input;
+            InitializeComponent();
+        }
+
+        public searchPatient(mainCalendarDisplayWindow input)
+        {
+            this.caller = new mainCalendarDisplayWindow();
+            this.caller = input;
             InitializeComponent();
         }
 
@@ -45,7 +53,23 @@ namespace loginPage
             patient = new Patient("first", "last", "sex", "address", 123, 5555555, "cntry", "prvnce", "cty", 11, 22, 1999, 12345, "blab,bla,lba");
             if (caller != null)
             {
-                caller.ShowPatient(patient);
+                if (caller.GetType() == typeof(editPatient))
+                {
+                    editPatient temp = new editPatient();
+                    temp = (editPatient)caller;
+                    temp.ShowPatient(patient);
+                }
+                else if (caller.GetType() == typeof(mainCalendarDisplayWindow))
+                {
+                    mainCalendarDisplayWindow temp = new mainCalendarDisplayWindow();
+                    temp = (mainCalendarDisplayWindow)caller;
+                    temp.bookNewName.Text="<"+patient.lastName+","+patient.firstName+">";
+                }
+                
+            }
+            else
+            {
+                var mb = MessageBox.Show("caller.gettype is null");
             }
             this.Close();
 

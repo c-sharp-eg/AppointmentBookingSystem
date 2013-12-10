@@ -26,3 +26,31 @@ E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\l
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\pastAppointments.baml
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\pastAppointments.g.cs
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\App.baml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage.exe
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage.pdb
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\bin\Debug\loginPage.exe
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\bin\Debug\loginPage.pdb
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\bin\Debug\Microsoft.Expression.Drawing.xml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\addPatient.baml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\billing.baml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\editPatient.baml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\MainWindow.baml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\pastAppointments.baml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\searchPatient.baml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\App.baml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\addPatient.g.cs
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\billing.g.cs
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\editPatient.g.cs
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\MainWindow.g.cs
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\pastAppointments.g.cs
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\searchPatient.g.cs
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\App.g.cs
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage_MarkupCompile.cache
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage.g.resources
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage.Properties.Resources.resources
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\mainCalendarDisplayWindow.baml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\mainCalendarDisplayWindow.g.cs
