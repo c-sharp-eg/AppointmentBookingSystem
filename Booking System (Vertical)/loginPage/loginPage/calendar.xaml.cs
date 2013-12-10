@@ -30,6 +30,11 @@ namespace loginPage
         DataGridColumnHeader previousSlot;
         DataGridColumnHeader currentSlot;
 
+        DataGridColumnHeader[] d0Slots = new DataGridColumnHeader[23];
+        DataGridColumnHeader[][] dateSlots = new DataGridColumnHeader[31][];
+
+
+
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
@@ -85,6 +90,9 @@ namespace loginPage
             monthCalendar.SelectedDate = currentDate.AddDays(1);
             //this "refreshes" the month calendar
             monthCalendar.DisplayDate = currentDate.AddDays(1);
+
+            saveSlots();
+            clearSlots();
         }
 
         //left arrow button for previous day
@@ -94,6 +102,8 @@ namespace loginPage
             monthCalendar.SelectedDate = currentDate.AddDays(-1);
             //this "refreshes" the month calendar
             monthCalendar.DisplayDate = currentDate.AddDays(-1);
+
+            loadSlots();
         }
 
         private void dateBox_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -178,14 +188,32 @@ namespace loginPage
                 if (currentSlot.Background == greenGradient)
                 {
                     currentSlot.Background = null;
+                    checkInButton.Content = "Check- In";
                 }
                 else if (currentSlot.Background == null)
                 {
                     currentSlot.Background = greenGradient;
+                    checkInButton.Content = "Cancel Check - In";
                 }
             }
-            //reseting to "default"
-            checkInButton.Content = "Check - In";
+        }
+
+
+        public void saveSlots()
+        {
+            d0Slots[0] = d0t0;
+            dateSlots[0] = d0Slots;
+        }
+
+        public void clearSlots()
+        {
+            d0t0.Background = null;
+        }
+
+        public void loadSlots()
+        {
+            d0Slots = dateSlots[0];
+            d0t0 = d0Slots[0];
         }
 
 
