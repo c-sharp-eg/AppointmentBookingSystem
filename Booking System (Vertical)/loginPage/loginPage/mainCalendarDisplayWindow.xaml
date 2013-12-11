@@ -95,7 +95,7 @@
                 		<Grid x:Name="doctor1" Margin="0,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
                             <DataGridColumnHeader Content="" Margin="0,25,-15,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t0" Click="calendarDatesClicked" BorderThickness="4,2,13,2" />
-                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t1" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,514" Foreground="Black" Name="d0t1" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
                             <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t2" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
                             <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" Width="170.065" Foreground="Black" Name="d0t3" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
                             <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t4" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>

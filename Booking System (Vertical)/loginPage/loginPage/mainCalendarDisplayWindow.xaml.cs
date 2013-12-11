@@ -14,14 +14,19 @@ using System.Windows.Controls.Primitives;
 
 namespace loginPage
 {
-
     /// <summary>
     /// Interaction logic for calendar.xaml
     /// </summary>
     public partial class mainCalendarDisplayWindow : Window
     {
+    
+        public const int NUM_DOCTORS = 5;
+        public const int NUM_TIMESLOTS = 5;
+
+        public string[,] todaysApts = new string[23, 5];
+            
         public IList<Patient> patients = new List<Patient>();
-        
+
         MainWindow loginScreen = new MainWindow();
         billing billingScreen = new billing();
         addPatient newPat = new addPatient();
@@ -94,8 +99,6 @@ namespace loginPage
             //this "refreshes" the month calendar
             monthCalendar.DisplayDate = currentDate.AddDays(1);
 
-            saveSlots();
-            clearSlots();
         }
 
         //left arrow button for previous day
@@ -106,7 +109,6 @@ namespace loginPage
             //this "refreshes" the month calendar
             monthCalendar.DisplayDate = currentDate.AddDays(-1);
 
-            loadSlots();
         }
 
         private void dateBox_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -144,6 +146,7 @@ namespace loginPage
             searchPat.Close();
             searchPat = new searchPatient(this);
             searchPat.Show();
+            displayRandomAppointments();
         }
 
         private void bookClearButton_Click(object sender, RoutedEventArgs e)
@@ -218,23 +221,6 @@ namespace loginPage
             dateBox.SelectedDate = bookDate.SelectedDate;
         }
 
-        public void saveSlots()
-        {
-            d0Slots[0] = d0t0;
-            dateSlots[0] = d0Slots;
-        }
-
-        public void clearSlots()
-        {
-            d0t0.Background = null;
-        }
-
-        public void loadSlots()
-        {
-            d0Slots = dateSlots[0];
-            d0t0 = d0Slots[0];
-        }
-
         private void todayButton_Click(object sender, RoutedEventArgs e)
         {
             monthCalendar.SelectedDate = DateTime.Now;
@@ -262,5 +248,456 @@ namespace loginPage
             }
         }
 
+        //this method updates the maincalandar appointments
+        //@Param Array<String> - a list of the text data to update the calander
+        public void updateMainCalander(string[] d0, string[] d1,string[] d2, string[] d3,string[] d4)
+        {
+            //CHECK FOR CORRECT DATA
+            if ( d0.Length < 23)
+            {
+                var mb = MessageBox.Show("Error! the calandar is trying to update with wrong size data");
+                return;
+            }
+            if ( d1.Length < 23)
+            {
+                var mb = MessageBox.Show("Error! the calandar is trying to update with wrong size data");
+                return;
+            }
+            if ( d2.Length < 23)
+            {
+                var mb = MessageBox.Show("Error! the calandar is trying to update with wrong size data");
+                return;
+            }
+            if ( d3.Length < 23)
+            {
+                var mb = MessageBox.Show("Error! the calandar is trying to update with wrong size data");
+                return;
+            }
+            if ( d4.Length < 23)
+            {
+                var mb = MessageBox.Show("Error! the calandar is trying to update with wrong size data");
+                return;
+            }
+
+
+            //clear all 23 timeslots form doctor 1
+            d0t0.Content = "";
+            d0t1.Content = "";
+            d0t2.Content = "";
+            d0t3.Content = "";
+            d0t4.Content = "";
+            d0t5.Content = "";
+            d0t5.Content = "";
+            d0t7.Content = "";
+            d0t8.Content = "";
+            d0t9.Content = "";
+            d0t10.Content = "";
+            d0t11.Content = "";
+            d0t12.Content = "";
+            d0t13.Content = "";
+            d0t14.Content = "";
+            d0t15.Content = "";
+            d0t16.Content = "";
+            d0t17.Content = "";
+            d0t18.Content = "";
+            d0t19.Content = "";
+            d0t20.Content = "";
+            d0t21.Content = "";
+            d0t22.Content = "";
+            //clear all 23 timeslots form doctor 2
+            d1t0.Content = "";
+            d1t1.Content = "";
+            d1t2.Content = "";
+            d1t3.Content = "";
+            d1t4.Content = "";
+            d1t5.Content = "";
+            d1t5.Content = "";
+            d1t7.Content = "";
+            d1t8.Content = "";
+            d1t9.Content = "";
+            d1t10.Content = "";
+            d1t11.Content = "";
+            d1t12.Content = "";
+            d1t13.Content = "";
+            d1t14.Content = "";
+            d1t15.Content = "";
+            d1t16.Content = "";
+            d1t17.Content = "";
+            d1t18.Content = "";
+            d1t19.Content = "";
+            d1t20.Content = "";
+            d1t21.Content = "";
+            d1t22.Content = "";
+            //clear all 23 timeslots form doctor 3
+            d2t0.Content = "";
+            d2t1.Content = "";
+            d2t2.Content = "";
+            d2t3.Content = "";
+            d2t4.Content = "";
+            d2t5.Content = "";
+            d2t5.Content = "";
+            d2t7.Content = "";
+            d2t8.Content = "";
+            d2t9.Content = "";
+            d2t10.Content = "";
+            d2t11.Content = "";
+            d2t12.Content = "";
+            d2t13.Content = "";
+            d2t14.Content = "";
+            d2t15.Content = "";
+            d2t16.Content = "";
+            d2t17.Content = "";
+            d2t18.Content = "";
+            d2t19.Content = "";
+            d2t20.Content = "";
+            d2t21.Content = "";
+            d2t22.Content = "";
+            //clear all 23 timeslots form doctor 4
+            d3t0.Content = "";
+            d3t1.Content = "";
+            d3t2.Content = "";
+            d3t3.Content = "";
+            d3t4.Content = "";
+            d3t5.Content = "";
+            d3t5.Content = "";
+            d3t7.Content = "";
+            d3t8.Content = "";
+            d3t9.Content = "";
+            d3t10.Content = "";
+            d3t11.Content = "";
+            d3t12.Content = "";
+            d3t13.Content = "";
+            d3t14.Content = "";
+            d3t15.Content = "";
+            d3t16.Content = "";
+            d3t17.Content = "";
+            d3t18.Content = "";
+            d3t19.Content = "";
+            d3t20.Content = "";
+            d3t21.Content = "";
+            d3t22.Content = "";
+            //clear all 23 timeslots form doctor 5
+            d4t0.Content = "";
+            d4t1.Content = "";
+            d4t2.Content = "";
+            d4t3.Content = "";
+            d4t4.Content = "";
+            d4t5.Content = "";
+            d4t5.Content = "";
+            d4t7.Content = "";
+            d4t8.Content = "";
+            d4t9.Content = "";
+            d4t10.Content = "";
+            d4t11.Content = "";
+            d4t12.Content = "";
+            d4t13.Content = "";
+            d4t14.Content = "";
+            d4t15.Content = "";
+            d4t16.Content = "";
+            d4t17.Content = "";
+            d4t18.Content = "";
+            d4t19.Content = "";
+            d4t20.Content = "";
+            d4t21.Content = "";
+            d4t22.Content = "";
+
+            //update all 23 timeslots form doctor 1
+            if (d0[0] !=null)
+                d0t0.Content = d0[0];
+            if (d0[1] !=null)
+                d0t1.Content = d0[1];
+            if (d0[2] !=null)
+                d0t2.Content = d0[2];
+            if (d0[3] != null)
+                d0t3.Content = d0[3];
+            if (d0[4] != null)
+                d0t4.Content = d0[4];
+            if (d0[5] != null)
+                d0t5.Content = d0[5];
+            if (d0[6] != null)
+                d0t5.Content = d0[6];
+            if (d0[6] != null)
+                d0t7.Content = d0[7];
+            if (d0[8] != null)
+                d0t8.Content = d0[8];
+            if (d0[9] != null)
+                d0t9.Content = d0[9];
+            if (d0[10] != null)
+                d0t10.Content = d0[10];
+            if (d0[11] != null)
+                d0t11.Content = d0[11];
+            if (d0[12] != null)
+                d0t12.Content = d0[12];
+            if (d0[13] != null)
+                d0t13.Content = d0[13];
+            if (d0[14] != null)
+                d0t14.Content = d0[14];
+            if (d0[15] != null)
+                d0t15.Content = d0[15];
+            if (d0[16] != null)
+                d0t16.Content = d0[16];
+            if (d0[17] != null)
+                d0t17.Content = d0[17];
+            if (d0[18] != null)
+                d0t18.Content = d0[18];
+            if (d0[19] != null)
+                d0t19.Content = d0[19];
+            if (d0[20] != null)
+                d0t20.Content = d0[20];
+            if (d0[21] != null)
+                d0t21.Content = d0[21];
+            if (d0[22] != null)
+                d0t22.Content = d0[22];
+
+            //update all 23 timeslots form doctor 2
+            if (d1[0] != null)
+                d1t0.Content = d1[0];
+            if (d1[1] != null)
+                d1t1.Content = d1[1];
+            if (d1[2] != null)
+                d1t2.Content = d1[2];
+            if (d1[3] != null)
+                d1t3.Content = d1[3];
+            if (d1[4] != null)
+                d1t4.Content = d1[4];
+            if (d1[5] != null)
+                d1t5.Content = d1[5];
+            if (d1[6] != null)
+                d1t5.Content = d1[6];
+            if (d1[6] != null)
+                d1t7.Content = d1[7];
+            if (d1[8] != null)
+                d1t8.Content = d1[8];
+            if (d1[9] != null)
+                d1t9.Content = d1[9];
+            if (d1[10] != null)
+                d1t10.Content = d1[10];
+            if (d1[11] != null)
+                d1t11.Content = d1[11];
+            if (d1[12] != null)
+                d1t12.Content = d1[12];
+            if (d1[13] != null)
+                d1t13.Content = d1[13];
+            if (d1[14] != null)
+                d1t14.Content = d1[14];
+            if (d1[15] != null)
+                d1t15.Content = d1[15];
+            if (d1[16] != null)
+                d1t16.Content = d1[16];
+            if (d1[17] != null)
+                d1t17.Content = d1[17];
+            if (d1[18] != null)
+                d1t18.Content = d1[18];
+            if (d1[19] != null)
+                d1t19.Content = d1[19];
+            if (d1[20] != null)
+                d1t20.Content = d1[20];
+            if (d1[21] != null)
+                d1t21.Content = d1[21];
+            if (d1[22] != null)
+                d1t22.Content = d1[22];
+
+            //update all 23 timeslots form doctor 3
+            if (d2[0] != null)
+                d2t0.Content = d2[0];
+            if (d2[1] != null)
+                d2t1.Content = d2[1];
+            if (d2[2] != null)
+                d2t2.Content = d2[2];
+            if (d2[3] != null)
+                d2t3.Content = d2[3];
+            if (d2[4] != null)
+                d2t4.Content = d2[4];
+            if (d2[5] != null)
+                d2t5.Content = d2[5];
+            if (d2[6] != null)
+                d2t5.Content = d2[6];
+            if (d2[6] != null)
+                d2t7.Content = d2[7];
+            if (d2[8] != null)
+                d2t8.Content = d2[8];
+            if (d2[9] != null)
+                d2t9.Content = d2[9];
+            if (d2[10] != null)
+                d2t10.Content = d2[10];
+            if (d2[11] != null)
+                d2t11.Content = d2[11];
+            if (d2[12] != null)
+                d2t12.Content = d2[12];
+            if (d2[13] != null)
+                d2t13.Content = d2[13];
+            if (d2[14] != null)
+                d2t14.Content = d2[14];
+            if (d2[15] != null)
+                d2t15.Content = d2[15];
+            if (d2[16] != null)
+                d2t16.Content = d2[16];
+            if (d2[17] != null)
+                d2t17.Content = d2[17];
+            if (d2[18] != null)
+                d2t18.Content = d2[18];
+            if (d2[19] != null)
+                d2t19.Content = d2[19];
+            if (d2[20] != null)
+                d2t20.Content = d2[20];
+            if (d2[21] != null)
+                d2t21.Content = d2[21];
+            if (d2[22] != null)
+                d2t22.Content = d2[22];
+
+            //update all 23 timeslots form doctor 4
+            if (d3[0] != null)
+                d3t0.Content = d3[0];
+            if (d3[1] != null)
+                d3t1.Content = d3[1];
+            if (d3[2] != null)
+                d3t2.Content = d3[2];
+            if (d3[3] != null)
+                d3t3.Content = d3[3];
+            if (d3[4] != null)
+                d3t4.Content = d3[4];
+            if (d3[5] != null)
+                d3t5.Content = d3[5];
+            if (d3[6] != null)
+                d3t5.Content = d3[6];
+            if (d3[6] != null)
+                d3t7.Content = d3[7];
+            if (d3[8] != null)
+                d3t8.Content = d3[8];
+            if (d3[9] != null)
+                d3t9.Content = d3[9];
+            if (d3[10] != null)
+                d3t10.Content = d3[10];
+            if (d3[11] != null)
+                d3t11.Content = d3[11];
+            if (d3[12] != null)
+                d3t12.Content = d3[12];
+            if (d3[13] != null)
+                d3t13.Content = d3[13];
+            if (d3[14] != null)
+                d3t14.Content = d3[14];
+            if (d3[15] != null)
+                d3t15.Content = d3[15];
+            if (d3[16] != null)
+                d3t16.Content = d3[16];
+            if (d3[17] != null)
+                d3t17.Content = d3[17];
+            if (d3[18] != null)
+                d3t18.Content = d3[18];
+            if (d3[19] != null)
+                d3t19.Content = d3[19];
+            if (d3[20] != null)
+                d3t20.Content = d3[20];
+            if (d3[21] != null)
+                d3t21.Content = d3[21];
+            if (d3[22] != null)
+                d3t22.Content = d3[22];
+
+            //update all 23 timeslots form doctor 5
+            if (d4[0] != null)
+                d4t0.Content = d4[0];
+            if (d4[1] != null)
+                d4t1.Content = d4[1];
+            if (d4[2] != null)
+                d4t2.Content = d4[2];
+            if (d4[3] != null)
+                d4t3.Content = d4[3];
+            if (d4[4] != null)
+                d4t4.Content = d4[4];
+            if (d4[5] != null)
+                d4t5.Content = d4[5];
+            if (d4[6] != null)
+                d4t5.Content = d4[6];
+            if (d4[6] != null)
+                d4t7.Content = d4[7];
+            if (d4[8] != null)
+                d4t8.Content = d4[8];
+            if (d4[9] != null)
+                d4t9.Content = d4[9];
+            if (d4[10] != null)
+                d4t10.Content = d4[10];
+            if (d4[11] != null)
+                d4t11.Content = d4[11];
+            if (d4[12] != null)
+                d4t12.Content = d4[12];
+            if (d4[13] != null)
+                d4t13.Content = d4[13];
+            if (d4[14] != null)
+                d4t14.Content = d4[14];
+            if (d4[15] != null)
+                d4t15.Content = d4[15];
+            if (d4[16] != null)
+                d4t16.Content = d4[16];
+            if (d4[17] != null)
+                d4t17.Content = d4[17];
+            if (d4[18] != null)
+                d4t18.Content = d4[18];
+            if (d4[19] != null)
+                d4t19.Content = d4[19];
+            if (d4[20] != null)
+                d4t20.Content = d4[20];
+            if (d4[21] != null)
+                d4t21.Content = d4[21];
+            if (d4[22] != null)
+                d4t22.Content = d4[22];
+
+
+        }
+
+        public void displayRandomAppointments()
+        {
+            string[] d0 = new string[23];
+            string[] d1 = new string[23];
+            string[] d2 = new string[23];
+            string[] d3 = new string[23];
+            string[] d4 = new string[23];
+
+            Random random = new Random();
+            int randomNumber = random.Next(0, 22);
+
+            d0[randomNumber] = "Patient X"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Jones, Bob"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Daffy, Duck"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Smith, John"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Presley, Elvis"; randomNumber = random.Next(0, 22);
+            d1[randomNumber] = "Frank, Ryan"; randomNumber = random.Next(0, 22);
+            d1[randomNumber] = "Goldberg, Suzan"; randomNumber = random.Next(0, 22);
+            d1[randomNumber] = "Burns, Montgomery"; randomNumber = random.Next(0, 22);
+            d1[randomNumber] = "Francis, Joanne"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Gorgon, Medussa"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Willson, Mark"; randomNumber = random.Next(0, 22);
+            d2[randomNumber] = "Nguyn, Lee"; randomNumber = random.Next(0, 22);
+            d2[randomNumber] = "Miller, Sarah"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Alverez, Roberto"; randomNumber = random.Next(0, 22);
+            d4[randomNumber] = "Rolandson, Peter"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Asimov, Issac"; randomNumber = random.Next(0, 22);
+            d3[randomNumber] = "Obama, Barac"; randomNumber = random.Next(0, 22);
+            d1[randomNumber] = "Clindon, Hillary"; randomNumber = random.Next(0, 22);
+            d1[randomNumber] = "Gabriels, Cristina"; randomNumber = random.Next(0, 22);
+            d2[randomNumber] = "Yong, Nikodim"; randomNumber = random.Next(0, 22);
+            d3[randomNumber] = "Mohana, Noah"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Taide, Margert"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Trans, Judy"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Von Trappe, Julie"; randomNumber = random.Next(0, 22);
+            d2[randomNumber] = "Andrews, Danny"; randomNumber = random.Next(0, 22);
+            d1[randomNumber] = "De vito, Arnold"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Schwartsnager, Maria"; randomNumber = random.Next(0, 22);
+            d2[randomNumber] = "Ford, Rob"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Ford, Henry"; randomNumber = random.Next(0, 22);
+            d3[randomNumber] = "Pascal, Blaise"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Kepler, Jon"; randomNumber = random.Next(0, 22);
+            d2[randomNumber] = "Bosonova, Jim"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "McNight, Tim"; randomNumber = random.Next(0, 22);
+            d3[randomNumber] = "Boston, Eminem"; randomNumber = random.Next(0, 22);
+            d4[randomNumber] = "Cuttings, Sam"; randomNumber = random.Next(0, 22);
+            d1[randomNumber] = "Mercier, Piere"; randomNumber = random.Next(0, 22);
+            d1[randomNumber] = "Nenchi, Nahed"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Iginla, Jerome"; randomNumber = random.Next(0, 22);
+            d4[randomNumber] = "Nathanels, Jessica"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Bianca, Charles"; randomNumber = random.Next(0, 22);
+
+            updateMainCalander(d0, d1, d2, d3, d4);
+        }
     }
+
 }

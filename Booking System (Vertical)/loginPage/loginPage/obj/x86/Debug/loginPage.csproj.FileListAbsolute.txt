@@ -86,3 +86,5 @@ E:\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x8
 E:\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage.Properties.Resources.resources
 E:\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\GenerateResource.read.1.tlog
 E:\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\cancelConfirmation.baml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\cancelConfirmation.g.cs
