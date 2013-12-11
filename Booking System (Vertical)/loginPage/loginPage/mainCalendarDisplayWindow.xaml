@@ -86,8 +86,8 @@
                 	<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983" Foreground="Black" Name="bookNewName" />
                 	<Button x:Name="SelectPatientButton" Content="Select Patient" Margin="20.999,62.587,75.339,0" VerticalAlignment="Top" Click="selectPatientButton_Click" />
                 </Grid>
-                <ScrollViewer x:Name="appointmentInfo" Height="110" Background="White" Canvas.Left="108.5" Canvas.Top="778" Width="834">
-                	<TextBlock TextWrapping="Wrap" FontSize="16" Name="apptInfoBox" Foreground="Black" Width="815"><Run Text="Appointment Information"/><LineBreak/><Run FontSize="12" Text="Patient:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Doctor:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Time:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Notes:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run/></TextBlock>
+                <ScrollViewer x:Name="appointmentNotesSV" Height="114" Background="White" Canvas.Left="541" Canvas.Top="778" Width="402">
+                    <TextBlock Height="114" Name="AppointmentNotesTB" Text="No appointment selected." Width="385" Foreground="Black" />
                 </ScrollViewer>
                 <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="436.5" Canvas.Top="910" Width="200" Click="checkInButton_Click" />
                 <ScrollViewer x:Name="schedScroll" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Height="621.852" Canvas.Left="222.611" Canvas.Top="122" Width="719.889">
@@ -117,7 +117,7 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t20" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t21" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t22" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
-                			<DataGridColumnHeader Content="Dr. Phillips" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
+                			<DataGridColumnHeader Content="Dr. Phillips" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d0" />
                 		</Grid>
                 		<Grid x:Name="doctor2" Margin="159,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
@@ -144,7 +144,7 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t20" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t21" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t22" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
-                			<DataGridColumnHeader Content="Dr. Strumpfer" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
+                			<DataGridColumnHeader Content="Dr. Strumpfer" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d1" />
                 		</Grid>
                 		<Grid x:Name="doctor3" Margin="318,0,314.662,8" Background="White">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
@@ -171,7 +171,7 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t20" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t21" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t22" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
-                            <DataGridColumnHeader Content="Dr. Cole" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="Dr. Cole" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" BorderThickness="4,2,18,2" Name="d2" />
                 		</Grid>
                 		<Grid x:Name="doctor4" Margin="0,0,159.662,8" Background="White" HorizontalAlignment="Right" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
@@ -198,7 +198,7 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t20" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t21" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t22" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
-                			<DataGridColumnHeader Content="Nurse Ratched" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
+                			<DataGridColumnHeader Content="Nurse Ratched" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d3" />
                 		</Grid>
                 		<Grid x:Name="doctor5" Margin="0,0,0.662,8" Background="White" HorizontalAlignment="Right" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
@@ -225,7 +225,7 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t20" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t21" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t22" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
-                			<DataGridColumnHeader Content="Dr. Honeydew" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
+                			<DataGridColumnHeader Content="Dr. Honeydew" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d4" />
                 		</Grid>
                 	</Grid>
                 </ScrollViewer>
@@ -256,6 +256,17 @@
                 	<DataGridColumnHeader Content="3:20 - 3:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 </StackPanel>
                 <Button Canvas.Left="776" Canvas.Top="65" Content="Today" Height="23" Name="todayButton" Width="75" Click="todayButton_Click" />
+                <Canvas Canvas.Left="108" Canvas.Top="778" Height="114" Name="AppointmentInfoCanvas" Width="428" Background="White">
+                    <TextBlock Canvas.Left="4" Canvas.Top="4" Height="26" Name="textBlock1" Text="Appointment Information" Width="200" Foreground="Black" FontSize="16" FontWeight="Bold" FontStyle="Normal" />
+                    <TextBlock Canvas.Left="6" Canvas.Top="42" Height="21" Name="textBlock2" Text="Patient:" Width="54" Foreground="Black" FontSize="14" FontWeight="Bold" />
+                    <TextBlock Canvas.Left="8" Canvas.Top="69" Height="22" Name="textBlock3" Text="Doctor:" Width="52" FontSize="14" Foreground="Black" FontWeight="Bold" />
+                    <TextBlock Canvas.Left="207" Canvas.Top="42" FontSize="14" FontWeight="Bold" Foreground="Black" Height="22" Name="textBlock4" Text="Date:" Width="54" />
+                    <TextBlock Canvas.Left="209" Canvas.Top="69" FontSize="14" FontWeight="Bold" Foreground="Black" Height="22" Name="textBlock5" Text="Time:" Width="52" />
+                    <TextBlock Canvas.Left="70" Canvas.Top="45" Height="19" Name="appInfoPatientTB" Text="" Width="131" Background="White" Foreground="Black" />
+                    <TextBlock Background="White" Canvas.Left="70" Canvas.Top="69" Foreground="Black" Height="19" Name="appInfoDoctorTB" Text="" Width="131" />
+                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="45" Foreground="Black" Height="19" Name="appInfoDateTB" Text="" Width="131" />
+                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="69" Foreground="Black" Height="19" Name="appInfoTimeTB" Text="" Width="131" />
+                </Canvas>
             </Canvas>
         </ScrollViewer>      
     </Grid>

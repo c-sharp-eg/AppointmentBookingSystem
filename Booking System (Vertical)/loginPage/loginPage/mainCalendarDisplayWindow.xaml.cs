@@ -20,11 +20,12 @@ namespace loginPage
     public partial class mainCalendarDisplayWindow : Window
     {
     
+        //constants for our system
         public const int NUM_DOCTORS = 5;
-        public const int NUM_TIMESLOTS = 5;
+        public const int NUM_TIMESLOTS = 23;
 
-        public string[,] todaysApts = new string[23, 5];
-            
+        public Dictionary<DateTime, Appointment> allAppointmentsDictionary;
+
         public IList<Patient> patients = new List<Patient>();
 
         MainWindow loginScreen = new MainWindow();
@@ -143,6 +144,8 @@ namespace loginPage
             searchPat.Close();
             searchPat = new searchPatient(this);
             searchPat.Show();
+            
+            //TODO: Remove the line below it's just for testing
             displayRandomAppointments();
         }
 
@@ -186,9 +189,13 @@ namespace loginPage
                 checkInButton.Content = "Check - In";
             }
 
+            /* displays message with info for box clicked
             var mb = MessageBox.Show("\""+calButton.Name+"\" returns timeslot Index = "
                 +timeslotNametoIndex(calButton.Name)
                 +"\nFor Doctor #: "+timeslotNametoDoctor(calButton.Name));
+             */
+
+            
 
        }
 
@@ -654,7 +661,7 @@ namespace loginPage
             string[] d4 = new string[23];
 
             Random random = new Random();
-            int randomNumber = random.Next(0, 22);
+            int randomNumber = random.Next(0, 23);
 
             d0[randomNumber] = "Patient X"; randomNumber = random.Next(0, 22);
             d0[randomNumber] = "Jones, Bob"; randomNumber = random.Next(0, 22);
@@ -736,20 +743,14 @@ namespace loginPage
         public int timeslotNametoDoctor(String name)
         {
             return Int32.Parse(name.Substring(1, 1));
-            /*
-            string slot = name.Substring(1,1);
+        }
 
-            switch (slot)
-            {
-                case "0": return 0;
-                case "1": return 1;
-                case "2": return 2;
-                case "3": return 3;
-                case "4": return 4;
-                
-            }
-            return -1;
-            */
+        public void displayApptInfo(Appointment appt)
+        {
+            appInfoDateTB.Text = appt.date.ToShortDateString();
+            appInfoDoctorTB.Text = appt.DoctorName();
+            appInfoPatientTB.Text = appt.patient.lastName + ", " + appt.patient.lastName;
+            appInfoTimeTB.Text = appt.Timeslot();
         }
 
     
