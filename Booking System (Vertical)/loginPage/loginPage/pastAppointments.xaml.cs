@@ -39,7 +39,7 @@ namespace loginPage
         private void pastSelectButton_Click(object sender, RoutedEventArgs e)
         {
             searchPat.Close();
-            searchPat = new searchPatient();
+            searchPat = new searchPatient(this);
             searchPat.Show();
         }
     }

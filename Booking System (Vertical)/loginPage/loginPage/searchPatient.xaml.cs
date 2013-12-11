@@ -40,6 +40,12 @@ namespace loginPage
             InitializeComponent();
         }
 
+        public searchPatient(pastAppointments input)
+        {
+            this.caller = new pastAppointments();
+            this.caller = input;
+            InitializeComponent();
+        }
 
         private void searchCancelButton_Click_1(object sender, RoutedEventArgs e)
         {
@@ -65,6 +71,12 @@ namespace loginPage
                     mainCalendarDisplayWindow temp = new mainCalendarDisplayWindow();
                     temp = (mainCalendarDisplayWindow)caller;
                     temp.bookNewName.Text="<"+patient.lastName+","+patient.firstName+">";
+                }
+                else if (caller.GetType() == typeof(pastAppointments))
+                {
+                    pastAppointments temp = new pastAppointments();
+                    temp = (pastAppointments)caller;
+                    temp.pastPatientName.Text="<"+patient.lastName+","+patient.firstName+">";
                 }
                 
             }
