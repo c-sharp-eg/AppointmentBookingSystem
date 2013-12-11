@@ -11,8 +11,6 @@ E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\l
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\GenerateResource.write.1.tlog
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage.exe
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage.pdb
-E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\calendar.baml
-E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\calendar.g.cs
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\billing.baml
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\billing.g.cs
 E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\bin\Debug\Microsoft.Expression.Drawing.dll
@@ -54,3 +52,7 @@ C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\o
 C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\mainCalendarDisplayWindow.baml
 C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\mainCalendarDisplayWindow.g.cs
+E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\mainCalendarDisplayWindow.baml
+E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\mainCalendarDisplayWindow.g.cs
+E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\cancelConfirmation.baml
+E:\Daniel\Homework\CPSC 481\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\cancelConfirmation.g.cs

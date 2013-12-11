@@ -53,8 +53,8 @@
                 		
                 	</MenuItem>
                 	<MenuItem Header="Appt" Width="52.913" x:Name="apptMenu">
-                        <MenuItem Header="Check In" x:Name="apptCheckIn" />
-                		<MenuItem Header="Cancel Booking" x:Name="apptCancel" />		
+                        <MenuItem Header="Check In" x:Name="apptCheckIn" Click="apptCheckIn_Click" />
+                		<MenuItem Header="Cancel Booking" x:Name="apptCancel" Click="apptCancel_Click" />		
                 	</MenuItem>
                 	<MenuItem Header="Bill" Width="60.6" x:Name="billMenu">
                 		<MenuItem Header="Open Billing" x:Name="billOpen" Click="billOpen_Click" />
@@ -74,7 +74,7 @@
                         <ComboBoxItem Content="Nurse Ratched" Style="{DynamicResource SimpleComboBoxItem}" Name="d4Dropdown" />
                         <ComboBoxItem Content="Dr.Honeydew" Style="{DynamicResource SimpleComboBoxItem}" Name="d5Dropdown" />
                     </ComboBox>
-                	<DatePicker Margin="18.001,154.666,40.002,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Name="bookDate" />
+                	<DatePicker Margin="18.001,154.666,40.002,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Name="bookDate" SelectedDateChanged="bookDate_SelectedDateChanged" />
                 	<TextBlock HorizontalAlignment="Left" Margin="20.999,0,0,163.545" TextWrapping="Wrap" Text="Time" VerticalAlignment="Bottom" Foreground="Black" />
                 	<ComboBox Margin="17.999,0,40.002,135.125" Height="24.42" VerticalAlignment="Bottom" Name="bookTime">
 
@@ -255,6 +255,7 @@
                 	<DataGridColumnHeader Content="3:00 - 3:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="3:20 - 3:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 </StackPanel>
+                <Button Canvas.Left="776" Canvas.Top="78" Content="Today" Height="23" Name="todayButton" Width="75" Click="todayButton_Click" />
             </Canvas>
         </ScrollViewer>      
     </Grid>

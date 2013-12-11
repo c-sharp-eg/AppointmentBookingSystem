@@ -58,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="cancelConfirmation.xaml.cs">
+      <DependentUpon>cancelConfirmation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pastAppointments.xaml.cs">
       <DependentUpon>pastAppointments.xaml</DependentUpon>
     </Compile>
@@ -70,6 +73,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="billing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="cancelConfirmation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

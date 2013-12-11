@@ -28,6 +28,7 @@ namespace loginPage
         editPatient editPat = new editPatient();
         searchPatient searchPat = new searchPatient();
         pastAppointments pastAppt = new pastAppointments();
+        cancelConfirmation confCancel = new cancelConfirmation();
 
         DataGridColumnHeader previousSlot;
         DataGridColumnHeader currentSlot;
@@ -62,6 +63,7 @@ namespace loginPage
             editPat.Close();
             searchPat.Close();
             pastAppt.Close();
+            confCancel.Close();
         }
 
         //closing program from file menu
@@ -81,6 +83,7 @@ namespace loginPage
         private void monthCalendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
             dateBox.SelectedDate = monthCalendar.SelectedDate;
+            bookDate.SelectedDate = monthCalendar.SelectedDate;
         }
 
         //right arrow button for next day
@@ -110,6 +113,9 @@ namespace loginPage
         {
             monthCalendar.SelectedDate = dateBox.SelectedDate;
             monthCalendar.DisplayDate = monthCalendar.SelectedDate.GetValueOrDefault();
+
+            bookDate.SelectedDate = dateBox.SelectedDate;
+            
         }
 
         private void patientNew_Click(object sender, RoutedEventArgs e)
@@ -182,7 +188,7 @@ namespace loginPage
  
         }
 
-        private void checkInButton_Click(object sender, RoutedEventArgs e)
+        public void checkInFunc()
         {
             if (currentSlot != null)
             {
@@ -199,6 +205,18 @@ namespace loginPage
             }
         }
 
+        private void checkInButton_Click(object sender, RoutedEventArgs e)
+        {
+            checkInFunc();
+        }
+
+        private void bookDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            monthCalendar.SelectedDate = bookDate.SelectedDate;
+            monthCalendar.DisplayDate = monthCalendar.SelectedDate.GetValueOrDefault();
+
+            dateBox.SelectedDate = bookDate.SelectedDate;
+        }
 
         public void saveSlots()
         {
@@ -217,6 +235,32 @@ namespace loginPage
             d0t0 = d0Slots[0];
         }
 
+        private void todayButton_Click(object sender, RoutedEventArgs e)
+        {
+            monthCalendar.SelectedDate = DateTime.Now;
+            dateBox.SelectedDate = DateTime.Now;
+            bookDate.SelectedDate = DateTime.Now;
+        }
+
+        private void apptCheckIn_Click(object sender, RoutedEventArgs e)
+        {
+            checkInFunc();
+        }
+
+        public void cancelCheck()
+        {
+            confCancel.Close();
+            confCancel = new cancelConfirmation();
+            confCancel.Show();
+        }
+
+        private void apptCancel_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentSlot != null)
+            {
+                cancelCheck();
+            }
+        }
 
     }
 }
