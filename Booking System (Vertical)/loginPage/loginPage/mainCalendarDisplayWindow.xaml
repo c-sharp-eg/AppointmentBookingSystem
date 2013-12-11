@@ -40,7 +40,7 @@
     
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-            <Canvas Width="1280" Height="1024">
+            <Canvas Width="1280" Height="962">
                 <Menu Canvas.Left="-2" Canvas.Top="0" Height="24" x:Name="menu" Width="1426">
                 	<MenuItem Header="File" Width="41.95" Height="22" x:Name="fileMenu">
                 		<MenuItem Header="Log Out" x:Name="fileLogOut" Click="fileLogOut_Click" />
@@ -60,11 +60,11 @@
                 		<MenuItem Header="Open Billing" x:Name="billOpen" Click="billOpen_Click" />
                 	</MenuItem>
                 </Menu>
-                <Calendar Canvas.Left="988" Canvas.Top="135.28" Height="170" x:Name="monthCalendar" Width="180" SelectedDatesChanged="monthCalendar_SelectedDatesChanged" />
-            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="334" Orientation="Left" Stroke="Black" Canvas.Top="66" Width="100" x:Name="previousDay" MouseLeftButtonUp="previousDay_MouseLeftButtonUp" />
-            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="608" Orientation="Right" Stroke="Black" Canvas.Top="66" Width="100" x:Name="nextDay" PreviewMouseLeftButtonUp="nextDay_PreviewMouseLeftButtonUp" />
-                <DatePicker Canvas.Left="464" Canvas.Top="78" Height="24" x:Name="dateBox" Width="116" SelectedDateChanged="dateBox_SelectedDateChanged" />
-                <Grid Background="White" Width="180" Height="364.882" Canvas.Left="988" Canvas.Top="353.28">
+                <Calendar Canvas.Left="988" Canvas.Top="122" Height="170" x:Name="monthCalendar" Width="180" SelectedDatesChanged="monthCalendar_SelectedDatesChanged" />
+            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="334" Orientation="Left" Stroke="Black" Canvas.Top="52" Width="100" x:Name="previousDay" MouseLeftButtonUp="previousDay_MouseLeftButtonUp" />
+            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="608" Orientation="Right" Stroke="Black" Canvas.Top="52" Width="100" x:Name="nextDay" PreviewMouseLeftButtonUp="nextDay_PreviewMouseLeftButtonUp" />
+                <DatePicker Canvas.Left="464" Canvas.Top="65" Height="24" x:Name="dateBox" Width="116" SelectedDateChanged="dateBox_SelectedDateChanged" />
+                <Grid Background="White" Width="180" Height="364.882" Canvas.Left="988" Canvas.Top="340">
                 	<TextBlock HorizontalAlignment="Left" Margin="18.001,29.667,0,0" TextWrapping="Wrap" Text="Patient" VerticalAlignment="Top" Foreground="Black" />
                 	<TextBlock HorizontalAlignment="Left" Margin="20.999,91.833,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Foreground="Black" />
                 	<ComboBox Margin="18.002,111.793,39.999,0" VerticalAlignment="Top" Height="24.42" Name="bookDoctor">
@@ -86,11 +86,11 @@
                 	<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983" Foreground="Black" Name="bookNewName" />
                 	<Button x:Name="SelectPatientButton" Content="Select Patient" Margin="20.999,62.587,75.339,0" VerticalAlignment="Top" Click="selectPatientButton_Click" />
                 </Grid>
-                <ScrollViewer x:Name="appointmentInfo" Height="110" Background="White" Canvas.Left="108.5" Canvas.Top="788" Width="834">
+                <ScrollViewer x:Name="appointmentInfo" Height="110" Background="White" Canvas.Left="108.5" Canvas.Top="778" Width="834">
                 	<TextBlock TextWrapping="Wrap" FontSize="16" Name="apptInfoBox" Foreground="Black" Width="815"><Run Text="Appointment Information"/><LineBreak/><Run FontSize="12" Text="Patient:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Doctor:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Time:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run FontSize="12" Text="Notes:"/><Run FontSize="12" Language="en-ca" Text=""/><LineBreak/><Run/></TextBlock>
                 </ScrollViewer>
-                <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="436.5" Canvas.Top="922" Width="200" Click="checkInButton_Click" />
-                <ScrollViewer x:Name="schedScroll" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Height="621.852" Canvas.Left="222.611" Canvas.Top="135.28" Width="719.889">
+                <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="436.5" Canvas.Top="910" Width="200" Click="checkInButton_Click" />
+                <ScrollViewer x:Name="schedScroll" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Height="621.852" Canvas.Left="222.611" Canvas.Top="122" Width="719.889">
                 	<Grid Height="597.032" Width="787.662" Background="White">
                 		<Grid x:Name="doctor1" Margin="0,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
@@ -229,7 +229,7 @@
                 		</Grid>
                 	</Grid>
                 </ScrollViewer>
-                <StackPanel Width="60" Height="697.101" Canvas.Left="108.5" Canvas.Top="139.19">
+                <StackPanel Width="60" Height="697.101" Canvas.Left="108.5" Canvas.Top="125">
                 	<DataGridColumnHeader Content="Time" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="8:00 - 8:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="8:20 - 8:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
@@ -255,7 +255,7 @@
                 	<DataGridColumnHeader Content="3:00 - 3:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="3:20 - 3:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 </StackPanel>
-                <Button Canvas.Left="776" Canvas.Top="78" Content="Today" Height="23" Name="todayButton" Width="75" Click="todayButton_Click" />
+                <Button Canvas.Left="776" Canvas.Top="65" Content="Today" Height="23" Name="todayButton" Width="75" Click="todayButton_Click" />
             </Canvas>
         </ScrollViewer>      
     </Grid>
