@@ -38,9 +38,6 @@ namespace loginPage
         DataGridColumnHeader previousSlot;
         DataGridColumnHeader currentSlot;
 
-        DataGridColumnHeader[] d0Slots = new DataGridColumnHeader[23];
-        DataGridColumnHeader[][] dateSlots = new DataGridColumnHeader[31][];
-
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
@@ -188,8 +185,12 @@ namespace loginPage
             {
                 checkInButton.Content = "Check - In";
             }
- 
-        }
+
+            var mb = MessageBox.Show("\""+calButton.Name+"\" returns timeslot Index = "
+                +timeslotNametoIndex(calButton.Name)
+                +"\nFor Doctor #: "+timeslotNametoDoctor(calButton.Name));
+
+       }
 
         public void checkInFunc()
         {
@@ -698,6 +699,61 @@ namespace loginPage
 
             updateMainCalander(d0, d1, d2, d3, d4);
         }
+
+
+        public int timeslotNametoIndex(String name)
+        {
+            string slot = name.Substring(2);
+            
+            switch (slot)
+            {
+                case "t0" : return 0;
+                case "t1": return 1;
+                case "t2": return 2;
+                case "t3": return 3;
+                case "t4": return 4;
+                case "t5": return 5;
+                case "t6": return 6;
+                case "t7": return 7;
+                case "t8": return 8;
+                case "t9": return 9;
+                case "t10": return 10;
+                case "t11": return 11;
+                case "t12": return 12;
+                case "t13": return 13;
+                case "t14": return 14;
+                case "t15": return 15;
+                case "t16": return 16;
+                case "t17": return 17;
+                case "t18": return 18;
+                case "t19": return 19;
+                case "t20": return 20;
+                case "t21": return 21;
+                case "t22": return 22;
+            }
+            return -1;
+        }
+        public int timeslotNametoDoctor(String name)
+        {
+            return Int32.Parse(name.Substring(1, 1));
+            /*
+            string slot = name.Substring(1,1);
+
+            switch (slot)
+            {
+                case "0": return 0;
+                case "1": return 1;
+                case "2": return 2;
+                case "3": return 3;
+                case "4": return 4;
+                
+            }
+            return -1;
+            */
+        }
+
+    
     }
+
 
 }
