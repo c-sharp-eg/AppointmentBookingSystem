@@ -229,7 +229,7 @@
                 		</Grid>
                 	</Grid>
                 </ScrollViewer>
-                <StackPanel Width="60" Height="697.101" Canvas.Left="108.5" Canvas.Top="125">
+                <StackPanel Width="60" Height="697.101" Canvas.Left="107.999" Canvas.Top="125.835">
                 	<DataGridColumnHeader Content="Time" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="8:00 - 8:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="8:20 - 8:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
