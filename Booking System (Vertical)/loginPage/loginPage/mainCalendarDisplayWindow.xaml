@@ -278,7 +278,7 @@
                 	<DataGridColumnHeader Content="3:00 - 3:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="3:20 - 3:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 </StackPanel>
-                <Button Canvas.Left="803" Canvas.Top="65" Content="Today" Height="23" Name="todayButton" Width="75" Click="todayButton_Click" />
+                <Button Canvas.Left="497" Canvas.Top="38" Content="Today" Height="23" Name="todayButton" Width="75" Click="todayButton_Click" />
                 <Canvas Canvas.Left="108" Canvas.Top="778" Height="114" Name="AppointmentInfoCanvas" Width="428" Background="White">
                     <TextBlock Canvas.Left="4" Canvas.Top="4" Height="26" Name="textBlock1" Text="Appointment Information" Width="200" Foreground="Black" FontSize="16" FontWeight="Bold" FontStyle="Normal" />
                     <TextBlock Canvas.Left="8" Canvas.Top="42" Height="21" Name="textBlock2" Text="Patient:" Width="54" Foreground="Black" FontSize="14" FontWeight="Bold" />

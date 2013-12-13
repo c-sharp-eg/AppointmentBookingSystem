@@ -162,6 +162,8 @@ namespace loginPage
 
         SolidColorBrush customGreen = new SolidColorBrush();
         LinearGradientBrush greenGradient = new LinearGradientBrush();
+        SolidColorBrush slotGrey = new SolidColorBrush();
+        
 
         private void calendarDatesClicked(object sender, EventArgs e)
         {
@@ -187,16 +189,16 @@ namespace loginPage
             {
                 checkInButton.Content = "Cancel Check - In";
             }
-            else if (currentSlot.Background == null)
+            else
             {
                 checkInButton.Content = "Check - In";
             }
 
-            // displays message with info for box clicked
+            /*displays message with info for box clicked
             var mb = MessageBox.Show("\""+calButton.Name+"\" returns timeslot Index = "
                 +timeslotNametoIndex(calButton.Name)
                 +"\nFor Doctor #: "+timeslotNametoDoctor(calButton.Name));
-
+            */
             updateBookBox();
             updateApptInfoBox();
             
@@ -205,14 +207,15 @@ namespace loginPage
 
         public void checkInFunc()
         {
+            slotGrey.Color = Color.FromArgb(255, 239, 239, 239);
             if (currentSlot != null)
             {
                 if (currentSlot.Background == greenGradient)
                 {
-                    currentSlot.Background = null;
+                    currentSlot.Background = slotGrey;
                     checkInButton.Content = "Check- In";
                 }
-                else if (currentSlot.Background == null)
+                else
                 {
                     currentSlot.Background = greenGradient;
                     checkInButton.Content = "Cancel Check - In";
