@@ -176,8 +176,10 @@ namespace loginPage
             previousSlot = currentSlot;
             currentSlot = calButton;
 
+            SolidColorBrush borderGrey = new SolidColorBrush();
+            borderGrey.Color = Color.FromArgb(255, 208, 208, 208);
             if (previousSlot != null)
-                previousSlot.BorderBrush = null;
+                previousSlot.BorderBrush = borderGrey;
 
             currentSlot.BorderBrush = Brushes.Aqua;
 
