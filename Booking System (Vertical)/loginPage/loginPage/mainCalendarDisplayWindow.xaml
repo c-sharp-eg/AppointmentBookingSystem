@@ -1,7 +1,7 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" mc:Ignorable="d" x:Class="loginPage.mainCalendarDisplayWindow"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="loginPage.mainCalendarDisplayWindow"
         Title="Appointment Booking System" Width="1280" Height="1024" Foreground="#FF8893AD" Background="#FF8893AD" Padding="2,0" WindowState="Maximized">
     
 	<Window.Resources>
@@ -35,40 +35,11 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
-		<Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
-			<Setter Property="Width" Value="8"/>
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="Cursor" Value="SizeWE"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="{x:Type Thumb}">
-						<Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"/>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-	
-		<Style x:Key="DataGridColumnHeaderStyle1" TargetType="{x:Type DataGridColumnHeader}">
-			<Setter Property="VerticalContentAlignment" Value="Center"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
-						<Grid>
-							<Microsoft_Windows_Themes:DataGridHeaderBorder BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" IsClickable="{TemplateBinding CanUserSort}" IsPressed="{TemplateBinding IsPressed}" IsHovered="{TemplateBinding IsMouseOver}" Padding="{TemplateBinding Padding}" SortDirection="{TemplateBinding SortDirection}" SeparatorBrush="{TemplateBinding SeparatorBrush}" SeparatorVisibility="{TemplateBinding SeparatorVisibility}">
-								<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-							</Microsoft_Windows_Themes:DataGridHeaderBorder>
-							<Thumb x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" Style="{StaticResource ColumnHeaderGripperStyle}"/>
-							<Thumb x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle}"/>
-						</Grid>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
 	
 	</Window.Resources>
     
     <Grid>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,-3.5,0,3.5">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <Canvas Width="1280" Height="962">
                 <Menu Canvas.Left="-2" Canvas.Top="0" Height="24" x:Name="menu" Width="1426">
                 	<MenuItem Header="File" Width="41.95" Height="22" x:Name="fileMenu">
@@ -96,171 +67,169 @@
                 <Grid Background="White" Width="180" Height="364.882" Canvas.Left="988" Canvas.Top="340">
                 	<TextBlock HorizontalAlignment="Left" Margin="18.001,29.667,0,0" TextWrapping="Wrap" Text="Patient" VerticalAlignment="Top" Foreground="Black" />
                 	<TextBlock HorizontalAlignment="Left" Margin="20.999,91.833,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Foreground="Black" />
-                	<ComboBox Margin="18.002,111.793,39.999,0" VerticalAlignment="Top" Height="24.42" x:Name="bookDoctor">
-                		<ComboBoxItem Content="Dr.Phillips" Style="{DynamicResource SimpleComboBoxItem}" x:Name="d1Dropdown" />
-                		<ComboBoxItem Content="Dr.Strumpfer" Style="{DynamicResource SimpleComboBoxItem}" x:Name="d2Dropdown" />
-                        <ComboBoxItem Content="Dr.Cole" Style="{DynamicResource SimpleComboBoxItem}" x:Name="d3Dropdown" />
-                        <ComboBoxItem Content="Nurse Ratched" Style="{DynamicResource SimpleComboBoxItem}" x:Name="d4Dropdown" />
-                        <ComboBoxItem Content="Dr.Honeydew" Style="{DynamicResource SimpleComboBoxItem}" x:Name="d5Dropdown" />
+                	<ComboBox Margin="18.002,111.793,39.999,0" VerticalAlignment="Top" Height="24.42" Name="bookDoctor">
+                		<ComboBoxItem Content="Dr.Phillips" Style="{DynamicResource SimpleComboBoxItem}" Name="d1Dropdown" />
+                		<ComboBoxItem Content="Dr.Strumpfer" Style="{DynamicResource SimpleComboBoxItem}" Name="d2Dropdown" />
+                        <ComboBoxItem Content="Dr.Cole" Style="{DynamicResource SimpleComboBoxItem}" Name="d3Dropdown" />
+                        <ComboBoxItem Content="Nurse Ratched" Style="{DynamicResource SimpleComboBoxItem}" Name="d4Dropdown" />
+                        <ComboBoxItem Content="Dr.Honeydew" Style="{DynamicResource SimpleComboBoxItem}" Name="d5Dropdown" />
                     </ComboBox>
-                	<DatePicker Margin="18.001,154.666,40.002,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" x:Name="bookDate" SelectedDateChanged="bookDate_SelectedDateChanged" />
+                	<DatePicker Margin="18.001,154.666,40.002,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Name="bookDate" SelectedDateChanged="bookDate_SelectedDateChanged" />
                 	<TextBlock HorizontalAlignment="Left" Margin="20.999,0,0,163.545" TextWrapping="Wrap" Text="Time" VerticalAlignment="Bottom" Foreground="Black" />
-                	<ComboBox Margin="17.999,0,40.002,135.125" Height="24.42" VerticalAlignment="Bottom" x:Name="bookTime"/>
-                	<Button Content="Clear" Margin="8,0,0,54.413" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" x:Name="bookClearButton" Click="bookClearButton_Click" />
-                	<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,54.413" VerticalAlignment="Bottom" Width="75" x:Name="bookAddButton" />
+                	<ComboBox Margin="17.999,0,40.002,135.125" Height="24.42" VerticalAlignment="Bottom" Name="bookTime">
+
+                	</ComboBox>
+                	<Button Content="Clear" Margin="8,0,0,54.413" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Name="bookClearButton" Click="bookClearButton_Click" />
+                	<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,54.413" VerticalAlignment="Bottom" Width="75" Name="bookAddButton" />
                 	<TextBlock TextWrapping="Wrap" Text="Book New" FontSize="16" Margin="8,0,-6,0" Height="25.667" VerticalAlignment="Top" Foreground="Black" />
-                	<CheckBox Content="Double Book" HorizontalAlignment="Left" Margin="18.001,0,0,97.165" VerticalAlignment="Bottom" x:Name="bookDouble" />
-                	<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983" Foreground="Black" x:Name="bookNewName" />
+                	<CheckBox Content="Double Book" HorizontalAlignment="Left" Margin="18.001,0,0,97.165" VerticalAlignment="Bottom" Name="bookDouble" />
+                	<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983" Foreground="Black" Name="bookNewName" />
                 	<Button x:Name="SelectPatientButton" Content="Select Patient" Margin="20.999,62.587,75.339,0" VerticalAlignment="Top" Click="selectPatientButton_Click" />
                 </Grid>
                 <ScrollViewer x:Name="appointmentNotesSV" Height="114" Background="White" Canvas.Left="541" Canvas.Top="778" Width="402">
-                    <TextBlock Height="114" x:Name="AppointmentNotesTB" Text="No appointment selected." Width="385" Foreground="Black" />
+                    <TextBlock Height="114" Name="AppointmentNotesTB" Text="No appointment selected." Width="385" Foreground="Black" />
                 </ScrollViewer>
                 <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="436.5" Canvas.Top="910" Width="200" Click="checkInButton_Click" />
                 <ScrollViewer x:Name="schedScroll" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Height="621.852" Canvas.Left="222.611" Canvas.Top="122" Width="719.889">
                 	<Grid Height="597.032" Width="787.662" Background="White">
-                		<Grid x:Name="doctor1" Margin="0,0,0,8" HorizontalAlignment="Left" Width="155">
-                			<Grid.ColumnDefinitions>
-                				<ColumnDefinition Width="0.344*"/>
-                				<ColumnDefinition Width="0.656*"/>
-                			</Grid.ColumnDefinitions>
-                			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="{x:Null}" Grid.ColumnSpan="2"/>
-                            <DataGridColumnHeader Content="" Margin="0,25,-15,0" Height="25" VerticalAlignment="Top" x:Name="d0t0" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Foreground="Black" BorderBrush="Gainsboro" Background="#FFF3F3F3" Grid.ColumnSpan="2" />
-                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,514" Foreground="Black" x:Name="d0t1" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro" Grid.ColumnSpan="2"/>
-                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d0t2" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro" Grid.ColumnSpan="2"/>
-                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" Width="170.065" Foreground="Black" x:Name="d0t3" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d0t4" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d0t5" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d0t6" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Style="{DynamicResource DataGridColumnHeaderStyle1}" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d0t7" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d0t8" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d0t9" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" x:Name="d0t10" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d0t11" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d0t12" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" x:Name="d0t13" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" x:Name="d0t14" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d0t15" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d0t16" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d0t17" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d0t18" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d0t19" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d0t20" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d0t21" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d0t22" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" Grid.ColumnSpan="2" BorderBrush="Gainsboro"/>
-                			<DataGridColumnHeader Content="Dr. Phillips" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" x:Name="d0" Grid.ColumnSpan="2" />
+                		<Grid x:Name="doctor1" Margin="0,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
+                			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
+                            <DataGridColumnHeader Content="" Margin="0,25,-15,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t0" Click="calendarDatesClicked" BorderThickness="4,2,13,2" />
+                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,514" Foreground="Black" Name="d0t1" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t2" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" Width="170.065" Foreground="Black" Name="d0t3" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t4" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t5" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t6" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t7" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t8" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t9" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" Name="d0t10" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t11" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t12" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" Name="d0t13" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" Name="d0t14" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t15" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t16" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t17" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t18" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t19" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t20" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t21" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t22" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                			<DataGridColumnHeader Content="Dr. Phillips" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d0" />
                 		</Grid>
                 		<Grid x:Name="doctor2" Margin="159,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
-                            <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d1t0" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d1t1" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d1t2" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d1t3" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d1t4" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d1t5" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d1t6" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d1t7" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d1t8" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d1t9" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" x:Name="d1t10" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d1t11" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d1t12" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" x:Name="d1t13" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" x:Name="d1t14" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d1t15" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro" />
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d1t16" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d1t17" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d1t18" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d1t19" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d1t20" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d1t21" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d1t22" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                			<DataGridColumnHeader Content="Dr. Strumpfer" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" x:Name="d1" />
+                            <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t0" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t1" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t2" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t3" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t4" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t5" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t6" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t7" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t8" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t9" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" Name="d1t10" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t11" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t12" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" Name="d1t13" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" Name="d1t14" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t15" Click="calendarDatesClicked" BorderThickness="4,2,13,2" />
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t16" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t17" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t18" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t19" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t20" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t21" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t22" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                			<DataGridColumnHeader Content="Dr. Strumpfer" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d1" />
                 		</Grid>
                 		<Grid x:Name="doctor3" Margin="318,0,314.662,8" Background="White">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
-                            <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d2t0" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,514" Foreground="Black" x:Name="d2t1" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d2t2" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d2t3" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d2t4" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d2t5" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d2t6" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d2t7" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d2t8" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d2t9" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" x:Name="d2t10" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d2t11" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d2t12" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" x:Name="d2t13" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" x:Name="d2t14" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d2t15" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d2t16" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d2t17" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d2t18" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d2t19" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d2t20" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d2t21" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d2t22" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="Dr. Cole" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" BorderThickness="4,2,18,2" x:Name="d2" />
+                            <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t0" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,514" Foreground="Black" Name="d2t1" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t2" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t3" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t4" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t5" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t6" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t7" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t8" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t9" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" Name="d2t10" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t11" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t12" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" Name="d2t13" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" Name="d2t14" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t15" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t16" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t17" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t18" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,0,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t19" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t20" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t21" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t22" Click="calendarDatesClicked" BorderThickness="4,2,18,2"/>
+                            <DataGridColumnHeader Content="Dr. Cole" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" BorderThickness="4,2,18,2" Name="d2" />
                 		</Grid>
                 		<Grid x:Name="doctor4" Margin="0,0,159.662,8" Background="White" HorizontalAlignment="Right" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
-                            <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d3t0" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d3t1" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d3t2" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d3t3" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d3t4" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d3t5" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d3t6" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d3t7" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d3t8" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d3t9" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" x:Name="d3t10" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d3t11" Click="calendarDatesClicked" BorderThickness="1,0,11,1" BorderBrush="Gainsboro" Background="#FFF3F3F3" />
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d3t12" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" x:Name="d3t13" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" x:Name="d3t14" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d3t15" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d3t16" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d3t17" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d3t18" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d3t19" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d3t20" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d3t21" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d3t22" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                			<DataGridColumnHeader Content="Nurse Ratched" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" x:Name="d3" />
+                            <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t0" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t1" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t2" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t3" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t4" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t5" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t6" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t7" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t8" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t9" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" Name="d3t10" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t11" Click="calendarDatesClicked" BorderThickness="4,2,13,2" BorderBrush="{x:Null}" />
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t12" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" Name="d3t13" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" Name="d3t14" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t15" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t16" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t17" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t18" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t19" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t20" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t21" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t22" Click="calendarDatesClicked" BorderThickness="4,2,13,2"/>
+                			<DataGridColumnHeader Content="Nurse Ratched" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d3" />
                 		</Grid>
                 		<Grid x:Name="doctor5" Margin="0,0,0.662,8" Background="White" HorizontalAlignment="Right" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
-                            <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d4t0" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d4t1" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d4t2" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d4t3" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d4t4" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d4t5" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d4t6" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d4t7" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d4t8" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" x:Name="d4t9" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" x:Name="d4t10" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d4t11" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d4t12" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" x:Name="d4t13" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" x:Name="d4t14" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d4t15" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d4t16" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d4t17" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d4t18" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d4t19" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d4t20" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d4t21" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" x:Name="d4t22" Click="calendarDatesClicked" BorderThickness="1,0,11,1" Background="#FFF3F3F3" BorderBrush="Gainsboro"/>
-                			<DataGridColumnHeader Content="Dr. Honeydew" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" x:Name="d4" />
+                            <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t0" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t1" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t2" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t3" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t4" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t5" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t6" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t7" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t8" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t9" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" Name="d4t10" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t11" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t12" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" Name="d4t13" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" Name="d4t14" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t15" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t16" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t17" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t18" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t19" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t20" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t21" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t22" Click="calendarDatesClicked" BorderThickness="4,2,17,2"/>
+                			<DataGridColumnHeader Content="Dr. Honeydew" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d4" />
                 		</Grid>
                 	</Grid>
                 </ScrollViewer>
-                <StackPanel Width="60" Height="697.101" Canvas.Left="108" Canvas.Top="125.834">
+                <StackPanel Width="60" Height="697.101" Canvas.Left="108.5" Canvas.Top="125">
                 	<DataGridColumnHeader Content="Time" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="8:00 - 8:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="8:20 - 8:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
@@ -286,17 +255,17 @@
                 	<DataGridColumnHeader Content="3:00 - 3:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="3:20 - 3:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 </StackPanel>
-                <Button Canvas.Left="776" Canvas.Top="65" Content="Today" Height="23" x:Name="todayButton" Width="75" Click="todayButton_Click" />
-                <Canvas Canvas.Left="108" Canvas.Top="778" Height="114" x:Name="AppointmentInfoCanvas" Width="428" Background="White">
-                    <TextBlock Canvas.Left="4" Canvas.Top="4" Height="26" x:Name="textBlock1" Text="Appointment Information" Width="200" Foreground="Black" FontSize="16" FontWeight="Bold" FontStyle="Normal" />
-                    <TextBlock Canvas.Left="6" Canvas.Top="42" Height="21" x:Name="textBlock2" Text="Patient:" Width="54" Foreground="Black" FontSize="14" FontWeight="Bold" />
-                    <TextBlock Canvas.Left="8" Canvas.Top="69" Height="22" x:Name="textBlock3" Text="Doctor:" Width="52" FontSize="14" Foreground="Black" FontWeight="Bold" />
-                    <TextBlock Canvas.Left="207" Canvas.Top="42" FontSize="14" FontWeight="Bold" Foreground="Black" Height="22" x:Name="textBlock4" Text="Date:" Width="54" />
-                    <TextBlock Canvas.Left="209" Canvas.Top="69" FontSize="14" FontWeight="Bold" Foreground="Black" Height="22" x:Name="textBlock5" Text="Time:" Width="52" />
-                    <TextBlock Canvas.Left="70" Canvas.Top="45" Height="19" x:Name="appInfoPatientTB" Text="" Width="131" Background="White" Foreground="Black" />
-                    <TextBlock Background="White" Canvas.Left="70" Canvas.Top="69" Foreground="Black" Height="19" x:Name="appInfoDoctorTB" Text="" Width="131" />
-                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="45" Foreground="Black" Height="19" x:Name="appInfoDateTB" Text="" Width="131" />
-                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="69" Foreground="Black" Height="19" x:Name="appInfoTimeTB" Text="" Width="131" />
+                <Button Canvas.Left="776" Canvas.Top="65" Content="Today" Height="23" Name="todayButton" Width="75" Click="todayButton_Click" />
+                <Canvas Canvas.Left="108" Canvas.Top="778" Height="114" Name="AppointmentInfoCanvas" Width="428" Background="White">
+                    <TextBlock Canvas.Left="4" Canvas.Top="4" Height="26" Name="textBlock1" Text="Appointment Information" Width="200" Foreground="Black" FontSize="16" FontWeight="Bold" FontStyle="Normal" />
+                    <TextBlock Canvas.Left="6" Canvas.Top="42" Height="21" Name="textBlock2" Text="Patient:" Width="54" Foreground="Black" FontSize="14" FontWeight="Bold" />
+                    <TextBlock Canvas.Left="8" Canvas.Top="69" Height="22" Name="textBlock3" Text="Doctor:" Width="52" FontSize="14" Foreground="Black" FontWeight="Bold" />
+                    <TextBlock Canvas.Left="207" Canvas.Top="42" FontSize="14" FontWeight="Bold" Foreground="Black" Height="22" Name="textBlock4" Text="Date:" Width="54" />
+                    <TextBlock Canvas.Left="209" Canvas.Top="69" FontSize="14" FontWeight="Bold" Foreground="Black" Height="22" Name="textBlock5" Text="Time:" Width="52" />
+                    <TextBlock Canvas.Left="70" Canvas.Top="45" Height="19" Name="appInfoPatientTB" Text="" Width="131" Background="White" Foreground="Black" />
+                    <TextBlock Background="White" Canvas.Left="70" Canvas.Top="69" Foreground="Black" Height="19" Name="appInfoDoctorTB" Text="" Width="131" />
+                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="45" Foreground="Black" Height="19" Name="appInfoDateTB" Text="" Width="131" />
+                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="69" Foreground="Black" Height="19" Name="appInfoTimeTB" Text="" Width="131" />
                 </Canvas>
             </Canvas>
         </ScrollViewer>      
