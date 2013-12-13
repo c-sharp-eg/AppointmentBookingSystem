@@ -77,8 +77,31 @@
                 	<DatePicker Margin="18.001,154.666,40.002,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Name="bookDate" SelectedDateChanged="bookDate_SelectedDateChanged" />
                 	<TextBlock HorizontalAlignment="Left" Margin="20.999,0,0,163.545" TextWrapping="Wrap" Text="Time" VerticalAlignment="Bottom" Foreground="Black" />
                 	<ComboBox Margin="17.999,0,40.002,135.125" Height="24.42" VerticalAlignment="Bottom" Name="bookTime">
-
-                	</ComboBox>
+                        <ComboBoxItem Content="Booked" Style="{DynamicResource SimpleComboBoxItem}" Name="tBooked" Visibility="Hidden" />
+                        <ComboBoxItem Content="8:00 - 8:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t0Dropdown" />
+                        <ComboBoxItem Content="8:20 - 8:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t1Dropdown" />
+                        <ComboBoxItem Content="8:40 - 9:00" Style="{DynamicResource SimpleComboBoxItem}" Name="t2Dropdown" />
+                        <ComboBoxItem Content="9:00 - 9:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t3Dropdown" />
+                        <ComboBoxItem Content="9:20 - 9:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t4Dropdown" />
+                        <ComboBoxItem Content="9:40 - 10:00" Style="{DynamicResource SimpleComboBoxItem}" Name="t5Dropdown" />
+                        <ComboBoxItem Content="10:00 - 10:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t6Dropdown" />
+                        <ComboBoxItem Content="10:20 - 10:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t7Dropdown" />
+                        <ComboBoxItem Content="10:40 - 11:00" Style="{DynamicResource SimpleComboBoxItem}" Name="t8Dropdown" />
+                        <ComboBoxItem Content="11:00 - 11:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t9Dropdown" />
+                        <ComboBoxItem Content="11:20 - 11:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t10Dropdown" />
+                        <ComboBoxItem Content="11:40 - 12:00" Style="{DynamicResource SimpleComboBoxItem}" Name="t11Dropdown" />
+                        <ComboBoxItem Content="12:00 - 12:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t12Dropdown" />
+                        <ComboBoxItem Content="12:20 - 12:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t13Dropdown" />
+                        <ComboBoxItem Content="12:40 - 1:00" Style="{DynamicResource SimpleComboBoxItem}" Name="t14Dropdown" />
+                        <ComboBoxItem Content="1:00 - 1:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t15Dropdown" />
+                        <ComboBoxItem Content="1:20 - 1:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t16Dropdown" />
+                        <ComboBoxItem Content="1:40 - 2:00" Style="{DynamicResource SimpleComboBoxItem}" Name="t17Dropdown" />
+                        <ComboBoxItem Content="2:00 - 2:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t18Dropdown" />
+                        <ComboBoxItem Content="2:20 - 2:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t19Dropdown" />
+                        <ComboBoxItem Content="2:40 - 3:00" Style="{DynamicResource SimpleComboBoxItem}" Name="t20Dropdown" />
+                        <ComboBoxItem Content="3:00 - 3:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t21Dropdown" />
+                        <ComboBoxItem Content="3:20 - 3:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t22Dropdown" />
+                    </ComboBox>
                 	<Button Content="Clear" Margin="8,0,0,54.413" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Name="bookClearButton" Click="bookClearButton_Click" />
                 	<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,54.413" VerticalAlignment="Bottom" Width="75" Name="bookAddButton" />
                 	<TextBlock TextWrapping="Wrap" Text="Book New" FontSize="16" Margin="8,0,-6,0" Height="25.667" VerticalAlignment="Top" Foreground="Black" />

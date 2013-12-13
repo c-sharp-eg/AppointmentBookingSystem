@@ -259,6 +259,7 @@ namespace loginPage
 
         public void updateBookBox()
         {
+            //updates the doctor dropdown
             if (timeslotNametoDoctor(currentSlot.Name) == 0)
                 bookDoctor.SelectedItem = d0Dropdown;
             if (timeslotNametoDoctor(currentSlot.Name) == 1)
@@ -269,6 +270,65 @@ namespace loginPage
                 bookDoctor.SelectedItem = d3Dropdown;
             if (timeslotNametoDoctor(currentSlot.Name) == 4)
                 bookDoctor.SelectedItem = d4Dropdown;
+
+
+            //updates the time dropdown
+            tBooked.Visibility = System.Windows.Visibility.Collapsed;
+            if (currentSlot.Content != "")
+            {
+                tBooked.Visibility = System.Windows.Visibility.Visible;
+                bookTime.SelectedItem = tBooked;
+            }
+            else
+            {
+                if (timeslotNametoIndex(currentSlot.Name) == 0)
+                    bookTime.SelectedItem = t0Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 1)
+                    bookTime.SelectedItem = t1Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 2)
+                    bookTime.SelectedItem = t2Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 3)
+                    bookTime.SelectedItem = t3Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 4)
+                    bookTime.SelectedItem = t4Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 5)
+                    bookTime.SelectedItem = t5Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 6)
+                    bookTime.SelectedItem = t6Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 7)
+                    bookTime.SelectedItem = t7Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 8)
+                    bookTime.SelectedItem = t8Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 9)
+                    bookTime.SelectedItem = t9Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 10)
+                    bookTime.SelectedItem = t10Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 11)
+                    bookTime.SelectedItem = t11Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 12)
+                    bookTime.SelectedItem = t12Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 13)
+                    bookTime.SelectedItem = t13Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 14)
+                    bookTime.SelectedItem = t14Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 15)
+                    bookTime.SelectedItem = t15Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 16)
+                    bookTime.SelectedItem = t16Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 17)
+                    bookTime.SelectedItem = t17Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 18)
+                    bookTime.SelectedItem = t18Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 19)
+                    bookTime.SelectedItem = t19Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 20)
+                    bookTime.SelectedItem = t20Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 21)
+                    bookTime.SelectedItem = t21Dropdown;
+                if (timeslotNametoIndex(currentSlot.Name) == 22)
+                    bookTime.SelectedItem = t22Dropdown;
+            }
+
         }
 
 
@@ -680,46 +740,46 @@ namespace loginPage
             Random random = new Random();
             int randomNumber = random.Next(0, 23);
 
-            d0[randomNumber] = "Patient X"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Jones, Bob"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Daffy, Duck"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Smith, John"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Presley, Elvis"; randomNumber = random.Next(0, 22);
-            d1[randomNumber] = "Frank, Ryan"; randomNumber = random.Next(0, 22);
-            d1[randomNumber] = "Goldberg, Suzan"; randomNumber = random.Next(0, 22);
-            d1[randomNumber] = "Burns, Montgomery"; randomNumber = random.Next(0, 22);
-            d1[randomNumber] = "Francis, Joanne"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Gorgon, Medussa"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Willson, Mark"; randomNumber = random.Next(0, 22);
-            d2[randomNumber] = "Nguyn, Lee"; randomNumber = random.Next(0, 22);
-            d2[randomNumber] = "Miller, Sarah"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Alverez, Roberto"; randomNumber = random.Next(0, 22);
-            d4[randomNumber] = "Rolandson, Peter"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Asimov, Issac"; randomNumber = random.Next(0, 22);
-            d3[randomNumber] = "Obama, Barac"; randomNumber = random.Next(0, 22);
-            d1[randomNumber] = "Clindon, Hillary"; randomNumber = random.Next(0, 22);
-            d1[randomNumber] = "Gabriels, Cristina"; randomNumber = random.Next(0, 22);
-            d2[randomNumber] = "Yong, Nikodim"; randomNumber = random.Next(0, 22);
-            d3[randomNumber] = "Mohana, Noah"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Taide, Margert"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Trans, Judy"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Von Trappe, Julie"; randomNumber = random.Next(0, 22);
-            d2[randomNumber] = "Andrews, Danny"; randomNumber = random.Next(0, 22);
-            d1[randomNumber] = "De vito, Arnold"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Schwartsnager, Maria"; randomNumber = random.Next(0, 22);
-            d2[randomNumber] = "Ford, Rob"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Ford, Henry"; randomNumber = random.Next(0, 22);
-            d3[randomNumber] = "Pascal, Blaise"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Kepler, Jon"; randomNumber = random.Next(0, 22);
-            d2[randomNumber] = "Bosonova, Jim"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "McNight, Tim"; randomNumber = random.Next(0, 22);
-            d3[randomNumber] = "Boston, Eminem"; randomNumber = random.Next(0, 22);
-            d4[randomNumber] = "Cuttings, Sam"; randomNumber = random.Next(0, 22);
-            d1[randomNumber] = "Mercier, Piere"; randomNumber = random.Next(0, 22);
-            d1[randomNumber] = "Nenchi, Nahed"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Iginla, Jerome"; randomNumber = random.Next(0, 22);
-            d4[randomNumber] = "Nathanels, Jessica"; randomNumber = random.Next(0, 22);
-            d0[randomNumber] = "Bianca, Charles"; randomNumber = random.Next(0, 22);
+            d0[randomNumber] = "Patient X"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Jones, Bob"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Daffy, Duck"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Smith, John"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Presley, Elvis"; randomNumber = random.Next(0, 23);
+            d1[randomNumber] = "Frank, Ryan"; randomNumber = random.Next(0, 23);
+            d1[randomNumber] = "Goldberg, Suzan"; randomNumber = random.Next(0, 23);
+            d1[randomNumber] = "Burns, Montgomery"; randomNumber = random.Next(0, 23);
+            d1[randomNumber] = "Francis, Joanne"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Gorgon, Medussa"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Willson, Mark"; randomNumber = random.Next(0, 23);
+            d2[randomNumber] = "Nguyn, Lee"; randomNumber = random.Next(0, 23);
+            d2[randomNumber] = "Miller, Sarah"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Alverez, Roberto"; randomNumber = random.Next(0, 23);
+            d4[randomNumber] = "Rolandson, Peter"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Asimov, Issac"; randomNumber = random.Next(0, 23);
+            d3[randomNumber] = "Obama, Barac"; randomNumber = random.Next(0, 23);
+            d1[randomNumber] = "Clindon, Hillary"; randomNumber = random.Next(0, 23);
+            d1[randomNumber] = "Gabriels, Cristina"; randomNumber = random.Next(0, 23);
+            d2[randomNumber] = "Yong, Nikodim"; randomNumber = random.Next(0, 23);
+            d3[randomNumber] = "Mohana, Noah"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Taide, Margert"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Trans, Judy"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Von Trappe, Julie"; randomNumber = random.Next(0, 23);
+            d2[randomNumber] = "Andrews, Danny"; randomNumber = random.Next(0, 23);
+            d1[randomNumber] = "De vito, Arnold"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Schwartsnager, Maria"; randomNumber = random.Next(0, 23);
+            d2[randomNumber] = "Ford, Rob"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Ford, Henry"; randomNumber = random.Next(0, 23);
+            d3[randomNumber] = "Pascal, Blaise"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Kepler, Jon"; randomNumber = random.Next(0, 23);
+            d2[randomNumber] = "Bosonova, Jim"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "McNight, Tim"; randomNumber = random.Next(0, 23);
+            d3[randomNumber] = "Boston, Eminem"; randomNumber = random.Next(0, 23);
+            d4[randomNumber] = "Cuttings, Sam"; randomNumber = random.Next(0, 23);
+            d1[randomNumber] = "Mercier, Piere"; randomNumber = random.Next(0, 23);
+            d1[randomNumber] = "Nenchi, Nahed"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Iginla, Jerome"; randomNumber = random.Next(0, 23);
+            d4[randomNumber] = "Nathanels, Jessica"; randomNumber = random.Next(0, 23);
+            d0[randomNumber] = "Bianca, Charles"; randomNumber = random.Next(0, 23);
 
             updateMainCalander(d0, d1, d2, d3, d4);
         }
