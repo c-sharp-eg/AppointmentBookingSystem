@@ -61,8 +61,8 @@
                 	</MenuItem>
                 </Menu>
                 <Calendar Canvas.Left="988" Canvas.Top="122" Height="170" x:Name="monthCalendar" Width="180" SelectedDatesChanged="monthCalendar_SelectedDatesChanged" />
-            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="360" Orientation="Left" Stroke="Black" Canvas.Top="52" Width="100" x:Name="previousDay" MouseLeftButtonUp="previousDay_MouseLeftButtonUp" />
-            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="633" Orientation="Right" Stroke="Black" Canvas.Top="52" Width="100" x:Name="nextDay" PreviewMouseLeftButtonUp="nextDay_PreviewMouseLeftButtonUp" />
+            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="360" Orientation="Left" Stroke="Black" Canvas.Top="52" Width="100" x:Name="previousDay" MouseLeftButtonUp="previousDay_MouseLeftButtonUp" MouseLeftButtonDown="previousDay_MouseLeftButtonDown" MouseEnter="previousDay_MouseEnter" MouseLeave="previousDay_MouseLeave" />
+            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="633" Orientation="Right" Stroke="Black" Canvas.Top="52" Width="100" x:Name="nextDay" PreviewMouseLeftButtonUp="nextDay_PreviewMouseLeftButtonUp" PreviewMouseLeftButtonDown="nextDay_PreviewMouseLeftButtonDown" MouseEnter="nextDay_MouseEnter" MouseLeave="nextDay_MouseLeave" />
                 <DatePicker Canvas.Left="490" Canvas.Top="65" Height="24" x:Name="dateBox" Width="116" SelectedDateChanged="dateBox_SelectedDateChanged" />
                 <Grid Background="White" Width="180" Height="364.882" Canvas.Left="988" Canvas.Top="340">
                 	<TextBlock HorizontalAlignment="Left" Margin="18.001,29.667,0,0" TextWrapping="Wrap" Text="Patient" VerticalAlignment="Top" Foreground="Black" />

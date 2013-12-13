@@ -96,6 +96,10 @@ namespace loginPage
         //right arrow button for next day
         private void nextDay_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            SolidColorBrush whiteArrowFill = new SolidColorBrush();
+            whiteArrowFill.Color = Color.FromArgb(255, 244, 244, 245);
+            nextDay.Fill = whiteArrowFill;
+
             DateTime currentDate = monthCalendar.SelectedDate.GetValueOrDefault();
             monthCalendar.SelectedDate = currentDate.AddDays(1);
             //this "refreshes" the month calendar
@@ -103,15 +107,38 @@ namespace loginPage
 
         }
 
+        private void nextDay_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            SolidColorBrush blueArrowFill = new SolidColorBrush();
+            blueArrowFill.Color = Color.FromArgb(255, 0, 0, 139);
+            nextDay.Fill = blueArrowFill;
+        }
+
+
+        private void previousDay_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            SolidColorBrush blueArrowFill = new SolidColorBrush();
+            blueArrowFill.Color = Color.FromArgb(255, 0, 0, 139);
+            previousDay.Fill = blueArrowFill;
+        }
+
         //left arrow button for previous day
         private void previousDay_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            SolidColorBrush whiteArrowFill = new SolidColorBrush();
+            whiteArrowFill.Color = Color.FromArgb(255, 244, 244, 245);
+            previousDay.Fill = whiteArrowFill;
+
             DateTime currentDate = monthCalendar.SelectedDate.GetValueOrDefault();
             monthCalendar.SelectedDate = currentDate.AddDays(-1);
             //this "refreshes" the month calendar
             monthCalendar.DisplayDate = currentDate.AddDays(-1);
 
         }
+
+
+
+
 
         private void dateBox_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -897,6 +924,36 @@ namespace loginPage
             appInfoPatientTB.Text = appt.patient.lastName + ", " + appt.patient.lastName;
             appInfoTimeTB.Text = appt.Timeslot();
         }
+
+        private void nextDay_MouseLeave(object sender, MouseEventArgs e)
+        {
+            SolidColorBrush blueArrowFill = new SolidColorBrush();
+            blueArrowFill.Color = Color.FromArgb(255, 0, 0, 139);
+            nextDay.Stroke = blueArrowFill;
+        }
+
+        private void nextDay_MouseEnter(object sender, MouseEventArgs e)
+        {
+            SolidColorBrush whiteArrowFill = new SolidColorBrush();
+            whiteArrowFill.Color = Color.FromArgb(255, 244, 244, 245);
+            nextDay.Stroke = whiteArrowFill;
+        }
+
+        private void previousDay_MouseEnter(object sender, MouseEventArgs e)
+        {
+            SolidColorBrush whiteArrowFill = new SolidColorBrush();
+            whiteArrowFill.Color = Color.FromArgb(255, 244, 244, 245);
+            previousDay.Stroke = whiteArrowFill;
+            
+        }
+
+        private void previousDay_MouseLeave(object sender, MouseEventArgs e)
+        {
+            SolidColorBrush blueArrowFill = new SolidColorBrush();
+            blueArrowFill.Color = Color.FromArgb(255, 0, 0, 139);
+            previousDay.Stroke = blueArrowFill;
+        }
+
 
     }
 
