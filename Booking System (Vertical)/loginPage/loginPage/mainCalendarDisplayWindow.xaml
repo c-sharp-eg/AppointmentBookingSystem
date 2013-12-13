@@ -285,10 +285,10 @@
                     <TextBlock Canvas.Left="8" Canvas.Top="69" Height="22" Name="textBlock3" Text="Doctor:" Width="52" FontSize="14" Foreground="Black" FontWeight="Bold" />
                     <TextBlock Canvas.Left="209" Canvas.Top="42" FontSize="14" FontWeight="Bold" Foreground="Black" Height="22" Name="textBlock4" Text="Date:" Width="54" />
                     <TextBlock Canvas.Left="209" Canvas.Top="69" FontSize="14" FontWeight="Bold" Foreground="Black" Height="22" Name="textBlock5" Text="Time:" Width="52" />
-                    <TextBlock Canvas.Left="70" Canvas.Top="45" Height="19" Name="appInfoPatientTB" Text="" Width="131" Background="White" Foreground="Black" />
-                    <TextBlock Background="White" Canvas.Left="70" Canvas.Top="69" Foreground="Black" Height="19" Name="appInfoDoctorTB" Text="" Width="131" />
+                    <TextBlock Canvas.Left="73" Canvas.Top="45" Height="19" Name="appInfoPatientTB" Text="" Width="131" Background="White" Foreground="Black" />
+                    <TextBlock Background="White" Canvas.Left="73" Canvas.Top="72" Foreground="Black" Height="19" Name="appInfoDoctorTB" Text="" Width="131" />
                     <TextBlock Background="White" Canvas.Left="259" Canvas.Top="45" Foreground="Black" Height="19" Name="appInfoDateTB" Text="" Width="131" />
-                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="69" Foreground="Black" Height="19" Name="appInfoTimeTB" Text="" Width="131" />
+                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="72" Foreground="Black" Height="19" Name="appInfoTimeTB" Text="" Width="131" />
                 </Canvas>
             </Canvas>
         </ScrollViewer>      

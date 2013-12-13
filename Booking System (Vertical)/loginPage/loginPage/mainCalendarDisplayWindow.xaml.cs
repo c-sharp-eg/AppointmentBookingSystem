@@ -196,6 +196,7 @@ namespace loginPage
                 +"\nFor Doctor #: "+timeslotNametoDoctor(calButton.Name));
 
             updateBookBox();
+            updateApptInfoBox();
             
 
        }
@@ -255,6 +256,67 @@ namespace loginPage
             {
                 cancelCheck();
             }
+        }
+
+        public void updateApptInfoBox()
+        {
+            if (timeslotNametoDoctor(currentSlot.Name) == 0)
+                appInfoPatientTB.Text = "Dr. Phillips";
+            if (timeslotNametoDoctor(currentSlot.Name) == 1)
+                appInfoPatientTB.Text = "Dr. Strumpfer";
+            if (timeslotNametoDoctor(currentSlot.Name) == 2)
+                appInfoPatientTB.Text = "Dr. Cole";
+            if (timeslotNametoDoctor(currentSlot.Name) == 3)
+                appInfoPatientTB.Text = "Nurse Ratched";
+            if (timeslotNametoDoctor(currentSlot.Name) == 4)
+                appInfoPatientTB.Text = "Dr. Honeydew";
+
+            if (timeslotNametoIndex(currentSlot.Name) == 0)
+                appInfoTimeTB.Text = "8:00 - 8:20";
+            if (timeslotNametoIndex(currentSlot.Name) == 1)
+                appInfoTimeTB.Text = "8:20 - 8:40";
+            if (timeslotNametoIndex(currentSlot.Name) == 2)
+                appInfoTimeTB.Text = "8:40 - 9:00";
+            if (timeslotNametoIndex(currentSlot.Name) == 3)
+                appInfoTimeTB.Text = "9:00 - 9:20";
+            if (timeslotNametoIndex(currentSlot.Name) == 4)
+                appInfoTimeTB.Text = "9:20 - 9:40";
+            if (timeslotNametoIndex(currentSlot.Name) == 5)
+                appInfoTimeTB.Text = "9:40 - 10:00";
+            if (timeslotNametoIndex(currentSlot.Name) == 6)
+                appInfoTimeTB.Text = "10:00 - 10:20";
+            if (timeslotNametoIndex(currentSlot.Name) == 7)
+                appInfoTimeTB.Text = "10:20 - 10:40";
+            if (timeslotNametoIndex(currentSlot.Name) == 8)
+                appInfoTimeTB.Text = "10:40 - 11:00";
+            if (timeslotNametoIndex(currentSlot.Name) == 9)
+                appInfoTimeTB.Text = "11:00 - 11:20";
+            if (timeslotNametoIndex(currentSlot.Name) == 10)
+                appInfoTimeTB.Text = "11:20 - 11:40";
+            if (timeslotNametoIndex(currentSlot.Name) == 11)
+                appInfoTimeTB.Text = "11:40 - 12:00";
+            if (timeslotNametoIndex(currentSlot.Name) == 12)
+                appInfoTimeTB.Text = "12:00 - 12:20";
+            if (timeslotNametoIndex(currentSlot.Name) == 13)
+                appInfoTimeTB.Text = "12:20 - 12:40";
+            if (timeslotNametoIndex(currentSlot.Name) == 14)
+                appInfoTimeTB.Text = "12:40 - 1:00";
+            if (timeslotNametoIndex(currentSlot.Name) == 15)
+                appInfoTimeTB.Text = "1:00 - 1:20";
+            if (timeslotNametoIndex(currentSlot.Name) == 16)
+                appInfoTimeTB.Text = "1:20 - 1:40";
+            if (timeslotNametoIndex(currentSlot.Name) == 17)
+                appInfoTimeTB.Text = "1:40 - 2:00";
+            if (timeslotNametoIndex(currentSlot.Name) == 18)
+                appInfoTimeTB.Text = "2:00 - 2:20";
+            if (timeslotNametoIndex(currentSlot.Name) == 19)
+                appInfoTimeTB.Text = "2:20 - 2:40";
+            if (timeslotNametoIndex(currentSlot.Name) == 20)
+                appInfoTimeTB.Text = "2:40 - 3:00";
+            if (timeslotNametoIndex(currentSlot.Name) == 21)
+                appInfoTimeTB.Text = "3:00 - 3:20";
+            if (timeslotNametoIndex(currentSlot.Name) == 22)
+                appInfoTimeTB.Text = "3:20 - 3:40";
         }
 
         public void updateBookBox()
