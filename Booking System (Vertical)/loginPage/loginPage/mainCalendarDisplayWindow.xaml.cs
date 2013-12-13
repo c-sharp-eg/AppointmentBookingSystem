@@ -194,8 +194,8 @@ namespace loginPage
             var mb = MessageBox.Show("\""+calButton.Name+"\" returns timeslot Index = "
                 +timeslotNametoIndex(calButton.Name)
                 +"\nFor Doctor #: "+timeslotNametoDoctor(calButton.Name));
-             
 
+            updateBookBox();
             
 
        }
@@ -257,6 +257,21 @@ namespace loginPage
             }
         }
 
+        public void updateBookBox()
+        {
+            if (timeslotNametoDoctor(currentSlot.Name) == 0)
+                bookDoctor.SelectedItem = d0Dropdown;
+            if (timeslotNametoDoctor(currentSlot.Name) == 1)
+                bookDoctor.SelectedItem = d1Dropdown;
+            if (timeslotNametoDoctor(currentSlot.Name) == 2)
+                bookDoctor.SelectedItem = d2Dropdown;
+            if (timeslotNametoDoctor(currentSlot.Name) == 3)
+                bookDoctor.SelectedItem = d3Dropdown;
+            if (timeslotNametoDoctor(currentSlot.Name) == 4)
+                bookDoctor.SelectedItem = d4Dropdown;
+        }
+
+
         //this method updates the maincalandar appointments
         //@Param Array<String> - a list of the text data to update the calander
         public void updateMainCalander(string[] d0, string[] d1,string[] d2, string[] d3,string[] d4)
@@ -287,6 +302,7 @@ namespace loginPage
                 var mb = MessageBox.Show("Error! the calandar is trying to update with wrong size data");
                 return;
             }
+
 
 
             //clear all 23 timeslots form doctor 1
@@ -360,7 +376,7 @@ namespace loginPage
             d2t19.Content = "";
             d2t20.Content = "";
             d2t21.Content = "";
-            d2t22.Content = "";
+            d2t22.Content = ""; 
             //clear all 23 timeslots form doctor 4
             d3t0.Content = "";
             d3t1.Content = "";
