@@ -5,7 +5,7 @@ using System.Text;
 
 namespace loginPage
 {
-    class DayOfAppointments
+    public class DayOfAppointments
     {
         public DateTime date;
         public List<Appointment> d0 = new List<Appointment>(23);
