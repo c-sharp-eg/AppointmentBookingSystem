@@ -38,6 +38,7 @@ namespace loginPage
             this.caller = new mainCalendarDisplayWindow();
             this.caller = input;
             InitializeComponent();
+            dislpayPatients();
         }
 
         public searchPatient(pastAppointments input)
@@ -56,7 +57,6 @@ namespace loginPage
 
         private void selectButton_Click_1(object sender, RoutedEventArgs e)
         {
-            patient = new Patient("first", "last", "sex", "address", 123, 5555555, "cntry", "prvnce", "cty", 11, 22, 1999, 12345, "blab,bla,lba");
             if (caller != null)
             {
                 if (caller.GetType() == typeof(editPatient))
@@ -70,7 +70,10 @@ namespace loginPage
                 {
                     mainCalendarDisplayWindow temp = new mainCalendarDisplayWindow();
                     temp = (mainCalendarDisplayWindow)caller;
-                    temp.bookNewName.Text="<"+patient.lastName+","+patient.firstName+">";
+                    if (searchPatLB.SelectedItem!= null)
+                        temp.selectedPatient = (Patient)searchPatLB.SelectedItem;
+                    if (temp.selectedPatient!=null)
+                        temp.bookNewName.Text = "<" + temp.selectedPatient.lastName + "," + temp.selectedPatient.firstName + ">";
                 }
                 else if (caller.GetType() == typeof(pastAppointments))
                 {
@@ -88,7 +91,26 @@ namespace loginPage
 
         }
 
-
+        public void dislpayPatients()
+        {
+            List<Patient> patients;
+            try
+            {
+                mainCalendarDisplayWindow calandar;
+                calandar = (mainCalendarDisplayWindow)caller;
+                patients = calandar.patients;
+                
+                foreach (Patient p in patients)
+                {
+                    searchPatLB.Items.Add(p);
+                }
+                                
+            }
+            catch (Exception err)
+            {
+                var mb = MessageBox.Show(err.ToString());
+            }
+        }
 
 
          

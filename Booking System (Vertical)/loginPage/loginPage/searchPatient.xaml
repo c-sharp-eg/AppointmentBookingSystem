@@ -4,18 +4,17 @@
 		<TextBlock HorizontalAlignment="Left" Margin="8,0,0,0" TextWrapping="Wrap" Text="Select Patient" VerticalAlignment="Top" FontSize="16"/>
 		<TextBlock HorizontalAlignment="Left" Margin="8,21.28,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment"/>
 		<TextBox Margin="8,41.24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19.96" HorizontalAlignment="Left" Width="178.967" Text="" Name="searchLastName" />
-		<ScrollViewer Margin="8,71.2,8,48" Name="searchScroller">
-			<DataGrid>
-				<DataGrid.Columns>
-					<DataGridTextColumn Header="First Name"/>
-					<DataGridTextColumn Header="Last Name"/>
-					<DataGridTextColumn Header="Address" Width="100"/>
-					<DataGridTextColumn Header="Phone Number"/>
-				</DataGrid.Columns>
-			</DataGrid>
-		</ScrollViewer>
-		<Button x:Name="selectButton" Content="Select" HorizontalAlignment="Right" Margin="0,0,28,11" VerticalAlignment="Bottom" Width="75" Height="24" Click="selectButton_Click_1" />
+        <Button x:Name="selectButton" Content="Select" HorizontalAlignment="Right" Margin="0,0,28,11" VerticalAlignment="Bottom" Width="75" Height="24" Click="selectButton_Click_1" />
 		<Button Content="Search" HorizontalAlignment="Right" Margin="0,39.24,28,0" VerticalAlignment="Top" Width="75" Name="searchButton" />
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="187,242.257,0,0" Name="searchCancelButton" VerticalAlignment="Top" Width="75" Click="searchCancelButton_Click_1" />
+        <DataGrid Name="searchDataGrid" Margin="0,67,28,179">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name" />
+                <DataGridTextColumn Header="Last Name" />
+                <DataGridTextColumn Header="Address" Width="100" />
+                <DataGridTextColumn Header="Phone Number" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListBox Height="123" Name="searchPatLB" Width="348" Margin="7,93,28,50" />
     </Grid>
 </Window>

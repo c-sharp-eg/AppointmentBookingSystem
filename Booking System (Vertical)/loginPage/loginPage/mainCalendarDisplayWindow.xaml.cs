@@ -24,9 +24,10 @@ namespace loginPage
         public const int NUM_DOCTORS = 5;
         public const int NUM_TIMESLOTS = 23;
 
+        //global variables
         public Dictionary<DateTime, DayOfAppointments> allAppointmentsDictionary;
-
         public List<Patient> patients = new List<Patient>();
+        public Patient selectedPatient;
 
         MainWindow loginScreen = new MainWindow();
         billing billingScreen = new billing();
@@ -52,6 +53,9 @@ namespace loginPage
             monthCalendar.SelectedDate = DateTime.Now;
             dateBox.SelectedDate = DateTime.Now;
             bookDate.SelectedDate = DateTime.Now;
+
+            //just for display testing print random appointments
+            displayRandomAppointments();
         }
 
         //logging out in file menu
@@ -145,9 +149,6 @@ namespace loginPage
             searchPat.Close();
             searchPat = new searchPatient(this);
             searchPat.Show();
-            
-            //TODO: Remove the line below it's just for testing
-            displayRandomAppointments();
         }
 
         private void bookClearButton_Click(object sender, RoutedEventArgs e)
