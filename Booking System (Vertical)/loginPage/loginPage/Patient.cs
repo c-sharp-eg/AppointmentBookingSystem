@@ -22,6 +22,8 @@ namespace loginPage
         public int dobYYYY;
         public int healthcare;
         public string notes;
+        public List<Appointment> appointments = new List<Appointment>();
+
         
 
         public Patient(string firstName, string lastName, string sex,

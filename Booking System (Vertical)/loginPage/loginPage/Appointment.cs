@@ -12,6 +12,9 @@ namespace loginPage
         public int timeslot;
         public string notes;
         public Patient patient;
+        public bool doubleBooked;
+        public Appointment doubleBookedAppt;
+
 
         public Appointment()
         {}
@@ -23,6 +26,7 @@ namespace loginPage
             this.notes=notes;
             this.patient = p;
             this.date = date;
+            this.doubleBooked = false;
         }
 
 

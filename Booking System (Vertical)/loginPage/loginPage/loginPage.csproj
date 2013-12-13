@@ -62,6 +62,7 @@
       <DependentUpon>cancelConfirmation.xaml</DependentUpon>
     </Compile>
     <Compile Include="Appointment.cs" />
+    <Compile Include="DayOfAppointments.cs" />
     <Compile Include="pastAppointments.xaml.cs">
       <DependentUpon>pastAppointments.xaml</DependentUpon>
     </Compile>

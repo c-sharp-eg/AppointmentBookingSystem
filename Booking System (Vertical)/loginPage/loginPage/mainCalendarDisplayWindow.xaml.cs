@@ -24,7 +24,7 @@ namespace loginPage
         public const int NUM_DOCTORS = 5;
         public const int NUM_TIMESLOTS = 23;
 
-        public Dictionary<DateTime, Appointment> allAppointmentsDictionary;
+        public Dictionary<DateTime, DayOfAppointments> allAppointmentsDictionary;
 
         public IList<Patient> patients = new List<Patient>();
 
