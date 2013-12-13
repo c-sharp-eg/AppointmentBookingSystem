@@ -26,11 +26,11 @@ namespace loginPage
 
         public Dictionary<DateTime, DayOfAppointments> allAppointmentsDictionary;
 
-        public IList<Patient> patients = new List<Patient>();
+        public List<Patient> patients = new List<Patient>();
 
         MainWindow loginScreen = new MainWindow();
         billing billingScreen = new billing();
-        addPatient newPat = new addPatient();
+        addPatient newPat;
         editPatient editPat = new editPatient();
         searchPatient searchPat = new searchPatient();
         pastAppointments pastAppt = new pastAppointments();
@@ -120,8 +120,9 @@ namespace loginPage
 
         private void patientNew_Click(object sender, RoutedEventArgs e)
         {
-            newPat.Close();
-            newPat = new addPatient();
+            if (newPat!=null)
+                newPat.Close();
+            newPat = new addPatient(this);
             newPat.Show();
         }
 
@@ -189,11 +190,11 @@ namespace loginPage
                 checkInButton.Content = "Check - In";
             }
 
-            /* displays message with info for box clicked
+            // displays message with info for box clicked
             var mb = MessageBox.Show("\""+calButton.Name+"\" returns timeslot Index = "
                 +timeslotNametoIndex(calButton.Name)
                 +"\nFor Doctor #: "+timeslotNametoDoctor(calButton.Name));
-             */
+             
 
             
 
@@ -753,8 +754,6 @@ namespace loginPage
             appInfoTimeTB.Text = appt.Timeslot();
         }
 
-    
     }
-
 
 }

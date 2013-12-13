@@ -18,14 +18,50 @@ namespace loginPage
     /// </summary>
     public partial class addPatient : Window
     {
-        public addPatient()
+        public mainCalendarDisplayWindow caller;
+        
+        public addPatient(mainCalendarDisplayWindow caller)
         {
+            this.caller = caller;
             InitializeComponent();
         }
 
+
+        //this methode reads the feilds (checks they are valid) and creates a new patient
+        //which it saves in mainCalanderDisplayWindow.Patients
         private void addSaveButton_Click(object sender, RoutedEventArgs e)
         {
 
+            //TODO: ADD ERROR CHCEKING other wise crash;
+            Patient p=null;
+            try
+            {
+                p = new Patient(this.addFirst.Text, this.addLast.Text,
+                     this.addMale.IsSelected ? "M" : "F", this.addAddress.Text, int.Parse(this.addArea.Text),
+                     int.Parse(this.addPhone.Text), this.addCountry.Text, this.addProvince.Text,
+                     this.addCity.Text, int.Parse(this.addMonthBox.Text), int.Parse(this.addDayBox.Text),
+                     int.Parse(this.addYearBox.Text), int.Parse(this.addNo.Text), this.addNotes.Text);
+            }
+            catch (Exception err)
+            {
+                var mb2 = MessageBox.Show(err.ToString());
+                return;
+            }
+
+            if ((caller != null) && (p != null))
+                caller.patients.Add(p);
+            else
+            {
+                var mb1 = MessageBox.Show("Caller was null");
+            }
+
+            string pats = "";
+            foreach (Patient patient in caller.patients)
+            {
+                pats += "\n : " + patient.ToString();
+            }
+            var mb = MessageBox.Show(pats);
+            this.Close();
         }
 
         private void addCancelButton_Click(object sender, RoutedEventArgs e)
