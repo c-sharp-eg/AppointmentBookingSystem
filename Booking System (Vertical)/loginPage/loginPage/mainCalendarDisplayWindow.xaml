@@ -113,7 +113,7 @@
                     <TextBlock Height="114" Name="AppointmentNotesTB" Text="No appointment selected" Width="385" Foreground="Black" />
                 </ScrollViewer>
                 <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="436.5" Canvas.Top="910" Width="200" Click="checkInButton_Click" />
-                <ScrollViewer x:Name="schedScroll" HorizontalScrollBarVisibility ="Visible"  VerticalScrollBarVisibility="Hidden" Height="621.852" Canvas.Left="155" Canvas.Top="122" Width="788">
+                <ScrollViewer x:Name="schedScroll" HorizontalScrollBarVisibility ="Visible"  VerticalScrollBarVisibility="Hidden" Height="621.852" Canvas.Left="156" Canvas.Top="122" Width="788">
                 	<Grid Height="597.032" Width="787.662" Background="White">
                 		<Grid x:Name="doctor1" Margin="0,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
