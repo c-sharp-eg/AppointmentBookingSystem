@@ -138,6 +138,34 @@ namespace loginPage
 
 
 
+        private void nextDay_MouseLeave(object sender, MouseEventArgs e)
+        {
+            SolidColorBrush blueArrowFill = new SolidColorBrush();
+            blueArrowFill.Color = Color.FromArgb(255, 0, 0, 139);
+            nextDay.Stroke = blueArrowFill;
+        }
+
+        private void nextDay_MouseEnter(object sender, MouseEventArgs e)
+        {
+            SolidColorBrush whiteArrowFill = new SolidColorBrush();
+            whiteArrowFill.Color = Color.FromArgb(255, 244, 244, 245);
+            nextDay.Stroke = whiteArrowFill;
+        }
+
+        private void previousDay_MouseEnter(object sender, MouseEventArgs e)
+        {
+            SolidColorBrush whiteArrowFill = new SolidColorBrush();
+            whiteArrowFill.Color = Color.FromArgb(255, 244, 244, 245);
+            previousDay.Stroke = whiteArrowFill;
+
+        }
+
+        private void previousDay_MouseLeave(object sender, MouseEventArgs e)
+        {
+            SolidColorBrush blueArrowFill = new SolidColorBrush();
+            blueArrowFill.Color = Color.FromArgb(255, 0, 0, 139);
+            previousDay.Stroke = blueArrowFill;
+        }
 
 
         private void dateBox_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -209,8 +237,14 @@ namespace loginPage
             SolidColorBrush borderGrey = new SolidColorBrush();
             borderGrey.Color = Color.FromArgb(255, 208, 208, 208);
             if (previousSlot != null)
+            {
+                slotGrey.Color = Color.FromArgb(255, 239, 239, 239);
                 previousSlot.BorderBrush = borderGrey;
-
+                if (previousSlot.Background != greenGradient)
+                {
+                    previousSlot.Background = slotGrey;
+                }
+            }
             currentSlot.BorderBrush = Brushes.Aqua;
 
             if (currentSlot.Background == greenGradient)
@@ -219,6 +253,9 @@ namespace loginPage
             }
             else
             {
+                SolidColorBrush whiteArrowFill = new SolidColorBrush();
+                whiteArrowFill.Color = Color.FromArgb(255, 244, 244, 245);
+                currentSlot.Background = whiteArrowFill;
                 checkInButton.Content = "Check - In";
             }
 
@@ -925,34 +962,6 @@ namespace loginPage
             appInfoTimeTB.Text = appt.Timeslot();
         }
 
-        private void nextDay_MouseLeave(object sender, MouseEventArgs e)
-        {
-            SolidColorBrush blueArrowFill = new SolidColorBrush();
-            blueArrowFill.Color = Color.FromArgb(255, 0, 0, 139);
-            nextDay.Stroke = blueArrowFill;
-        }
-
-        private void nextDay_MouseEnter(object sender, MouseEventArgs e)
-        {
-            SolidColorBrush whiteArrowFill = new SolidColorBrush();
-            whiteArrowFill.Color = Color.FromArgb(255, 244, 244, 245);
-            nextDay.Stroke = whiteArrowFill;
-        }
-
-        private void previousDay_MouseEnter(object sender, MouseEventArgs e)
-        {
-            SolidColorBrush whiteArrowFill = new SolidColorBrush();
-            whiteArrowFill.Color = Color.FromArgb(255, 244, 244, 245);
-            previousDay.Stroke = whiteArrowFill;
-            
-        }
-
-        private void previousDay_MouseLeave(object sender, MouseEventArgs e)
-        {
-            SolidColorBrush blueArrowFill = new SolidColorBrush();
-            blueArrowFill.Color = Color.FromArgb(255, 0, 0, 139);
-            previousDay.Stroke = blueArrowFill;
-        }
 
 
     }
