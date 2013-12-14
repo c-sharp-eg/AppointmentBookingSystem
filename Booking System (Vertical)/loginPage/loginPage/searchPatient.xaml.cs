@@ -83,8 +83,12 @@ namespace loginPage
                     {
                         temp.selectedPatient = (Patient)searchPatLB.SelectedItem;
                     }
-                    if (temp.selectedPatient!=null)
+                    if (temp.selectedPatient != null)
+                    {
                         temp.bookNewName.Text = "<" + temp.selectedPatient.lastName + "," + temp.selectedPatient.firstName + ">";
+                        if (temp.bookNewName.Text != "<patient name>")
+                            temp.bookAddButton.IsEnabled = true;
+                    }
                 }
                 else if (caller.GetType() == typeof(pastAppointments))
                 {

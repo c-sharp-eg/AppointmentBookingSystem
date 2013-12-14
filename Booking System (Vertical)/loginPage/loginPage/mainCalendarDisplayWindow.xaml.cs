@@ -218,6 +218,7 @@ namespace loginPage
             bookTime.Text = "";
             bookNotes.Text = "";
             bookDouble.IsChecked = false;
+            bookAddButton.IsEnabled = false;
         }
 
 
@@ -1142,6 +1143,7 @@ namespace loginPage
         private void bookAddButton_Click(object sender, RoutedEventArgs e)
         {
             bookAppointment();
+            bookAddButton.IsEnabled = false;
         }
 
 
