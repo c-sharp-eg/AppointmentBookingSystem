@@ -20,10 +20,6 @@ namespace loginPage
     {
         public mainCalendarDisplayWindow caller;
 
-        public addPatient()
-        {
-        }
-
         public addPatient(mainCalendarDisplayWindow caller)
         {
             this.caller = caller;

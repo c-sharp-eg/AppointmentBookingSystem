@@ -19,6 +19,7 @@ namespace loginPage
     /// </summary>
     public partial class MainWindow : Window
     {
+
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
@@ -58,7 +59,7 @@ namespace loginPage
         }
 
         // used for checking the user entered fields, also will return a little information status on the top (changes colour of te)
-        private void checkLogin()
+        public void checkLogin()
         {
             //hardcoded username/password
             //probably want this blank when we're testing
@@ -68,6 +69,7 @@ namespace loginPage
                 statusText.Text = "Logging in...";
 
                 //opens the main booking window and closes the login screen 
+
                 mainCalendarDisplayWindow cal = new mainCalendarDisplayWindow();
                 cal.Show();
                 this.Hide();

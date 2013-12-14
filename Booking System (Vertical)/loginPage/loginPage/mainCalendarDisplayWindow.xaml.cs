@@ -63,12 +63,13 @@ namespace loginPage
         //logging out in file menu
         private void fileLogOut_Click(object sender, RoutedEventArgs e)
         {
-            loginScreen = new MainWindow();
+            
             loginScreen.Show();
 
             this.Hide();
             billingScreen.Close();
-            newPat.closeActivate();
+            if (newPat != null)
+                newPat.closeActivate();
             editPat.Close();
             searchPat.Close();
             pastAppt.Close();
