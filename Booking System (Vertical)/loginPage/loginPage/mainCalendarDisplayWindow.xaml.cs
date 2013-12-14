@@ -54,6 +54,7 @@ namespace loginPage
             dateBox.SelectedDate = DateTime.Now;
             bookDate.SelectedDate = DateTime.Now;
             checkInButton.IsEnabled = false;
+            bookAddButton.IsEnabled = false;
 
             //just for display testing print random appointments
             displayRandomAppointments();
@@ -241,10 +242,13 @@ namespace loginPage
             if (currentSlot.Content != "")
             {
                 checkInButton.IsEnabled = true;
+                bookAddButton.IsEnabled = false;
             }
             else
             {
                 checkInButton.IsEnabled = false;
+                if (bookNewName.Text != "<patient name>")
+                    bookAddButton.IsEnabled = true;
             }
 
             SolidColorBrush borderGrey = new SolidColorBrush();
@@ -1077,7 +1081,7 @@ namespace loginPage
                 else
                 {
 
-                   var mb1 = MessageBox.Show("error: no doctor slected");
+                   var mb1 = MessageBox.Show("error: no doctor selected");
 
                 }
 
@@ -1090,6 +1094,9 @@ namespace loginPage
                 var mb = MessageBox.Show(err.ToString());
             }
 
+            currentSlot.Content = appt.patient.firstName + " " + appt.patient.lastName;
+            appInfoPatientTB.Text = currentSlot.Content.ToString();
+            
 
 
         }// end book appointment
