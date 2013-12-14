@@ -331,15 +331,15 @@ namespace loginPage
         public void updateApptInfoBox()
         {
             if (timeslotNametoDoctor(currentSlot.Name) == 0)
-                appInfoPatientTB.Text = "Dr. Phillips";
+                appInfoDoctorTB.Text = "Dr. Phillips";
             if (timeslotNametoDoctor(currentSlot.Name) == 1)
-                appInfoPatientTB.Text = "Dr. Strumpfer";
+                appInfoDoctorTB.Text = "Dr. Strumpfer";
             if (timeslotNametoDoctor(currentSlot.Name) == 2)
-                appInfoPatientTB.Text = "Dr. Cole";
+                appInfoDoctorTB.Text = "Dr. Cole";
             if (timeslotNametoDoctor(currentSlot.Name) == 3)
-                appInfoPatientTB.Text = "Nurse Ratched";
+                appInfoDoctorTB.Text = "Nurse Ratched";
             if (timeslotNametoDoctor(currentSlot.Name) == 4)
-                appInfoPatientTB.Text = "Dr. Honeydew";
+                appInfoDoctorTB.Text = "Dr. Honeydew";
 
             if (timeslotNametoIndex(currentSlot.Name) == 0)
                 appInfoTimeTB.Text = "8:00 - 8:20";
