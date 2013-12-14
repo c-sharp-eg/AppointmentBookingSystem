@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace loginPage
 {
@@ -111,11 +112,17 @@ namespace loginPage
                 
                 foreach (Patient p in patients)
                 {
+                    
+
                     string pFirstName = p.firstName;
                     string pLastName = p.lastName;
                     string pAddress = p.address;
-                    searchPatLB.Items.Add(pFirstName.PadRight(20-pFirstName.Length) + "\t" + pLastName.PadRight(20-pLastName.Length) + "\t" + pAddress);
+                    //searchPatLB.Items.Add(pFirstName.PadRight(20-pFirstName.Length) + "\t" + pLastName.PadRight(20-pLastName.Length) + "\t" + pAddress);
+                    searchPatLB.Items.Add(p);
+
                     
+
+                
                 }
                                 
             }
