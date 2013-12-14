@@ -25,7 +25,7 @@ namespace loginPage
         public const int NUM_TIMESLOTS = 23;
 
         //global variables
-        public Dictionary<DateTime, DayOfAppointments> allAppointmentsDictionary;
+        public Dictionary<DateTime, DayOfAppointments> allAppointmentsDictionary = new Dictionary<DateTime,DayOfAppointments>();
         public List<Patient> patients = new List<Patient>();
         public Patient selectedPatient;
 
@@ -307,6 +307,7 @@ namespace loginPage
             monthCalendar.SelectedDate = DateTime.Now;
             dateBox.SelectedDate = DateTime.Now;
             bookDate.SelectedDate = DateTime.Now;
+
         }
 
         private void apptCheckIn_Click(object sender, RoutedEventArgs e)
@@ -407,7 +408,7 @@ namespace loginPage
 
             //updates the time dropdown
             tBooked.Visibility = System.Windows.Visibility.Collapsed;
-            if (currentSlot.Content != "")
+            if (((string)currentSlot.Content) != "")
             {
                 tBooked.Visibility = System.Windows.Visibility.Visible;
                 bookTime.SelectedItem = tBooked;
@@ -986,6 +987,135 @@ namespace loginPage
             appInfoDoctorTB.Text = appt.DoctorName();
             appInfoPatientTB.Text = appt.patient.lastName + ", " + appt.patient.lastName;
             appInfoTimeTB.Text = appt.Timeslot();
+        }
+
+        public void bookAppointment()
+        {
+            //check if date selected
+            if (bookDate.SelectedDate == null)
+            {
+                var mb = MessageBox.Show("Error: date is null");
+                return;
+            }
+
+            DayOfAppointments dayOfAppt;
+            DateTime date = ((DateTime)bookDate.SelectedDate).Date;
+            Appointment appt=new Appointment(date);
+
+            try
+            {
+                //search for existing date in dictionary
+                if (allAppointmentsDictionary.ContainsKey(date))
+                {
+                    bool containsDate= allAppointmentsDictionary.TryGetValue(date,out dayOfAppt);
+                    if (!containsDate)
+                    {
+                        var mb = MessageBox.Show("Error in lookup of dayOfAppt");
+                    }
+
+                }
+                else
+                {
+                    dayOfAppt = new DayOfAppointments(date);
+                    allAppointmentsDictionary.Add(date, dayOfAppt);
+                    appt.doubleBooked = false;
+                }
+
+                if (d0Dropdown.IsSelected)
+                {
+                    appt.doctor = 0;
+                    appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                    appt.patient = this.selectedPatient;
+                    appt.date = date;
+                    dayOfAppt.d0.Add(appt);
+                }
+                else if (d1Dropdown.IsSelected)
+                {
+                    appt.doctor = 1;
+                    appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                    appt.patient = this.selectedPatient;
+                    appt.date = date;
+                    dayOfAppt.d1.Add(appt);
+                }
+                else if (d2Dropdown.IsSelected)
+                {
+                    appt.doctor = 2;
+                    appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                    appt.patient = this.selectedPatient;
+                    appt.date = date;
+                    dayOfAppt.d2.Add(appt);
+                }
+                else if (d3Dropdown.IsSelected)
+                {
+                    appt.doctor = 3;
+                    appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                    appt.patient = this.selectedPatient;
+                    appt.date = date;
+                    dayOfAppt.d3.Add(appt);
+                }
+                else if (d4Dropdown.IsSelected)
+                {
+                    appt.doctor = 4;
+                    appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                    appt.patient = this.selectedPatient;
+                    appt.date = date;
+                    dayOfAppt.d4.Add(appt);
+                }
+                else
+                {
+
+                   var mb1 = MessageBox.Show("error: no doctor slected");
+
+                }
+
+                var mb2 = MessageBox.Show(appt.ToString());
+
+
+            }
+            catch (Exception err)
+            {
+                var mb = MessageBox.Show(err.ToString());
+            }
+
+
+
+        }// end book appointment
+
+        private int stringToTimeslotInt(string input)
+        {
+            switch (input)
+            {
+                case "8:00 - 8:20": return 0;
+                case "8:20 - 8:40": return 1;
+                case "8:40 - 9:00": return 2;
+                case "9:00 - 9:20": return 3;
+                case "9:20 - 9:40": return 4;
+                case "9:40 - 10:00": return 5;
+                case "10:00 - 10:20": return 6;
+                case "10:20 - 10:40": return 7;
+                case "10:40 - 11:00": return 8;
+                case "11:00 - 11:20": return 9;
+                case "11:20 - 11:40": return 10;
+                case "11:40 - 12:00": return 11;
+                case "12:00 - 12:20": return 12;
+                case "12:20 - 12:40": return 13;
+                case "12:40 - 1:00": return 14;
+                case "1:00 - 1:20": return 15;
+                case "1:20 - 1:40": return 16;
+                case "1:40 - 2:00": return 17;
+                case "2:00 - 2:20": return 18;
+                case "2:20 - 2:40": return 19;
+                case "2:40 - 3:00": return 20;
+                case "3:00 - 3:20": return 21;
+                case "3:20 - 3:40": return 22;
+                default: return -1;
+            }
+             
+        }
+
+        private void bookAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            bookAppointment();
         }
 
 

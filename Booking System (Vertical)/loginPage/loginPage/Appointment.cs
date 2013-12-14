@@ -8,8 +8,8 @@ namespace loginPage
     public class Appointment
     {
         public DateTime date;
-        public int doctor;
-        public int timeslot;
+        public int doctor;  //between 0-4
+        public int timeslot; //between 0-22
         public string notes;
         public Patient patient;
         public bool doubleBooked;
@@ -18,6 +18,10 @@ namespace loginPage
 
         public Appointment()
         {}
+        public Appointment(DateTime date)
+        {
+            this.date = date;
+        }
 
         public Appointment(Patient p, int doctor, int timeslot, string notes, DateTime date)
         {
@@ -79,6 +83,20 @@ namespace loginPage
             }
             
         }
+
+        public string ToString()
+        {
+            string output = "";
+            output += "Date: " + date.ToShortDateString() + "\n";
+            output += "Doctor: " + docNumToName(doctor) + "\n";
+            output += "Timeslot: " + Timeslot() + "\n";
+            if (patient!=null)
+                output += "Patient: " + patient.ToString();
+
+            return output;
+       
+        }
+
 
     }
 }

@@ -48,7 +48,7 @@ namespace loginPage
 
         override public string ToString()
         {
-            return "Patient: "+ firstName + " " +  lastName + " " +  sex + " " +
+            return firstName + " " +  lastName + " " +  sex + " " +
                      address + " " +  areaCode + " " +  phoneNumber + " " +  country + " " +
                      province + " " +  city + " " +  dobMM + " " +  dobDD + " " +  dobYYYY +
                      " " + healthcare + " " + "notes: \"" + notes + "\"";
