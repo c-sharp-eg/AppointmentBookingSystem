@@ -18,8 +18,11 @@ namespace loginPage
     /// </summary>
     public partial class editPatient : Window
     {
+        //variables
+        public Patient selectedPatient;
         public Boolean patientSelected;
         searchPatient searchPat = new searchPatient();
+        public mainCalendarDisplayWindow caller;
 
         protected override void OnClosed(EventArgs e)
         {
@@ -27,11 +30,16 @@ namespace loginPage
             searchPat.Close();
         }
 
+        public editPatient(mainCalendarDisplayWindow caller)
+        {
+            this.caller = caller;
+            InitializeComponent();
+            patientSelected = false;
+        }
         public editPatient()
         {
             InitializeComponent();
             patientSelected = false;
-     
         }
 
         private void editCancelButton_Click(object sender, RoutedEventArgs e)
@@ -51,13 +59,21 @@ namespace loginPage
         {
             try
             {
-                Patient p = new Patient(this.editFirst.Text, this.editLast.Text,
-                    this.editMale.IsSelected ? "M" : "F", this.editAddress.Text, int.Parse(this.editArea.Text),
-                    int.Parse(this.editPhone.Text), this.editCountry.Text, this.editProvince.Text,
-                    this.editCity.Text, int.Parse(this.editMonthBox.Text), int.Parse(this.editDayBox.Text),
-                    int.Parse(this.editYearBox.Text), int.Parse(this.editNo.Text), this.editNotes.Text);
+                selectedPatient.firstName = this.editFirst.Text;
+                selectedPatient.lastName = this.editLast.Text;
+                selectedPatient.sex = this.editMale.IsSelected ? "M" : "F";
+                selectedPatient.address = this.editAddress.Text;
+                selectedPatient.areaCode = int.Parse(this.editArea.Text);
+                selectedPatient.phoneNumber = int.Parse(this.editPhone.Text);
+                selectedPatient.country= this.editCountry.Text;
+                selectedPatient.province = this.editProvince.Text;
+                selectedPatient.city = this.editCity.Text;
+                selectedPatient.dobMM = int.Parse(this.editMonthBox.Text);
+                selectedPatient.dobDD = int.Parse(this.editDayBox.Text);
+                selectedPatient.dobYYYY = int.Parse(this.editYearBox.Text);
+                selectedPatient.healthcare = int.Parse(this.editNo.Text);
+                selectedPatient.notes = this.editNotes.Text;
 
-                var mb = MessageBox.Show(p.ToString());
             }
             catch(Exception err)
             {

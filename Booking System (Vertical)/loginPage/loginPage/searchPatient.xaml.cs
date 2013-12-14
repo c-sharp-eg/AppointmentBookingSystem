@@ -19,6 +19,7 @@ namespace loginPage
     public partial class searchPatient : Window
     {
         Object caller;
+        mainCalendarDisplayWindow mainCal;
         public Patient patient;
 
         public searchPatient()
@@ -30,15 +31,18 @@ namespace loginPage
         {
             this.caller = new editPatient();
             this.caller = input;
+            this.mainCal = ((editPatient)this.caller).caller;
             InitializeComponent();
+            displayPatients();
         }
 
         public searchPatient(mainCalendarDisplayWindow input)
         {
             this.caller = new mainCalendarDisplayWindow();
             this.caller = input;
+            this.mainCal = (mainCalendarDisplayWindow)this.caller;
             InitializeComponent();
-            dislpayPatients();
+            displayPatients();
         }
 
         public searchPatient(pastAppointments input)
@@ -63,7 +67,12 @@ namespace loginPage
                 {
                     editPatient temp = new editPatient();
                     temp = (editPatient)caller;
-                    temp.ShowPatient(patient);
+                    if (searchPatLB.SelectedItem != null)
+                    {
+                        patient = (Patient)searchPatLB.SelectedItem;
+                        temp.selectedPatient = patient;
+                        temp.ShowPatient(patient);
+                    }
                     temp.patientSelected = true;
                 }
                 else if (caller.GetType() == typeof(mainCalendarDisplayWindow))
@@ -91,13 +100,13 @@ namespace loginPage
 
         }
 
-        public void dislpayPatients()
+        public void displayPatients()
         {
             List<Patient> patients;
             try
             {
                 mainCalendarDisplayWindow calandar;
-                calandar = (mainCalendarDisplayWindow)caller;
+                calandar = (mainCalendarDisplayWindow)mainCal;
                 patients = calandar.patients;
                 
                 foreach (Patient p in patients)

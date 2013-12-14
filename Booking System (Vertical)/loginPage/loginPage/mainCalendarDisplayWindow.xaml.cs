@@ -188,7 +188,7 @@ namespace loginPage
         private void patientEdit_Click(object sender, RoutedEventArgs e)
         {
             editPat.Close();
-            editPat = new editPatient();
+            editPat = new editPatient(this);
             editPat.Show();
         }
 
