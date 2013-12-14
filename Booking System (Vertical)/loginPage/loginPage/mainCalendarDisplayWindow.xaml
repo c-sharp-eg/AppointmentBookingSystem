@@ -60,11 +60,11 @@
                 		<MenuItem Header="Open Billing" x:Name="billOpen" Click="billOpen_Click" />
                 	</MenuItem>
                 </Menu>
-                <Calendar Canvas.Left="988" Canvas.Top="122" Height="170" x:Name="monthCalendar" Width="180" SelectedDatesChanged="monthCalendar_SelectedDatesChanged" />
-            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="360" Orientation="Left" Stroke="Black" Canvas.Top="52" Width="100" x:Name="previousDay" MouseLeftButtonUp="previousDay_MouseLeftButtonUp" MouseLeftButtonDown="previousDay_MouseLeftButtonDown" MouseEnter="previousDay_MouseEnter" MouseLeave="previousDay_MouseLeave" />
-            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="633" Orientation="Right" Stroke="Black" Canvas.Top="52" Width="100" x:Name="nextDay" PreviewMouseLeftButtonUp="nextDay_PreviewMouseLeftButtonUp" PreviewMouseLeftButtonDown="nextDay_PreviewMouseLeftButtonDown" MouseEnter="nextDay_MouseEnter" MouseLeave="nextDay_MouseLeave" />
-                <DatePicker Canvas.Left="490" Canvas.Top="65" Height="24" x:Name="dateBox" Width="116" SelectedDateChanged="dateBox_SelectedDateChanged" />
-                <Grid Background="White" Width="180" Height="364.882" Canvas.Left="988" Canvas.Top="340">
+                <Calendar Canvas.Left="1018" Canvas.Top="122" Height="170" x:Name="monthCalendar" Width="180" SelectedDatesChanged="monthCalendar_SelectedDatesChanged" />
+            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="390" Orientation="Left" Stroke="Black" Canvas.Top="52" Width="100" x:Name="previousDay" MouseLeftButtonUp="previousDay_MouseLeftButtonUp" MouseLeftButtonDown="previousDay_MouseLeftButtonDown" MouseEnter="previousDay_MouseEnter" MouseLeave="previousDay_MouseLeave" />
+            	<ed:BlockArrow Fill="#FFF4F4F5" Height="50" Canvas.Left="662" Orientation="Right" Stroke="Black" Canvas.Top="52" Width="100" x:Name="nextDay" PreviewMouseLeftButtonUp="nextDay_PreviewMouseLeftButtonUp" PreviewMouseLeftButtonDown="nextDay_PreviewMouseLeftButtonDown" MouseEnter="nextDay_MouseEnter" MouseLeave="nextDay_MouseLeave" />
+                <DatePicker Canvas.Left="520" Canvas.Top="65" Height="24" x:Name="dateBox" Width="116" SelectedDateChanged="dateBox_SelectedDateChanged" />
+                <Grid Background="White" Width="180" Height="425" Canvas.Left="1018" Canvas.Top="318">
                 	<TextBlock HorizontalAlignment="Left" Margin="18.001,29.667,0,0" TextWrapping="Wrap" Text="Patient" VerticalAlignment="Top" Foreground="Black" />
                 	<TextBlock HorizontalAlignment="Left" Margin="20.999,91.833,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Foreground="Black" />
                 	<ComboBox Margin="18.002,111.793,39.999,0" VerticalAlignment="Top" Height="24.42" Name="bookDoctor">
@@ -75,8 +75,8 @@
                         <ComboBoxItem Content="Dr.Honeydew" Style="{DynamicResource SimpleComboBoxItem}" Name="d4Dropdown" />
                     </ComboBox>
                 	<DatePicker Margin="18.001,154.666,40.002,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Name="bookDate" SelectedDateChanged="bookDate_SelectedDateChanged" />
-                	<TextBlock HorizontalAlignment="Left" Margin="20.999,0,0,163.545" TextWrapping="Wrap" Text="Time" VerticalAlignment="Bottom" Foreground="Black" />
-                	<ComboBox Margin="17.999,0,40.002,135.125" Height="24.42" VerticalAlignment="Bottom" Name="bookTime">
+                	<TextBlock HorizontalAlignment="Left" Margin="20.999,0,0,224" TextWrapping="Wrap" Text="Time" VerticalAlignment="Bottom" Foreground="Black" />
+                	<ComboBox Margin="17.999,0,40.002,195" Height="24.42" VerticalAlignment="Bottom" Name="bookTime">
                         <ComboBoxItem Content="Booked" Style="{DynamicResource SimpleComboBoxItem}" Name="tBooked" Visibility="Hidden" />
                         <ComboBoxItem Content="8:00 - 8:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t0Dropdown" />
                         <ComboBoxItem Content="8:20 - 8:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t1Dropdown" />
@@ -102,18 +102,22 @@
                         <ComboBoxItem Content="3:00 - 3:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t21Dropdown" />
                         <ComboBoxItem Content="3:20 - 3:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t22Dropdown" />
                     </ComboBox>
-                	<Button Content="Clear" Margin="8,0,0,54.413" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Name="bookClearButton" Click="bookClearButton_Click" />
-                	<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,54.413" VerticalAlignment="Bottom" Width="75" Name="bookAddButton" Click="bookAddButton_Click" />
+                	<Button Content="Clear" Margin="8,0,0,22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Name="bookClearButton" Click="bookClearButton_Click" />
+                	<Button Content="Book" HorizontalAlignment="Right" Margin="0,0,8,22" VerticalAlignment="Bottom" Width="75" Name="bookAddButton" Click="bookAddButton_Click" />
                 	<TextBlock TextWrapping="Wrap" Text="Book New" FontSize="16" Margin="8,0,-6,0" Height="25.667" VerticalAlignment="Top" Foreground="Black" />
-                	<CheckBox Content="Double Book" HorizontalAlignment="Left" Margin="18.001,0,0,97.165" VerticalAlignment="Bottom" Name="bookDouble" />
+                	<CheckBox Content="Double Book" HorizontalAlignment="Left" Margin="23,0,0,61" VerticalAlignment="Bottom" Name="bookDouble" />
                 	<TextBlock HorizontalAlignment="Left" Margin="17.999,42.627,0,0" TextWrapping="Wrap" Text="&lt;patient name&gt;" VerticalAlignment="Top" Width="124.983" Foreground="Black" Name="bookNewName" />
                 	<Button x:Name="SelectPatientButton" Content="Select Patient" Margin="20.999,62.587,75.339,0" VerticalAlignment="Top" Click="selectPatientButton_Click" />
+                    <ScrollViewer Height="74" HorizontalAlignment="Left" Margin="23,258,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="120">
+                        <TextBox Height="73" Name="bookNotes" Width="120" AcceptsReturn="True" AcceptsTab="True" />
+                    </ScrollViewer>
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="23,240,0,0" Name="textBlock6" Text="Notes" VerticalAlignment="Top" Foreground="Black" />
                 </Grid>
-                <ScrollViewer x:Name="appointmentNotesSV" Height="114" Background="White" Canvas.Left="541" Canvas.Top="778" Width="402">
+                <ScrollViewer x:Name="appointmentNotesSV" Height="114" Background="White" Canvas.Left="570" Canvas.Top="778" Width="402">
                     <TextBlock Height="114" Name="AppointmentNotesTB" Text="No appointment selected" Width="385" Foreground="Black" />
                 </ScrollViewer>
-                <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="436.5" Canvas.Top="910" Width="200" Click="checkInButton_Click" />
-                <ScrollViewer x:Name="schedScroll" HorizontalScrollBarVisibility ="Visible"  VerticalScrollBarVisibility="Hidden" Height="621.852" Canvas.Left="156" Canvas.Top="122" Width="788">
+                <Button x:Name="checkInButton" Content="Check - In" Height="27.96" Canvas.Left="468" Canvas.Top="910" Width="200" Click="checkInButton_Click" />
+                <ScrollViewer x:Name="schedScroll" HorizontalScrollBarVisibility ="Visible"  VerticalScrollBarVisibility="Hidden" Height="621.852" Canvas.Left="185" Canvas.Top="122" Width="788">
                 	<Grid Height="597.032" Width="787.662" Background="White">
                 		<Grid x:Name="doctor1" Margin="0,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
                 			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
@@ -252,7 +256,7 @@
                 		</Grid>
                 	</Grid>
                 </ScrollViewer>
-                <StackPanel Width="60" Height="697.101" Canvas.Left="42" Canvas.Top="125.835">
+                <StackPanel Width="60" Height="697.101" Canvas.Left="72" Canvas.Top="125.835">
                 	<DataGridColumnHeader Content="Time" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="8:00 - 8:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="8:20 - 8:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
@@ -278,17 +282,17 @@
                 	<DataGridColumnHeader Content="3:00 - 3:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 	<DataGridColumnHeader Content="3:20 - 3:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
                 </StackPanel>
-                <Button Canvas.Left="497" Canvas.Top="38" Content="Today" Height="23" Name="todayButton" Width="75" Click="todayButton_Click" />
-                <Canvas Canvas.Left="108" Canvas.Top="778" Height="114" Name="AppointmentInfoCanvas" Width="428" Background="White">
-                    <TextBlock Canvas.Left="4" Canvas.Top="4" Height="26" Name="textBlock1" Text="Appointment Information" Width="200" Foreground="Black" FontSize="16" FontWeight="Bold" FontStyle="Normal" />
-                    <TextBlock Canvas.Left="8" Canvas.Top="42" Height="21" Name="textBlock2" Text="Patient:" Width="54" Foreground="Black" FontSize="14" FontWeight="Bold" />
-                    <TextBlock Canvas.Left="8" Canvas.Top="69" Height="22" Name="textBlock3" Text="Doctor:" Width="52" FontSize="14" Foreground="Black" FontWeight="Bold" />
-                    <TextBlock Canvas.Left="209" Canvas.Top="42" FontSize="14" FontWeight="Bold" Foreground="Black" Height="22" Name="textBlock4" Text="Date:" Width="54" />
-                    <TextBlock Canvas.Left="209" Canvas.Top="69" FontSize="14" FontWeight="Bold" Foreground="Black" Height="22" Name="textBlock5" Text="Time:" Width="52" />
-                    <TextBlock Canvas.Left="73" Canvas.Top="45" Height="19" Name="appInfoPatientTB" Text="" Width="131" Background="White" Foreground="Black" />
-                    <TextBlock Background="White" Canvas.Left="73" Canvas.Top="72" Foreground="Black" Height="19" Name="appInfoDoctorTB" Text="" Width="131" />
-                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="45" Foreground="Black" Height="19" Name="appInfoDateTB" Text="" Width="131" />
-                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="72" Foreground="Black" Height="19" Name="appInfoTimeTB" Text="" Width="131" />
+                <Button Canvas.Left="528" Canvas.Top="38" Content="Today" Height="23" Name="todayButton" Width="75" Click="todayButton_Click" />
+                <Canvas Canvas.Left="138" Canvas.Top="778" Height="114" Name="AppointmentInfoCanvas" Width="428" Background="White">
+                    <TextBlock Canvas.Left="4" Canvas.Top="4" Height="26" Name="textBlock1" Text="Appointment Information" Width="200" Foreground="Black" FontSize="16" FontWeight="Normal" FontStyle="Normal" />
+                    <TextBlock Canvas.Left="8" Canvas.Top="37" Height="21" Name="textBlock2" Text="Patient:" Width="54" Foreground="Black" FontSize="14" FontWeight="Normal" />
+                    <TextBlock Canvas.Left="8" Canvas.Top="63" Height="22" Name="textBlock3" Text="Doctor:" Width="52" FontSize="14" Foreground="Black" FontWeight="Normal" />
+                    <TextBlock Canvas.Left="209" Canvas.Top="37" FontSize="14" FontWeight="Normal" Foreground="Black" Height="22" Name="textBlock4" Text="Date:" Width="54" />
+                    <TextBlock Canvas.Left="209" Canvas.Top="63" FontSize="14" FontWeight="Normal" Foreground="Black" Height="22" Name="textBlock5" Text="Time:" Width="52" />
+                    <TextBlock Canvas.Left="73" Canvas.Top="38" Height="19" Name="appInfoPatientTB" Text="" Width="131" Background="White" Foreground="Black" />
+                    <TextBlock Background="White" Canvas.Left="73" Canvas.Top="65" Foreground="Black" Height="19" Name="appInfoDoctorTB" Text="" Width="131" />
+                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="38" Foreground="Black" Height="19" Name="appInfoDateTB" Text="" Width="131" />
+                    <TextBlock Background="White" Canvas.Left="259" Canvas.Top="65" Foreground="Black" Height="19" Name="appInfoTimeTB" Text="" Width="131" />
                 </Canvas>
             </Canvas>
         </ScrollViewer>      

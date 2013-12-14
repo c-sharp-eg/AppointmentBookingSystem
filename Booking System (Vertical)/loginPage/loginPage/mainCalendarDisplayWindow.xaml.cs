@@ -267,7 +267,8 @@ namespace loginPage
             */
             updateBookBox();
             updateApptInfoBox();
-            
+
+            appInfoPatientTB.Text = currentSlot.Content.ToString();
 
        }
 
