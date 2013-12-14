@@ -239,7 +239,7 @@ namespace loginPage
             previousSlot = currentSlot;
             currentSlot = calButton;
 
-            if (currentSlot.Content != "")
+            if (currentSlot.Content.ToString() != "")
             {
                 checkInButton.IsEnabled = true;
                 bookAddButton.IsEnabled = false;
