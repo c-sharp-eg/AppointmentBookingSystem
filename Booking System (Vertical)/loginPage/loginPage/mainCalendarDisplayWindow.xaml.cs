@@ -56,6 +56,7 @@ namespace loginPage
 
             //just for display testing print random appointments
             displayRandomAppointments();
+            addRandomPatients();
         }
 
         //logging out in file menu
@@ -914,6 +915,31 @@ namespace loginPage
             d0[randomNumber] = "Bianca, Charles"; randomNumber = random.Next(0, 23);
 
             updateMainCalander(d0, d1, d2, d3, d4);
+        }
+
+
+        public void addRandomPatients()
+        {
+            Patient p1 = new Patient("Michael", "Hayden", "M", "112 Angel St.", 410, 6658734, "United States", "Maryland", "Baltimore", 07, 05, 1965, 223444111, "");
+            Patient p2 = new Patient("Ray", "Person", "M", "65 Yorkshire Way", 654, 4133578, "UK", "London", "London", 04, 11, 1973, 1122113, "");
+            Patient p3 = new Patient("Rupert", "Dennings", "M", "1 Broadmoor St.", 07, 55445567, "Australia", "Queensland", "Brisbane", 07, 09, 1990, 21114151, "");
+            Patient p4 = new Patient("Ibrahim", "Sayeed", "M", "89 Sethi St.", 91, 4415454, "Pakistan", "NWFP", "Peshawar", 04, 05, 1985, 1212141, "");
+            Patient p5 = new Patient("Laura", "Janssens", "F", "63 Louizastraat", 42, 5511615, "Belgium", "Flemish Region", "Antwerp", 07, 09, 1989, 12125156, "");
+            Patient p6 = new Patient("Brian", "Omar", "M", "12 Dalgleish Bay", 403, 9351515, "Canada", "Alberta", "Calgary", 05, 03, 1991, 121513, "");
+            Patient p7 = new Patient("Aman", "Gill", "F", "2114 35th Ave SW", 403, 4619305, "Canada", "Alberta", "Calgary", 03, 01, 1988, 12141251, "");
+            Patient p8 = new Patient("Jennifer", "Talmage", "F", "141 Whyte Ave", 403, 4151551, "Canada", "Alberta", "Edmonton", 02, 01, 1991, 1211211, "");
+            Patient p9 = new Patient("Jayant", "Patell", "M", "73 Royal Crest Way NW", 403, 4315133, "Canada", "Alberta", "Calgary", 01, 01, 1901, 121241, "");
+            Patient p10 = new Patient("Hardeep", "Gar", "M", "10 Country Hills BLVD NE", 403, 1511611, "Canada", "Alberta", "Calgary", 02, 05, 1991, 4523512, "");
+            patients.Add(p1);
+            patients.Add(p2);
+            patients.Add(p3);
+            patients.Add(p4);
+            patients.Add(p5);
+            patients.Add(p6);
+            patients.Add(p7);
+            patients.Add(p8);
+            patients.Add(p9);
+            patients.Add(p10);
         }
 
 
