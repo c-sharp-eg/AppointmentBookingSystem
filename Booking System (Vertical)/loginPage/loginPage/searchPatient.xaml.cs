@@ -111,7 +111,11 @@ namespace loginPage
                 
                 foreach (Patient p in patients)
                 {
-                    searchPatLB.Items.Add(p);
+                    string pFirstName = p.firstName;
+                    string pLastName = p.lastName;
+                    string pAddress = p.address;
+                    searchPatLB.Items.Add(pFirstName.PadRight(20-pFirstName.Length) + "\t" + pLastName.PadRight(20-pLastName.Length) + "\t" + pAddress);
+                    
                 }
                                 
             }
