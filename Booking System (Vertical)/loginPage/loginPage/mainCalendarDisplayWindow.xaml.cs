@@ -283,8 +283,14 @@ namespace loginPage
             */
             updateBookBox();
             updateApptInfoBox();
-
-            appInfoPatientTB.Text = currentSlot.Content.ToString();
+            if (currentSlot.Content.ToString() != null)
+            {
+                appInfoPatientTB.Text = currentSlot.Content.ToString();
+            }
+            else
+            {
+                appInfoPatientTB.Text = "";
+            }
 
        }
 
