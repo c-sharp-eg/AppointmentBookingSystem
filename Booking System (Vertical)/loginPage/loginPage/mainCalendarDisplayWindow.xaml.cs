@@ -53,6 +53,7 @@ namespace loginPage
             monthCalendar.SelectedDate = DateTime.Now;
             dateBox.SelectedDate = DateTime.Now;
             bookDate.SelectedDate = DateTime.Now;
+            checkInButton.IsEnabled = false;
 
             //just for display testing print random appointments
             displayRandomAppointments();
@@ -213,6 +214,7 @@ namespace loginPage
             bookDoctor.Text = "";
             bookDate.SelectedDate = DateTime.Now; 
             bookTime.Text = "";
+            bookNotes.Text = "";
             bookDouble.IsChecked = false;
         }
 
@@ -234,6 +236,15 @@ namespace loginPage
             DataGridColumnHeader calButton = sender as DataGridColumnHeader;
             previousSlot = currentSlot;
             currentSlot = calButton;
+
+            if (currentSlot.Content != "")
+            {
+                checkInButton.IsEnabled = true;
+            }
+            else
+            {
+                checkInButton.IsEnabled = false;
+            }
 
             SolidColorBrush borderGrey = new SolidColorBrush();
             borderGrey.Color = Color.FromArgb(255, 208, 208, 208);
