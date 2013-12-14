@@ -68,7 +68,7 @@ namespace loginPage
 
             this.Hide();
             billingScreen.Close();
-            newPat.Close();
+            newPat.closeActivate();
             editPat.Close();
             searchPat.Close();
             pastAppt.Close();

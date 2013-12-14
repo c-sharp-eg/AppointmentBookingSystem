@@ -19,7 +19,11 @@ namespace loginPage
     public partial class addPatient : Window
     {
         public mainCalendarDisplayWindow caller;
-        
+
+        public addPatient()
+        {
+        }
+
         public addPatient(mainCalendarDisplayWindow caller)
         {
             this.caller = caller;
@@ -65,6 +69,11 @@ namespace loginPage
         }
 
         private void addCancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            closeActivate();
+        }
+
+        public void closeActivate()
         {
             this.Close();
         }
