@@ -27,7 +27,7 @@ namespace loginPage
         public DateTime displayDate;
 
         //global variables
-        public Dictionary<DateTime, DayOfAppointments> allAppointmentsDictionary = new Dictionary<DateTime,DayOfAppointments>();
+        public Dictionary<string, DayOfAppointments> allAppointmentsDictionary = new Dictionary<string,DayOfAppointments>();
         public List<Patient> patients = new List<Patient>();
         public Patient selectedPatient;
 
@@ -97,6 +97,7 @@ namespace loginPage
         {
             dateBox.SelectedDate = monthCalendar.SelectedDate;
             bookDate.SelectedDate = monthCalendar.SelectedDate;
+            displayDate = ((DateTime)monthCalendar.SelectedDate).Date;
         }
 
         //right arrow button for next day
@@ -181,6 +182,11 @@ namespace loginPage
 
             bookDate.SelectedDate = dateBox.SelectedDate;
             
+            //update the saved display date
+            displayDate = ((DateTime)dateBox.SelectedDate).Date;
+
+            refreshDisplayDate();
+       
         }
 
         private void patientNew_Click(object sender, RoutedEventArgs e)
@@ -214,9 +220,14 @@ namespace loginPage
 
         private void bookClearButton_Click(object sender, RoutedEventArgs e)
         {
+            clearBookNewApptStuff();
+        }
+
+        private void clearBookNewApptStuff()
+        {
             bookNewName.Text = "<patient name>";
             bookDoctor.Text = "";
-            bookDate.SelectedDate = DateTime.Now; 
+            bookDate.SelectedDate = displayDate;
             bookTime.Text = "";
             bookNotes.Text = "";
             bookDouble.IsChecked = false;
@@ -324,8 +335,9 @@ namespace loginPage
         {
             monthCalendar.SelectedDate = bookDate.SelectedDate;
             monthCalendar.DisplayDate = monthCalendar.SelectedDate.GetValueOrDefault();
-
             dateBox.SelectedDate = bookDate.SelectedDate;
+
+            displayDate = ((DateTime)bookDate.SelectedDate).Date;
         }
 
         private void todayButton_Click(object sender, RoutedEventArgs e)
@@ -523,129 +535,7 @@ namespace loginPage
                 return;
             }
 
-
-
-            //clear all 23 timeslots form doctor 1
-            d0t0.Content = "";
-            d0t1.Content = "";
-            d0t2.Content = "";
-            d0t3.Content = "";
-            d0t4.Content = "";
-            d0t5.Content = "";
-            d0t5.Content = "";
-            d0t7.Content = "";
-            d0t8.Content = "";
-            d0t9.Content = "";
-            d0t10.Content = "";
-            d0t11.Content = "";
-            d0t12.Content = "";
-            d0t13.Content = "";
-            d0t14.Content = "";
-            d0t15.Content = "";
-            d0t16.Content = "";
-            d0t17.Content = "";
-            d0t18.Content = "";
-            d0t19.Content = "";
-            d0t20.Content = "";
-            d0t21.Content = "";
-            d0t22.Content = "";
-            //clear all 23 timeslots form doctor 2
-            d1t0.Content = "";
-            d1t1.Content = "";
-            d1t2.Content = "";
-            d1t3.Content = "";
-            d1t4.Content = "";
-            d1t5.Content = "";
-            d1t5.Content = "";
-            d1t7.Content = "";
-            d1t8.Content = "";
-            d1t9.Content = "";
-            d1t10.Content = "";
-            d1t11.Content = "";
-            d1t12.Content = "";
-            d1t13.Content = "";
-            d1t14.Content = "";
-            d1t15.Content = "";
-            d1t16.Content = "";
-            d1t17.Content = "";
-            d1t18.Content = "";
-            d1t19.Content = "";
-            d1t20.Content = "";
-            d1t21.Content = "";
-            d1t22.Content = "";
-            //clear all 23 timeslots form doctor 3
-            d2t0.Content = "";
-            d2t1.Content = "";
-            d2t2.Content = "";
-            d2t3.Content = "";
-            d2t4.Content = "";
-            d2t5.Content = "";
-            d2t5.Content = "";
-            d2t7.Content = "";
-            d2t8.Content = "";
-            d2t9.Content = "";
-            d2t10.Content = "";
-            d2t11.Content = "";
-            d2t12.Content = "";
-            d2t13.Content = "";
-            d2t14.Content = "";
-            d2t15.Content = "";
-            d2t16.Content = "";
-            d2t17.Content = "";
-            d2t18.Content = "";
-            d2t19.Content = "";
-            d2t20.Content = "";
-            d2t21.Content = "";
-            d2t22.Content = ""; 
-            //clear all 23 timeslots form doctor 4
-            d3t0.Content = "";
-            d3t1.Content = "";
-            d3t2.Content = "";
-            d3t3.Content = "";
-            d3t4.Content = "";
-            d3t5.Content = "";
-            d3t5.Content = "";
-            d3t7.Content = "";
-            d3t8.Content = "";
-            d3t9.Content = "";
-            d3t10.Content = "";
-            d3t11.Content = "";
-            d3t12.Content = "";
-            d3t13.Content = "";
-            d3t14.Content = "";
-            d3t15.Content = "";
-            d3t16.Content = "";
-            d3t17.Content = "";
-            d3t18.Content = "";
-            d3t19.Content = "";
-            d3t20.Content = "";
-            d3t21.Content = "";
-            d3t22.Content = "";
-            //clear all 23 timeslots form doctor 5
-            d4t0.Content = "";
-            d4t1.Content = "";
-            d4t2.Content = "";
-            d4t3.Content = "";
-            d4t4.Content = "";
-            d4t5.Content = "";
-            d4t5.Content = "";
-            d4t7.Content = "";
-            d4t8.Content = "";
-            d4t9.Content = "";
-            d4t10.Content = "";
-            d4t11.Content = "";
-            d4t12.Content = "";
-            d4t13.Content = "";
-            d4t14.Content = "";
-            d4t15.Content = "";
-            d4t16.Content = "";
-            d4t17.Content = "";
-            d4t18.Content = "";
-            d4t19.Content = "";
-            d4t20.Content = "";
-            d4t21.Content = "";
-            d4t22.Content = "";
-
+            clearCalendarDisplay();
             //update all 23 timeslots form doctor 1
             if (d0[0] !=null)
                 d0t0.Content = d0[0];
@@ -976,9 +866,9 @@ namespace loginPage
             try
             {
                 //search for existing date in dictionary
-                if (allAppointmentsDictionary.ContainsKey(date))
+                if (allAppointmentsDictionary.ContainsKey(date.ToShortDateString()))
                 {
-                    bool containsDate= allAppointmentsDictionary.TryGetValue(date,out dayOfAppt);
+                    bool containsDate= allAppointmentsDictionary.TryGetValue(date.ToShortDateString(),out dayOfAppt);
                     if (!containsDate)
                     {
                         var mb = MessageBox.Show("Error in lookup of dayOfAppt");
@@ -989,7 +879,7 @@ namespace loginPage
                 else
                 {
                     dayOfAppt = new DayOfAppointments(date);
-                    allAppointmentsDictionary.Add(date, dayOfAppt);
+                    allAppointmentsDictionary.Add(date.ToShortDateString(), dayOfAppt);
                     appt.doubleBooked = false;
                 }
 
@@ -1002,12 +892,13 @@ namespace loginPage
                 catch (Exception err)
                 {
                     var mb = MessageBox.Show("Error: No timeslot selected. Please select a timeslot.");
+                    bookAddButton.IsEnabled = false;
                     return; //quit on error
                 }
                 //check if the stringto timeslot returned a valid index
-                if (appt.timeslot == -1)
+                if (timeslot == -1)
                 {
-                    var mb = MessageBox.Show("Error(-1): No timeslot selected. Please select a timeslot.");
+                    var mb = MessageBox.Show("Error: Timeslot is booked. To double book: manualy resect the timeslot and ensure \"double book\" is clicked.");
                     return; //quit on error
                 }
                 
@@ -1140,7 +1031,8 @@ namespace loginPage
                 else
                 {
 
-                   var mb1 = MessageBox.Show("error: no doctor selected");
+                   var mb1 = MessageBox.Show("Error: No Doctor selected. Please select a doctor from the dropdown.");
+                   bookAddButton.IsEnabled = false;
 
                 }
 
@@ -1153,16 +1045,15 @@ namespace loginPage
                 var mb = MessageBox.Show(err.ToString());
             }
 
-            bool containsSelectedDate = allAppointmentsDictionary.TryGetValue(date, out dayOfAppt);
+            bool containsSelectedDate = allAppointmentsDictionary.TryGetValue(date.ToShortDateString(), out dayOfAppt);
             if (!containsSelectedDate)
             {
-                var mb = MessageBox.Show("No appointments for current day");
+                //var mb = MessageBox.Show("No appointments for current day");
                 return; //quit the method on error
             }
             else
             {
                 displayAppointments(dayOfAppt);
-                var mb = MessageBox.Show(dayOfAppt.ToString());
             }
             
 
@@ -1204,6 +1095,7 @@ namespace loginPage
         {
             bookAppointment();
             bookAddButton.IsEnabled = false;
+            clearBookNewApptStuff();
         }
 
         public void displayAppointments(DayOfAppointments dayOfAppts)
@@ -1220,58 +1112,199 @@ namespace loginPage
                 if (dayOfAppts.d0[i] != null)
                 {
                     if (dayOfAppts.d0[i].doubleBooked)
-                        d0[i] = "" + dayOfAppts.d0[i].patient.lastName + ", " + dayOfAppts.d0[i].patient.lastName
-                               + "\n" + dayOfAppts.d0[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d0[i].doubleBookedAppt.patient.firstName;
+                        d0[i] = "" + dayOfAppts.d0[i].patient.lastName + ", " + dayOfAppts.d0[i].patient.firstName
+                               + "/" + dayOfAppts.d0[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d0[i].doubleBookedAppt.patient.firstName;
                     else
-                        d0[i] = "" + dayOfAppts.d0[i].patient.lastName + ", " + dayOfAppts.d0[i].patient.lastName;
+                        d0[i] = "" + dayOfAppts.d0[i].patient.lastName + ", " + dayOfAppts.d0[i].patient.firstName;
                 }
                 else d0[i] = "";
 
                 if (dayOfAppts.d1[i] != null)
                 {
                     if (dayOfAppts.d1[i].doubleBooked)
-                        d1[i] = "" + dayOfAppts.d1[i].patient.lastName + ", " + dayOfAppts.d1[i].patient.lastName
-                               + "\n" + dayOfAppts.d1[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d1[i].doubleBookedAppt.patient.firstName;
+                        d1[i] = "" + dayOfAppts.d1[i].patient.lastName + ", " + dayOfAppts.d1[i].patient.firstName
+                               + "/" + dayOfAppts.d1[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d1[i].doubleBookedAppt.patient.firstName;
                     else
-                        d1[i] = "" + dayOfAppts.d1[i].patient.lastName + ", " + dayOfAppts.d1[i].patient.lastName;
+                        d1[i] = "" + dayOfAppts.d1[i].patient.lastName + ", " + dayOfAppts.d1[i].patient.firstName;
                 }
                 else d1[i] = "";
 
                 if (dayOfAppts.d2[i] != null)
                 {
                     if (dayOfAppts.d2[i].doubleBooked)
-                        d2[i] = "" + dayOfAppts.d2[i].patient.lastName + ", " + dayOfAppts.d2[i].patient.lastName
-                               + "\n" + dayOfAppts.d2[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d2[i].doubleBookedAppt.patient.firstName;
+                        d2[i] = "" + dayOfAppts.d2[i].patient.lastName + ", " + dayOfAppts.d2[i].patient.firstName
+                               + "/" + dayOfAppts.d2[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d2[i].doubleBookedAppt.patient.firstName;
                     else
-                        d2[i] = "" + dayOfAppts.d2[i].patient.lastName + ", " + dayOfAppts.d2[i].patient.lastName;
+                        d2[i] = "" + dayOfAppts.d2[i].patient.lastName + ", " + dayOfAppts.d2[i].patient.firstName;
                 }
                 else d2[i] = "";
 
                 if (dayOfAppts.d3[i] != null)
                 {
                     if (dayOfAppts.d3[i].doubleBooked)
-                        d3[i] = "" + dayOfAppts.d3[i].patient.lastName + ", " + dayOfAppts.d3[i].patient.lastName
-                               + "\n" + dayOfAppts.d3[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d3[i].doubleBookedAppt.patient.firstName;
+                        d3[i] = "" + dayOfAppts.d3[i].patient.lastName + ", " + dayOfAppts.d3[i].patient.firstName
+                               + "/" + dayOfAppts.d3[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d3[i].doubleBookedAppt.patient.firstName;
                     else
-                        d3[i] = "" + dayOfAppts.d3[i].patient.lastName + ", " + dayOfAppts.d3[i].patient.lastName;
+                        d3[i] = "" + dayOfAppts.d3[i].patient.lastName + ", " + dayOfAppts.d3[i].patient.firstName;
                 }
                 else d3[i] = "";
 
                 if (dayOfAppts.d4[i] != null)
                 {
                     if (dayOfAppts.d4[i].doubleBooked)
-                        d4[i] = "" + dayOfAppts.d4[i].patient.lastName + ", " + dayOfAppts.d4[i].patient.lastName
-                               + "\n" + dayOfAppts.d4[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d4[i].doubleBookedAppt.patient.firstName;
+                        d4[i] = "" + dayOfAppts.d4[i].patient.lastName + ", " + dayOfAppts.d4[i].patient.firstName
+                               + "/" + dayOfAppts.d4[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d4[i].doubleBookedAppt.patient.firstName;
                     else
-                        d4[i] = "" + dayOfAppts.d4[i].patient.lastName + ", " + dayOfAppts.d4[i].patient.lastName;
+                        d4[i] = "" + dayOfAppts.d4[i].patient.lastName + ", " + dayOfAppts.d4[i].patient.firstName;
                 }
                 else d4[i] = "";
-
+            
             }//end for loop (timeslots)
 
             //update the display
             this.updateMainCalander(d0, d1, d2, d3, d4);
 
+        }
+
+        public void refreshDisplayDate()
+        {
+            //update the display for current date
+            DayOfAppointments dayOfAppt;
+            bool containsSelectedDate = allAppointmentsDictionary.TryGetValue(displayDate.ToShortDateString(), out dayOfAppt);
+            if (!containsSelectedDate)
+            {
+                clearCalendarDisplay();
+            }
+            else
+            {
+                displayAppointments(dayOfAppt);
+            }
+            return;
+        }
+
+        public void clearCalendarDisplay()
+        {
+
+            //clear all 23 timeslots form doctor 1
+            d0t0.Content = "";
+            d0t1.Content = "";
+            d0t2.Content = "";
+            d0t3.Content = "";
+            d0t4.Content = "";
+            d0t5.Content = "";
+            d0t5.Content = "";
+            d0t7.Content = "";
+            d0t8.Content = "";
+            d0t9.Content = "";
+            d0t10.Content = "";
+            d0t11.Content = "";
+            d0t12.Content = "";
+            d0t13.Content = "";
+            d0t14.Content = "";
+            d0t15.Content = "";
+            d0t16.Content = "";
+            d0t17.Content = "";
+            d0t18.Content = "";
+            d0t19.Content = "";
+            d0t20.Content = "";
+            d0t21.Content = "";
+            d0t22.Content = "";
+            //clear all 23 timeslots form doctor 2
+            d1t0.Content = "";
+            d1t1.Content = "";
+            d1t2.Content = "";
+            d1t3.Content = "";
+            d1t4.Content = "";
+            d1t5.Content = "";
+            d1t5.Content = "";
+            d1t7.Content = "";
+            d1t8.Content = "";
+            d1t9.Content = "";
+            d1t10.Content = "";
+            d1t11.Content = "";
+            d1t12.Content = "";
+            d1t13.Content = "";
+            d1t14.Content = "";
+            d1t15.Content = "";
+            d1t16.Content = "";
+            d1t17.Content = "";
+            d1t18.Content = "";
+            d1t19.Content = "";
+            d1t20.Content = "";
+            d1t21.Content = "";
+            d1t22.Content = "";
+            //clear all 23 timeslots form doctor 3
+            d2t0.Content = "";
+            d2t1.Content = "";
+            d2t2.Content = "";
+            d2t3.Content = "";
+            d2t4.Content = "";
+            d2t5.Content = "";
+            d2t5.Content = "";
+            d2t7.Content = "";
+            d2t8.Content = "";
+            d2t9.Content = "";
+            d2t10.Content = "";
+            d2t11.Content = "";
+            d2t12.Content = "";
+            d2t13.Content = "";
+            d2t14.Content = "";
+            d2t15.Content = "";
+            d2t16.Content = "";
+            d2t17.Content = "";
+            d2t18.Content = "";
+            d2t19.Content = "";
+            d2t20.Content = "";
+            d2t21.Content = "";
+            d2t22.Content = "";
+            //clear all 23 timeslots form doctor 4
+            d3t0.Content = "";
+            d3t1.Content = "";
+            d3t2.Content = "";
+            d3t3.Content = "";
+            d3t4.Content = "";
+            d3t5.Content = "";
+            d3t5.Content = "";
+            d3t7.Content = "";
+            d3t8.Content = "";
+            d3t9.Content = "";
+            d3t10.Content = "";
+            d3t11.Content = "";
+            d3t12.Content = "";
+            d3t13.Content = "";
+            d3t14.Content = "";
+            d3t15.Content = "";
+            d3t16.Content = "";
+            d3t17.Content = "";
+            d3t18.Content = "";
+            d3t19.Content = "";
+            d3t20.Content = "";
+            d3t21.Content = "";
+            d3t22.Content = "";
+            //clear all 23 timeslots form doctor 5
+            d4t0.Content = "";
+            d4t1.Content = "";
+            d4t2.Content = "";
+            d4t3.Content = "";
+            d4t4.Content = "";
+            d4t5.Content = "";
+            d4t5.Content = "";
+            d4t7.Content = "";
+            d4t8.Content = "";
+            d4t9.Content = "";
+            d4t10.Content = "";
+            d4t11.Content = "";
+            d4t12.Content = "";
+            d4t13.Content = "";
+            d4t14.Content = "";
+            d4t15.Content = "";
+            d4t16.Content = "";
+            d4t17.Content = "";
+            d4t18.Content = "";
+            d4t19.Content = "";
+            d4t20.Content = "";
+            d4t21.Content = "";
+            d4t22.Content = "";
         }
 
 
