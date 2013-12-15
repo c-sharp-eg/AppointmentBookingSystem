@@ -48,7 +48,7 @@ namespace loginPage
 
         override public string ToString()
         {
-            return firstName.PadRight(20 - firstName.Length) + "\t" + lastName.PadRight(20 - lastName.Length) + "\t" + address;
+            return lastName.PadRight(20 - lastName.Length) + "\t" + firstName.PadRight(20 - firstName.Length) + "\t" + address;
         }
 
     }

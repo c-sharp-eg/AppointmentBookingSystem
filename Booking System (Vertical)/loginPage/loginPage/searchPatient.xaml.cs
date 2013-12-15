@@ -132,6 +132,33 @@ namespace loginPage
             }
         }
 
+        private void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            List<Patient> patients;
+            List<Patient> sortedPatients;
+            string search = searchLastName.Text;
+            searchPatLB.Items.Clear();
+            int index;
+            try
+            {
+                mainCalendarDisplayWindow calendar;
+                calendar = (mainCalendarDisplayWindow)mainCal;
+                patients = calendar.patients;
+                sortedPatients = patients.OrderBy(o => o.lastName).ToList();
+                foreach (Patient p in sortedPatients)
+                {
+                    index = p.lastName.IndexOf(search);
+                    if (index != -1)
+                    {
+                        searchPatLB.Items.Add(p);
+                    }
+                }
+            } catch (Exception err)
+            {
+                var mb = MessageBox.Show(err.ToString());
+            }
+        }
+
 
          
     }

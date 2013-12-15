@@ -5,12 +5,12 @@
 		<TextBlock HorizontalAlignment="Left" Margin="8,21.28,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment"/>
 		<TextBox Margin="8,41.24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19.96" HorizontalAlignment="Left" Width="178.967" Text="" Name="searchLastName" />
         <Button x:Name="selectButton" Content="Select" HorizontalAlignment="Right" Margin="0,0,28,11" VerticalAlignment="Bottom" Width="75" Height="24" Click="selectButton_Click_1" />
-		<Button Content="Search" HorizontalAlignment="Right" Margin="0,39.24,28,0" VerticalAlignment="Top" Width="75" Name="searchButton" />
+		<Button Content="Search" HorizontalAlignment="Right" Margin="0,39.24,28,0" VerticalAlignment="Top" Width="75" Name="searchButton" Click="searchButton_Click" />
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="187,242.257,0,0" Name="searchCancelButton" VerticalAlignment="Top" Width="75" Click="searchCancelButton_Click_1" />
         <DataGrid Name="searchDataGrid" Margin="7,68,28,170">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="First Name" Width="95" />
-                <DataGridTextColumn Header="Last Name" Width="95"/>
+                <DataGridTextColumn Header="Last Name" Width="95" />
+                <DataGridTextColumn Header="First Name" Width="95"/>
                 <DataGridTextColumn Header="Address" Width="155" />
                
             </DataGrid.Columns>
