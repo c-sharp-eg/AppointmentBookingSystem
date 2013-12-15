@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 
 namespace loginPage
 {
@@ -59,8 +60,28 @@ namespace loginPage
             checkInButton.IsEnabled = false;
             bookAddButton.IsEnabled = false;
 
+            this.KeyUp += new KeyEventHandler(mainCalendarDisplayWindow_KeyUp);
+
             //just for display testing print random appointments
             addRandomPatients();
+        }
+
+        void mainCalendarDisplayWindow_KeyUp(object sender, KeyEventArgs e)
+        {
+            if ((e.Key == Key.A) && (Keyboard.Modifiers == ModifierKeys.Control))
+                patientNew_Click(sender, e);
+            else if ((e.Key == Key.E) && (Keyboard.Modifiers == ModifierKeys.Control))
+                patientEdit_Click(sender, e);
+            else if ((e.Key == Key.W) && (Keyboard.Modifiers == ModifierKeys.Control))
+                patientPast_Click(sender, e);
+            else if ((e.Key == Key.C) && (Keyboard.Modifiers == ModifierKeys.Control))
+                checkInButton_Click(sender, e);
+            else if ((e.Key == Key.Y) && (Keyboard.Modifiers == ModifierKeys.Control))
+                apptCancel_Click(sender, e);
+            else if ((e.Key == Key.B) && (Keyboard.Modifiers == ModifierKeys.Control))
+                billOpen_Click(sender, e);
+            else if ((e.Key == Key.L) && (Keyboard.Modifiers == ModifierKeys.Control))
+                fileLogOut_Click(sender, e);
         }
 
         //logging out in file menu

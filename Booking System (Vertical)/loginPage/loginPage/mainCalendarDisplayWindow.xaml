@@ -43,21 +43,21 @@
             <Canvas Width="1280" Height="962">
                 <Menu Canvas.Left="-2" Canvas.Top="0" Height="24" x:Name="menu" Width="1426">
                 	<MenuItem Header="File" Width="41.95" Height="22" x:Name="fileMenu">
-                		<MenuItem Header="Log Out" x:Name="fileLogOut" Click="fileLogOut_Click" />
+                		<MenuItem Header="Log Out" x:Name="fileLogOut" Click="fileLogOut_Click" InputGestureText="Ctrl+L" />
                 		<MenuItem Header="Exit" x:Name="fileExit" Click="fileExit_Click" />
                 	</MenuItem>
                 	<MenuItem Header="Patient" Width="59.95" x:Name="patientMenu">
-                		<MenuItem x:Name="patientNew" Header="New Patient" Click="patientNew_Click" />
-                        <MenuItem x:Name="patientEdit" Header="Edit Patient " Click="patientEdit_Click" />
-                		<MenuItem x:Name="patientPast" Header="View Past Appointments" Click="patientPast_Click" />
+                        <MenuItem x:Name="patientNew" Header="New Patient" Click="patientNew_Click" InputGestureText="Ctrl+A"/>
+                        <MenuItem x:Name="patientEdit" Header="Edit Patient " Click="patientEdit_Click" InputGestureText="Ctrl+E"/>
+                        <MenuItem x:Name="patientPast" Header="View Past Appointments" Click="patientPast_Click" InputGestureText="Ctrl+W"/>
                 		
                 	</MenuItem>
                 	<MenuItem Header="Appt" Width="52.913" x:Name="apptMenu">
-                        <MenuItem Header="Check In" x:Name="apptCheckIn" Click="apptCheckIn_Click" />
-                		<MenuItem Header="Cancel Booking" x:Name="apptCancel" Click="apptCancel_Click" />		
+                        <MenuItem Header="Check In" x:Name="apptCheckIn" Click="apptCheckIn_Click" InputGestureText="Ctrl+C"/>
+                        <MenuItem Header="Cancel Booking" x:Name="apptCancel" Click="apptCancel_Click" InputGestureText="Ctrl+Y"/>		
                 	</MenuItem>
                 	<MenuItem Header="Bill" Width="60.6" x:Name="billMenu">
-                		<MenuItem Header="Open Billing" x:Name="billOpen" Click="billOpen_Click" />
+                        <MenuItem Header="Open Billing" x:Name="billOpen" Click="billOpen_Click" InputGestureText="Ctrl+B"/>
                 	</MenuItem>
                 </Menu>
                 <Calendar Canvas.Left="1018" Canvas.Top="122" Height="170" x:Name="monthCalendar" Width="180" SelectedDatesChanged="monthCalendar_SelectedDatesChanged" />
