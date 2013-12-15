@@ -87,13 +87,8 @@ namespace loginPage
         public override string ToString()
         {
             string output = "";
-            output += "Date: " + date.ToShortDateString() + "\n";
-            output += "Doctor: " + docNumToName(doctor) + "\n";
-            output += "Timeslot: " + Timeslot() + "\n";
-            if (patient!=null)
-                output += "Patient: " + patient.ToString();
-
-            return output;
+            output += date.ToShortDateString() + Timeslot() + docNumToName(doctor);
+            return date.ToShortDateString().PadRight(20 - date.ToShortDateString().Length) + "\t" + Timeslot().PadRight(20 - Timeslot().Length) + "\t" + docNumToName(doctor);
        
         }
 

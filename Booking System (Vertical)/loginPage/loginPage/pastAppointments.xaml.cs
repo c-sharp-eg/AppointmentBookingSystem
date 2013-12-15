@@ -61,5 +61,16 @@ namespace loginPage
                 pastApptLB.Items.Add(a);
             }
         }
+
+        private void pastAppointmentBox_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                caller.Effect = null;
+            }
+            catch (Exception err)
+            {
+            }
+        }
     }
 }

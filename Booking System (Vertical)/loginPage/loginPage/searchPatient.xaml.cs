@@ -21,6 +21,7 @@ namespace loginPage
         Object caller;
         mainCalendarDisplayWindow mainCal;
         public Patient patient;
+        bool callerMain = false;
 
         public searchPatient()
         {
@@ -41,6 +42,7 @@ namespace loginPage
             this.caller = new mainCalendarDisplayWindow();
             this.caller = input;
             this.mainCal = (mainCalendarDisplayWindow)this.caller;
+            callerMain = true;
             InitializeComponent();
             displayPatients();
         }
@@ -101,6 +103,7 @@ namespace loginPage
                         patient = (Patient)searchPatLB.SelectedItem;
                         temp.selectedPatient = patient;
                         temp.ShowPatient(patient);
+                        temp.pastPatientName.Text = patient.firstName + " " + patient.lastName;
                     }
                     temp.patientSelected = true;
                 }
@@ -164,6 +167,20 @@ namespace loginPage
             } catch (Exception err)
             {
                 var mb = MessageBox.Show(err.ToString());
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (callerMain)
+                {
+                    mainCal.Effect = null;
+                }
+            }
+            catch (Exception err)
+            {
             }
         }
 

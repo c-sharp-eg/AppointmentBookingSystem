@@ -73,5 +73,16 @@ namespace loginPage
         {
             this.Close();
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                caller.Effect = null;
+            }
+            catch (Exception err)
+            {
+            }
+        }
     }
 }

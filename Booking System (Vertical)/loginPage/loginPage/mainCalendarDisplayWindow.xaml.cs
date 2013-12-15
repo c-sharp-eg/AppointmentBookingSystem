@@ -9,6 +9,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Effects;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
@@ -68,6 +69,8 @@ namespace loginPage
             apptCancel.IsEnabled = false;
             //just for display testing print random appointments
             addRandomPatients();
+
+
         }
 
         void mainCalendarDisplayWindow_KeyUp(object sender, KeyEventArgs e)
@@ -219,6 +222,9 @@ namespace loginPage
             if (newPat!=null)
                 newPat.Close();
             newPat = new addPatient(this);
+            var blur = new BlurEffect();
+            blur.Radius = 5;
+            this.Effect = blur;
             newPat.Show();
         }
 
@@ -226,6 +232,9 @@ namespace loginPage
         {
             editPat.Close();
             editPat = new editPatient(this);
+            var blur = new BlurEffect();
+            blur.Radius = 5;
+            this.Effect = blur;
             editPat.Show();
         }
 
@@ -233,6 +242,9 @@ namespace loginPage
         {
             pastAppt.Close();
             pastAppt = new pastAppointments(this);
+            var blur = new BlurEffect();
+            blur.Radius = 5;
+            this.Effect = blur;
             pastAppt.Show();
         }
 
@@ -240,6 +252,9 @@ namespace loginPage
         {
             searchPat.Close();
             searchPat = new searchPatient(this);
+            var blur = new BlurEffect();
+            blur.Radius = 5;
+            this.Effect = blur;
             searchPat.Show();
         }
 

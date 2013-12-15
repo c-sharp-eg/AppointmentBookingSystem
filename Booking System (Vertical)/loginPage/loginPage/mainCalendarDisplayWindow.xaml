@@ -49,7 +49,7 @@
                 	<MenuItem Header="Patient" Width="59.95" x:Name="patientMenu">
                         <MenuItem x:Name="patientNew" Header="New Patient" Click="patientNew_Click" InputGestureText="Ctrl+A"/>
                         <MenuItem x:Name="patientEdit" Header="Edit Patient " Click="patientEdit_Click" InputGestureText="Ctrl+E"/>
-                        <MenuItem x:Name="patientPast" Header="View Past Appointments" Click="patientPast_Click" InputGestureText="Ctrl+W"/>
+                        <MenuItem x:Name="patientPast" Header="View Patient History" Click="patientPast_Click" InputGestureText="Ctrl+W"/>
                 		
                 	</MenuItem>
                 	<MenuItem Header="Appt" Width="52.913" x:Name="apptMenu">
