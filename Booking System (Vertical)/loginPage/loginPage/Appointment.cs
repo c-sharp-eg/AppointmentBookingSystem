@@ -84,7 +84,7 @@ namespace loginPage
             
         }
 
-        public string ToString()
+        public override string ToString()
         {
             string output = "";
             output += "Date: " + date.ToShortDateString() + "\n";

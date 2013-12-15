@@ -60,7 +60,6 @@ namespace loginPage
             bookAddButton.IsEnabled = false;
 
             //just for display testing print random appointments
-            displayRandomAppointments();
             addRandomPatients();
         }
 
@@ -890,62 +889,7 @@ namespace loginPage
 
         }
 
-        public void displayRandomAppointments()
-        {
-            string[] d0 = new string[23];
-            string[] d1 = new string[23];
-            string[] d2 = new string[23];
-            string[] d3 = new string[23];
-            string[] d4 = new string[23];
-
-            Random random = new Random();
-            int randomNumber = random.Next(0, 23);
-
-            d0[randomNumber] = "Patient X"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Jones, Bob"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Daffy, Duck"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Smith, John"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Presley, Elvis"; randomNumber = random.Next(0, 23);
-            d1[randomNumber] = "Frank, Ryan"; randomNumber = random.Next(0, 23);
-            d1[randomNumber] = "Goldberg, Suzan"; randomNumber = random.Next(0, 23);
-            d1[randomNumber] = "Burns, Montgomery"; randomNumber = random.Next(0, 23);
-            d1[randomNumber] = "Francis, Joanne"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Gorgon, Medussa"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Willson, Mark"; randomNumber = random.Next(0, 23);
-            d2[randomNumber] = "Nguyn, Lee"; randomNumber = random.Next(0, 23);
-            d2[randomNumber] = "Miller, Sarah"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Alverez, Roberto"; randomNumber = random.Next(0, 23);
-            d4[randomNumber] = "Rolandson, Peter"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Asimov, Issac"; randomNumber = random.Next(0, 23);
-            d3[randomNumber] = "Obama, Barac"; randomNumber = random.Next(0, 23);
-            d1[randomNumber] = "Clindon, Hillary"; randomNumber = random.Next(0, 23);
-            d1[randomNumber] = "Gabriels, Cristina"; randomNumber = random.Next(0, 23);
-            d2[randomNumber] = "Yong, Nikodim"; randomNumber = random.Next(0, 23);
-            d3[randomNumber] = "Mohana, Noah"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Taide, Margert"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Trans, Judy"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Von Trappe, Julie"; randomNumber = random.Next(0, 23);
-            d2[randomNumber] = "Andrews, Danny"; randomNumber = random.Next(0, 23);
-            d1[randomNumber] = "De vito, Arnold"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Schwartsnager, Maria"; randomNumber = random.Next(0, 23);
-            d2[randomNumber] = "Ford, Rob"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Ford, Henry"; randomNumber = random.Next(0, 23);
-            d3[randomNumber] = "Pascal, Blaise"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Kepler, Jon"; randomNumber = random.Next(0, 23);
-            d2[randomNumber] = "Bosonova, Jim"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "McNight, Tim"; randomNumber = random.Next(0, 23);
-            d3[randomNumber] = "Boston, Eminem"; randomNumber = random.Next(0, 23);
-            d4[randomNumber] = "Cuttings, Sam"; randomNumber = random.Next(0, 23);
-            d1[randomNumber] = "Mercier, Piere"; randomNumber = random.Next(0, 23);
-            d1[randomNumber] = "Nenchi, Nahed"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Iginla, Jerome"; randomNumber = random.Next(0, 23);
-            d4[randomNumber] = "Nathanels, Jessica"; randomNumber = random.Next(0, 23);
-            d0[randomNumber] = "Bianca, Charles"; randomNumber = random.Next(0, 23);
-
-            updateMainCalander(d0, d1, d2, d3, d4);
-        }
-
-
+    
         public void addRandomPatients()
         {
             Patient p1 = new Patient("Michael", "Hayden", "M", "112 Angel St.", 410, 6658734, "United States", "Maryland", "Baltimore", 07, 05, 1965, 223444111, "");
@@ -1053,19 +997,25 @@ namespace loginPage
                 {
                     appt.doctor = 0;
                     appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                    //check if the stringto timeslot returned a valid index
+                    if (appt.timeslot == -1)
+                    {
+                        var mb = MessageBox.Show("Error:stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());");
+                    }
+                    
                     appt.patient = this.selectedPatient;
                     appt.date = date;
                     //check if appointment already booked
-                    if (dayOfAppt.d0.ElementAt(appt.timeslot) != null)
+                    if (dayOfAppt.d0[appt.timeslot] == null)
                     {
-                        dayOfAppt.d0.Add(appt);
+                        dayOfAppt.d0[appt.timeslot] = appt;
                     }
                     else
                     {
-                        if ((dayOfAppt.d0.ElementAt(appt.timeslot).doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        if ((dayOfAppt.d0[appt.timeslot].doubleBookedAppt == null) && (bookDouble.IsChecked == true))
                         {
-                            dayOfAppt.d0.ElementAt(appt.timeslot).doubleBookedAppt = appt;
-                            dayOfAppt.d0.ElementAt(appt.timeslot).doubleBooked = true;
+                            dayOfAppt.d0[appt.timeslot].doubleBookedAppt = appt;
+                            dayOfAppt.d0[appt.timeslot].doubleBooked = true;
                         }
                         else
                         {
@@ -1082,16 +1032,16 @@ namespace loginPage
                     appt.patient = this.selectedPatient;
                     appt.date = date;
                     //check if appointment already booked
-                    if (dayOfAppt.d1.ElementAt(appt.timeslot) != null)
+                    if (dayOfAppt.d1[appt.timeslot] == null)
                     {
-                        dayOfAppt.d1.Add(appt);
+                        dayOfAppt.d1[appt.timeslot] = appt;
                     }
                     else
                     {
-                        if ((dayOfAppt.d1.ElementAt(appt.timeslot).doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        if ((dayOfAppt.d1[appt.timeslot].doubleBookedAppt == null) && (bookDouble.IsChecked == true))
                         {
-                            dayOfAppt.d1.ElementAt(appt.timeslot).doubleBookedAppt = appt;
-                            dayOfAppt.d1.ElementAt(appt.timeslot).doubleBooked = true;
+                            dayOfAppt.d1[appt.timeslot].doubleBookedAppt = appt;
+                            dayOfAppt.d1[appt.timeslot].doubleBooked = true;
                         }
                         else
                         {
@@ -1107,16 +1057,16 @@ namespace loginPage
                     appt.patient = this.selectedPatient;
                     appt.date = date;
                     //check if appointment already booked
-                    if (dayOfAppt.d2.ElementAt(appt.timeslot) != null)
+                    if (dayOfAppt.d2[appt.timeslot] == null)
                     {
-                        dayOfAppt.d2.Add(appt);
+                        dayOfAppt.d2[appt.timeslot] = appt;
                     }
                     else
                     {
-                        if ((dayOfAppt.d2.ElementAt(appt.timeslot).doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        if ((dayOfAppt.d2[appt.timeslot].doubleBookedAppt == null) && (bookDouble.IsChecked == true))
                         {
-                            dayOfAppt.d2.ElementAt(appt.timeslot).doubleBookedAppt = appt;
-                            dayOfAppt.d2.ElementAt(appt.timeslot).doubleBooked = true;
+                            dayOfAppt.d2[appt.timeslot].doubleBookedAppt = appt;
+                            dayOfAppt.d2[appt.timeslot].doubleBooked = true;
                         }
                         else
                         {
@@ -1132,16 +1082,16 @@ namespace loginPage
                     appt.patient = this.selectedPatient;
                     appt.date = date;
                     //check if appointment already booked
-                    if (dayOfAppt.d3.ElementAt(appt.timeslot) != null)
+                    if (dayOfAppt.d3[appt.timeslot] == null)
                     {
-                        dayOfAppt.d3.Add(appt);
+                        dayOfAppt.d3[appt.timeslot] = appt;
                     }
                     else
                     {
-                        if ((dayOfAppt.d3.ElementAt(appt.timeslot).doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        if ((dayOfAppt.d3[appt.timeslot].doubleBookedAppt == null) && (bookDouble.IsChecked == true))
                         {
-                            dayOfAppt.d3.ElementAt(appt.timeslot).doubleBookedAppt = appt;
-                            dayOfAppt.d3.ElementAt(appt.timeslot).doubleBooked = true;
+                            dayOfAppt.d3[appt.timeslot].doubleBookedAppt = appt;
+                            dayOfAppt.d3[appt.timeslot].doubleBooked = true;
                         }
                         else
                         {
@@ -1157,16 +1107,16 @@ namespace loginPage
                     appt.patient = this.selectedPatient;
                     appt.date = date;
                     //check if appointment already booked
-                    if (dayOfAppt.d4.ElementAt(appt.timeslot) != null)
+                    if (dayOfAppt.d4[appt.timeslot] == null)
                     {
-                        dayOfAppt.d4.Add(appt);
+                        dayOfAppt.d4[appt.timeslot] = appt;
                     }
                     else
                     {
-                        if ((dayOfAppt.d4.ElementAt(appt.timeslot).doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        if ((dayOfAppt.d4[appt.timeslot].doubleBookedAppt == null) && (bookDouble.IsChecked == true))
                         {
-                            dayOfAppt.d4.ElementAt(appt.timeslot).doubleBookedAppt = appt;
-                            dayOfAppt.d4.ElementAt(appt.timeslot).doubleBooked = true;
+                            dayOfAppt.d4[appt.timeslot].doubleBookedAppt = appt;
+                            dayOfAppt.d4[appt.timeslot].doubleBooked = true;
                         }
                         else
                         {
@@ -1190,11 +1140,6 @@ namespace loginPage
             {
                 var mb = MessageBox.Show(err.ToString());
             }
-
-            currentSlot.Content = appt.patient.firstName + " " + appt.patient.lastName;
-            appInfoPatientTB.Text = currentSlot.Content.ToString();
-            
-
 
         }// end book appointment
 
