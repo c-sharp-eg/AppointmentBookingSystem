@@ -120,9 +120,8 @@
                 <ScrollViewer x:Name="schedScroll" HorizontalScrollBarVisibility ="Visible"  VerticalScrollBarVisibility="Hidden" Height="621.852" Canvas.Left="185" Canvas.Top="122" Width="788">
                 	<Grid Height="597.032" Width="787.662" Background="White">
                 		<Grid x:Name="doctor1" Margin="0,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
-                			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
-                            <DataGridColumnHeader Content="" Margin="0,25,-15,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t0" Click="calendarDatesClicked" BorderThickness="3,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" />
-                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,514" Foreground="Black" Name="d0t1" Click="calendarDatesClicked" BorderThickness="3,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
+                            <DataGridColumnHeader Content="" Margin="0,25,-15,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t0" Click="calendarDatesClicked" BorderThickness="3,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" IsMouseDirectlyOverChanged="d0t0_IsMouseDirectlyOverChanged" />
+                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,514" Foreground="Black" Name="d0t1" Click="calendarDatesClicked" BorderThickness="3,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" IsMouseDirectlyOverChanged="d0t0_IsMouseDirectlyOverChanged" />
                             <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t2" Click="calendarDatesClicked" BorderThickness="3,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" Width="170.065" Foreground="Black" Name="d0t3" Click="calendarDatesClicked" BorderThickness="3,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d0t4" Click="calendarDatesClicked" BorderThickness="3,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
@@ -144,10 +143,16 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t20" Click="calendarDatesClicked" BorderThickness="3,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t21" Click="calendarDatesClicked" BorderThickness="3,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d0t22" Click="calendarDatesClicked" BorderThickness="3,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                			<DataGridColumnHeader Content="Dr. Phillips" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d0" />
+                			<DataGridColumnHeader Content=" Dr. Phillips" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d0" BorderBrush="#FFF1F1F1" BorderThickness="1,0,12,0" >
+                				<DataGridColumnHeader.Background>
+                					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                						<GradientStop Color="White" Offset="0"/>
+                						<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                					</LinearGradientBrush>
+                				</DataGridColumnHeader.Background>
+                			</DataGridColumnHeader>
                 		</Grid>
                 		<Grid x:Name="doctor2" Margin="159,0,0,8" Background="White" HorizontalAlignment="Left" Width="155">
-                			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
                             <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t0" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t1" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d1t2" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
@@ -171,37 +176,53 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t20" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t21" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d1t22" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                			<DataGridColumnHeader Content="Dr. Strumpfer" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d1" />
+                			<DataGridColumnHeader Content=" Dr. Strumpfer" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d1" BorderBrush="#FFF1F1F1" BorderThickness="1,0,12,0" >
+                				<DataGridColumnHeader.Background>
+                					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                						<GradientStop Color="White" Offset="0"/>
+                						<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                					</LinearGradientBrush>
+                				</DataGridColumnHeader.Background>
+                			</DataGridColumnHeader>
                 		</Grid>
                 		<Grid x:Name="doctor3" Margin="318,0,314.662,8" Background="White">
-                			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
+                			<Grid.RowDefinitions>
+                				<RowDefinition Height="0.32*"/>
+                				<RowDefinition Height="0.68*"/>
+                			</Grid.RowDefinitions>
                             <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t0" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,514" Foreground="Black" Name="d2t1" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t2" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,100,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t3" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,125,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t4" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,150,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t5" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,175,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t6" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,200,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t7" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,225,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t8" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,250,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t9" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,275,-15.065,289.032" Foreground="Black" Name="d2t10" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,264.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t11" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,239.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t12" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,350,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" Name="d2t13" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,375,-15.065,189.032" Foreground="Black" Name="d2t14" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t15" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t16" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t17" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t18" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t19" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t20" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t21" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t22" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                            <DataGridColumnHeader Content="Dr. Cole" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" BorderThickness="4,2,18,2" Name="d2" />
+                            <DataGridColumnHeader Content="" Margin="0,50,-15.065,113.558" Foreground="Black" Name="d2t1" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
+                            <DataGridColumnHeader Content="" Margin="0,75,-15.065,88.59" Foreground="Black" Name="d2t2" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,63.59" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t3" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,38.59" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t4" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,13.59" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t5" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-11.41" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t6" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
+                            <DataGridColumnHeader Content="" Margin="0,11.41,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t7" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,36.41,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t8" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,61.41,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t9" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,86.41,-15.065,0" Foreground="Black" Name="d2t10" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Height="25" Grid.Row="1" VerticalAlignment="Top"/>
+                            <DataGridColumnHeader Content="" Margin="0,111.41,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t11" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,136.41,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d2t12" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,161.41,-15.065,0" VerticalAlignment="Top" Height="25" Foreground="Black" Name="d2t13" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1" d:LayoutOverrides="VerticalAlignment"/>
+                            <DataGridColumnHeader Content="" Margin="0,186.41,-15.065,189.032" Foreground="Black" Name="d2t14" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1" d:LayoutOverrides="VerticalAlignment"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,164.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t15" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,139.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t16" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,114.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t17" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,89.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t18" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,64.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t19" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t20" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t21" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d2t22" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0" Grid.Row="1"/>
+                            <DataGridColumnHeader Content=" Dr. Cole" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,163.59" Foreground="Black" BorderThickness="1,0,12,0" Name="d2" BorderBrush="#FFF1F1F1" >
+                            	<DataGridColumnHeader.Background>
+                            		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            			<GradientStop Color="White" Offset="0"/>
+                            			<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                            		</LinearGradientBrush>
+                            	</DataGridColumnHeader.Background>
+                            </DataGridColumnHeader>
                 		</Grid>
                 		<Grid x:Name="doctor4" Margin="0,0,159.662,8" Background="White" HorizontalAlignment="Right" Width="155">
-                			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
                             <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t0" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t1" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d3t2" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
@@ -225,10 +246,16 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t20" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t21" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d3t22" Click="calendarDatesClicked" BorderThickness="1,1,12,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                			<DataGridColumnHeader Content="Nurse Ratched" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d3" />
+                			<DataGridColumnHeader Content=" Nurse Ratched" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d3" BorderBrush="#FFF1F1F1" BorderThickness="1,0,12,0" >
+                				<DataGridColumnHeader.Background>
+                					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                						<GradientStop Color="White" Offset="0"/>
+                						<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                					</LinearGradientBrush>
+                				</DataGridColumnHeader.Background>
+                			</DataGridColumnHeader>
                 		</Grid>
                 		<Grid x:Name="doctor5" Margin="0,0,0.662,8" Background="White" HorizontalAlignment="Right" Width="155">
-                			<DataGridColumnHeader Content="Doctor 1" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black"/>
                             <DataGridColumnHeader Content="" Margin="0,25,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t0" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,50,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t1" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,75,-15.065,0" Height="25" VerticalAlignment="Top" Foreground="Black" Name="d4t2" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
@@ -252,35 +279,210 @@
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,39.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t20" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,14.032" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t21" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
                             <DataGridColumnHeader Content="" Margin="0,0,-15.065,-10.968" Height="25" VerticalAlignment="Bottom" Foreground="Black" Name="d4t22" Click="calendarDatesClicked" BorderThickness="1,1,16,1" Background="#FFEFEFEF" BorderBrush="#FFD0D0D0"/>
-                			<DataGridColumnHeader Content="Dr. Honeydew" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d4" />
+                			<DataGridColumnHeader Content=" Dr. Honeydew" Height="25" VerticalAlignment="Bottom" Margin="0,0,-15.065,564.032" Foreground="Black" Name="d4" BorderBrush="#FFF1F1F1" BorderThickness="1,0,12,0" >
+                				<DataGridColumnHeader.Background>
+                					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                						<GradientStop Color="White" Offset="0"/>
+                						<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                					</LinearGradientBrush>
+                				</DataGridColumnHeader.Background>
+                			</DataGridColumnHeader>
                 		</Grid>
                 	</Grid>
                 </ScrollViewer>
-                <StackPanel Width="60" Height="697.101" Canvas.Left="72" Canvas.Top="125.835">
-                	<DataGridColumnHeader Content="Time" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="8:00 - 8:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="8:20 - 8:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="8:40 - 9:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="9:00 - 9:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="9:20 - 9:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="9:40 - 10:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="10:00 - 10:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="10:20 - 10:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="10:40 - 11:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="11:00 - 11:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="11:20 - 11:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="11:40 - 12:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="12:00 - 12:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="12:20 - 12:40" Margin="0,0,-55.611,0" VerticalAlignment="Top" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="12:40 - 1:00" Margin="0,0,-55.611,0" d:LayoutOverrides="VerticalAlignment" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="1:00 - 1:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="1:20 - 1:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="1:40 - 2:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="2:00 - 2:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="2:20 - 2:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="2:40 - 3:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="3:00 - 3:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
-                	<DataGridColumnHeader Content="3:20 - 3:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black"/>
+                <StackPanel Width="60" Height="697.101" Canvas.Left="72" Canvas.Top="125.897">
+                	<DataGridColumnHeader Content=" Time" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFF1F1F1" BorderThickness="0,0,1,0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 8:00 - 8:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 8:20 - 8:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 8:40 - 9:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 9:00 - 9:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 9:20 - 9:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 9:40 - 10:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 10:00 - 10:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 10:20 - 10:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 10:40 - 11:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 11:00 - 11:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 11:20 - 11:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 11:40 - 12:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 12:00 - 12:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 12:20 - 12:40" Margin="0,0,-55.611,0" VerticalAlignment="Top" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 12:40 - 1:00" Margin="0,0,-55.611,0" d:LayoutOverrides="VerticalAlignment" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 1:00 - 1:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 1:20 - 1:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 1:40 - 2:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 2:00 - 2:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 2:20 - 2:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 2:40 - 3:00" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 3:00 - 3:20" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
+                	<DataGridColumnHeader Content=" 3:20 - 3:40" Margin="0,0,-55.611,0" Height="25" Foreground="Black" BorderBrush="#FFDADADA" BorderThickness="0">
+                		<DataGridColumnHeader.Background>
+                			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                				<GradientStop Color="White" Offset="0"/>
+                				<GradientStop Color="#FFF1F1F1" Offset="1"/>
+                			</LinearGradientBrush>
+                		</DataGridColumnHeader.Background>
+                	</DataGridColumnHeader>
                 </StackPanel>
                 <Button Canvas.Left="528" Canvas.Top="38" Content="Today" Height="23" Name="todayButton" Width="75" Click="todayButton_Click" />
                 <Canvas Canvas.Left="138" Canvas.Top="778" Height="114" Name="AppointmentInfoCanvas" Width="428" Background="White">

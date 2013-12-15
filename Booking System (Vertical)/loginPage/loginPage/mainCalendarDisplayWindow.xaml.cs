@@ -43,6 +43,9 @@ namespace loginPage
         DataGridColumnHeader previousSlot;
         DataGridColumnHeader currentSlot;
 
+        DataGridColumnHeader previousSlotOver;
+        DataGridColumnHeader currentSlotOver;
+
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
@@ -327,7 +330,30 @@ namespace loginPage
                 appInfoPatientTB.Text = "";
             }
 
-       }
+        }
+
+        private void d0t0_IsMouseDirectlyOverChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            greenGradient.StartPoint = new Point(0.5, 0);
+            greenGradient.EndPoint = new Point(0.5, 1);
+            greenGradient.GradientStops.Add(new GradientStop(Colors.LimeGreen, 0.0));
+            greenGradient.GradientStops.Add(new GradientStop(Colors.Lime, 1.0));
+            DataGridColumnHeader calButton = sender as DataGridColumnHeader;
+            previousSlotOver = currentSlotOver;
+            currentSlotOver = calButton;
+            if ((previousSlotOver != null) && (previousSlotOver.Background != greenGradient))
+            {
+                slotGrey.Color = Color.FromArgb(255, 239, 239, 239);
+                previousSlotOver.Background = slotGrey;
+            }
+            if (calButton.Background != greenGradient)
+            {
+                SolidColorBrush whiteArrowFill = new SolidColorBrush();
+                whiteArrowFill.Color = Color.FromArgb(255, 244, 244, 245);
+                calButton.Background = whiteArrowFill;
+            }
+             
+        }
 
         public void checkInFunc()
         {
@@ -1327,6 +1353,8 @@ namespace loginPage
             d4t21.Content = "";
             d4t22.Content = "";
         }
+
+        
 
 
     }
