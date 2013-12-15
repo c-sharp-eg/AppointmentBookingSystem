@@ -41,7 +41,7 @@ namespace loginPage
         cancelConfirmation confCancel = new cancelConfirmation();
 
         DataGridColumnHeader previousSlot;
-        DataGridColumnHeader currentSlot;
+        public DataGridColumnHeader currentSlot;
 
         DataGridColumnHeader previousSlotOver;
         DataGridColumnHeader currentSlotOver;
@@ -65,6 +65,7 @@ namespace loginPage
 
             this.KeyUp += new KeyEventHandler(mainCalendarDisplayWindow_KeyUp);
 
+            apptCancel.IsEnabled = false;
             //just for display testing print random appointments
             addRandomPatients();
         }
@@ -321,15 +322,10 @@ namespace loginPage
             */
             updateBookBox();
             updateApptInfoBox();
-            if (currentSlot.Content.ToString() != null)
-            {
-                appInfoPatientTB.Text = currentSlot.Content.ToString();
-            }
-            else
-            {
-                appInfoPatientTB.Text = "";
-            }
-
+            
+            //grey out the cancel appointment if text is empty
+            if (((string)currentSlot.Content) == "") apptCancel.IsEnabled = false;
+            else apptCancel.IsEnabled = true;
         }
 
         private void IsMouseDirectlyOverChanged(object sender, System.Windows.Input.MouseEventArgs e)
@@ -403,7 +399,7 @@ namespace loginPage
         public void cancelCheck()
         {
             confCancel.Close();
-            confCancel = new cancelConfirmation();
+            confCancel = new cancelConfirmation(this);
             confCancel.Show();
         }
 
@@ -417,6 +413,57 @@ namespace loginPage
 
         public void updateApptInfoBox()
         {
+            if (currentSlot.Content.ToString() != null)
+            {
+                //set name
+                appInfoPatientTB.Text = currentSlot.Content.ToString();
+                
+                /*
+                //load appointment notes
+                DayOfAppointments dayOfAppt;
+                bool containsDate = allAppointmentsDictionary.TryGetValue(displayDate.ToShortDateString(), out dayOfAppt);
+                if (!containsDate)
+                {
+                    AppointmentNotesTB.Text = "No appointment selected";
+                    return; //quit the method on error
+                }
+                Appointment appt;
+                int doctor = timeslotNametoDoctor(currentSlot.Name);
+                int timeslot = timeslotNametoIndex(currentSlot.Name);
+
+                if (doctor == 0)
+                {
+                    appt = dayOfAppt.d0[timeslot];
+                    var mb = MessageBox.Show(appt.notes);
+                }
+                else if (doctor == 1)
+                {
+                    appt = dayOfAppt.d1[timeslot];
+                }
+                else if (doctor == 2)
+                {
+                    appt = dayOfAppt.d2[timeslot];
+                }
+                else if (doctor == 3)
+                {
+                    appt = dayOfAppt.d3[timeslot];
+                }
+                else if (doctor == 4)
+                {
+                    appt = dayOfAppt.d4[timeslot];
+                }
+                else
+                {
+                    var mb = MessageBox.Show("Error: doctor timeslot in cancelConfirmation");//should never happen
+                }
+                */
+                
+            }
+            else
+            {
+                appInfoPatientTB.Text = "";
+            }
+
             if (timeslotNametoDoctor(currentSlot.Name) == 0)
                 appInfoDoctorTB.Text = "Dr. Phillips";
             if (timeslotNametoDoctor(currentSlot.Name) == 1)
@@ -474,6 +521,10 @@ namespace loginPage
                 appInfoTimeTB.Text = "3:00 - 3:20";
             if (timeslotNametoIndex(currentSlot.Name) == 22)
                 appInfoTimeTB.Text = "3:20 - 3:40";
+            appInfoDateTB.Text = displayDate.ToShortDateString();
+
+            
+
         }
 
         public void updateBookBox()
@@ -1083,7 +1134,8 @@ namespace loginPage
 
                 }
 
-                var mb2 = MessageBox.Show(appt.ToString());
+                //display message box with appointment
+                //var mb2 = MessageBox.Show(appt.ToString());
 
 
             }
@@ -1102,7 +1154,13 @@ namespace loginPage
             {
                 displayAppointments(dayOfAppt);
             }
+
+            //grey out the cancel appointment if text is empty
+            if (((string)currentSlot.Content) == "") apptCancel.IsEnabled = false;
+            else apptCancel.IsEnabled = true;
             
+            //update appoinment info boxed
+            updateApptInfoBox();
 
         }// end book appointment
 

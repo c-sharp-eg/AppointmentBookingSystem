@@ -4,7 +4,7 @@
         Title="cancelConfirmation" Height="181" Width="373" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="126,50,0,0" Name="textBlock1" Text="Cancel Appointment?" VerticalAlignment="Top" />
-        <Button Content="Yes" Height="23" HorizontalAlignment="Left" Margin="205,92,0,0" Name="yesCancel" VerticalAlignment="Top" Width="75" />
-        <Button Content="No" Height="23" HorizontalAlignment="Left" Margin="84,92,0,0" Name="noCancel" VerticalAlignment="Top" Width="75" />
+        <Button Content="Yes" Height="23" HorizontalAlignment="Left" Margin="205,92,0,0" Name="yesCancel" VerticalAlignment="Top" Width="75" Click="yesCancel_Click" />
+        <Button Content="No" Height="23" HorizontalAlignment="Left" Margin="84,92,0,0" Name="noCancel" VerticalAlignment="Top" Width="75" Click="noCancel_Click" />
     </Grid>
 </Window>
