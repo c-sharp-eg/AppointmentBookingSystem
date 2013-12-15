@@ -400,7 +400,9 @@ namespace loginPage
         {
             confCancel.Close();
             confCancel = new cancelConfirmation(this);
-            confCancel.Show();
+            this.IsEnabled = false;
+            confCancel.ShowDialog();
+            this.IsEnabled = true;
         }
 
         private void apptCancel_Click(object sender, RoutedEventArgs e)
