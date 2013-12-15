@@ -48,10 +48,8 @@ namespace loginPage
 
         override public string ToString()
         {
-            return firstName + " " +  lastName + " " +  sex + " " +
-                     address + " " +  areaCode + " " +  phoneNumber + " " +  country + " " +
-                     province + " " +  city + " " +  dobMM + " " +  dobDD + " " +  dobYYYY +
-                     " " + healthcare + " " + "notes: \"" + notes + "\"";
+            return firstName + " " +  lastName + " " +
+                     address;
         }
 
     }

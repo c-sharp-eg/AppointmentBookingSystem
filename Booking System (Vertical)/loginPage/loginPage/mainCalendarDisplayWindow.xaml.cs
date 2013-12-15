@@ -24,6 +24,8 @@ namespace loginPage
         public const int NUM_DOCTORS = 5;
         public const int NUM_TIMESLOTS = 23;
 
+        public DateTime displayDate;
+
         //global variables
         public Dictionary<DateTime, DayOfAppointments> allAppointmentsDictionary = new Dictionary<DateTime,DayOfAppointments>();
         public List<Patient> patients = new List<Patient>();
@@ -50,9 +52,10 @@ namespace loginPage
         {
             InitializeComponent();
 
-            monthCalendar.SelectedDate = DateTime.Now;
-            dateBox.SelectedDate = DateTime.Now;
-            bookDate.SelectedDate = DateTime.Now;
+            displayDate = DateTime.Now;
+            monthCalendar.SelectedDate = displayDate;
+            dateBox.SelectedDate = displayDate;
+            bookDate.SelectedDate = displayDate;
             checkInButton.IsEnabled = false;
             bookAddButton.IsEnabled = false;
 
@@ -1035,6 +1038,7 @@ namespace loginPage
                     if (!containsDate)
                     {
                         var mb = MessageBox.Show("Error in lookup of dayOfAppt");
+                        return; //quit the method on error
                     }
 
                 }
@@ -1051,7 +1055,25 @@ namespace loginPage
                     appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
                     appt.patient = this.selectedPatient;
                     appt.date = date;
-                    dayOfAppt.d0.Add(appt);
+                    //check if appointment already booked
+                    if (dayOfAppt.d0.ElementAt(appt.timeslot) != null)
+                    {
+                        dayOfAppt.d0.Add(appt);
+                    }
+                    else
+                    {
+                        if ((dayOfAppt.d0.ElementAt(appt.timeslot).doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        {
+                            dayOfAppt.d0.ElementAt(appt.timeslot).doubleBookedAppt = appt;
+                            dayOfAppt.d0.ElementAt(appt.timeslot).doubleBooked = true;
+                        }
+                        else
+                        {
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot.");
+                            return; //quit method on error
+                        }
+                    }
+
                 }
                 else if (d1Dropdown.IsSelected)
                 {
@@ -1059,7 +1081,24 @@ namespace loginPage
                     appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
                     appt.patient = this.selectedPatient;
                     appt.date = date;
-                    dayOfAppt.d1.Add(appt);
+                    //check if appointment already booked
+                    if (dayOfAppt.d1.ElementAt(appt.timeslot) != null)
+                    {
+                        dayOfAppt.d1.Add(appt);
+                    }
+                    else
+                    {
+                        if ((dayOfAppt.d1.ElementAt(appt.timeslot).doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        {
+                            dayOfAppt.d1.ElementAt(appt.timeslot).doubleBookedAppt = appt;
+                            dayOfAppt.d1.ElementAt(appt.timeslot).doubleBooked = true;
+                        }
+                        else
+                        {
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot.");
+                            return; //quit method on error
+                        }
+                    }
                 }
                 else if (d2Dropdown.IsSelected)
                 {
@@ -1067,7 +1106,24 @@ namespace loginPage
                     appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
                     appt.patient = this.selectedPatient;
                     appt.date = date;
-                    dayOfAppt.d2.Add(appt);
+                    //check if appointment already booked
+                    if (dayOfAppt.d2.ElementAt(appt.timeslot) != null)
+                    {
+                        dayOfAppt.d2.Add(appt);
+                    }
+                    else
+                    {
+                        if ((dayOfAppt.d2.ElementAt(appt.timeslot).doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        {
+                            dayOfAppt.d2.ElementAt(appt.timeslot).doubleBookedAppt = appt;
+                            dayOfAppt.d2.ElementAt(appt.timeslot).doubleBooked = true;
+                        }
+                        else
+                        {
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot.");
+                            return; //quit method on error
+                        }
+                    }
                 }
                 else if (d3Dropdown.IsSelected)
                 {
@@ -1075,7 +1131,24 @@ namespace loginPage
                     appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
                     appt.patient = this.selectedPatient;
                     appt.date = date;
-                    dayOfAppt.d3.Add(appt);
+                    //check if appointment already booked
+                    if (dayOfAppt.d3.ElementAt(appt.timeslot) != null)
+                    {
+                        dayOfAppt.d3.Add(appt);
+                    }
+                    else
+                    {
+                        if ((dayOfAppt.d3.ElementAt(appt.timeslot).doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        {
+                            dayOfAppt.d3.ElementAt(appt.timeslot).doubleBookedAppt = appt;
+                            dayOfAppt.d3.ElementAt(appt.timeslot).doubleBooked = true;
+                        }
+                        else
+                        {
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot.");
+                            return; //quit method on error
+                        }
+                    }
                 }
                 else if (d4Dropdown.IsSelected)
                 {
@@ -1083,7 +1156,24 @@ namespace loginPage
                     appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
                     appt.patient = this.selectedPatient;
                     appt.date = date;
-                    dayOfAppt.d4.Add(appt);
+                    //check if appointment already booked
+                    if (dayOfAppt.d4.ElementAt(appt.timeslot) != null)
+                    {
+                        dayOfAppt.d4.Add(appt);
+                    }
+                    else
+                    {
+                        if ((dayOfAppt.d4.ElementAt(appt.timeslot).doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        {
+                            dayOfAppt.d4.ElementAt(appt.timeslot).doubleBookedAppt = appt;
+                            dayOfAppt.d4.ElementAt(appt.timeslot).doubleBooked = true;
+                        }
+                        else
+                        {
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot.");
+                            return; //quit method on error
+                        }
+                    }
                 }
                 else
                 {
