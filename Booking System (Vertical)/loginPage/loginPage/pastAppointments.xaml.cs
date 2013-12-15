@@ -18,7 +18,10 @@ namespace loginPage
     /// </summary>
     public partial class pastAppointments : Window
     {
+        public Patient selectedPatient;
+        public Boolean patientSelected;
         searchPatient searchPat = new searchPatient();
+        public mainCalendarDisplayWindow caller;
 
         protected override void OnClosed(EventArgs e)
         {
@@ -29,6 +32,14 @@ namespace loginPage
         public pastAppointments()
         {
             InitializeComponent();
+            patientSelected = false;
+        }
+
+        public pastAppointments(mainCalendarDisplayWindow caller)
+        {
+            this.caller = caller;
+            InitializeComponent();
+            patientSelected = false;
         }
 
         private void pastCloseButton_Click(object sender, RoutedEventArgs e)
@@ -41,6 +52,14 @@ namespace loginPage
             searchPat.Close();
             searchPat = new searchPatient(this);
             searchPat.Show();
+        }
+
+        public void ShowPatient(Patient p)
+        {
+            foreach (Appointment a in p.appointments)
+            {
+                pastApptLB.Items.Add(a);
+            }
         }
     }
 }

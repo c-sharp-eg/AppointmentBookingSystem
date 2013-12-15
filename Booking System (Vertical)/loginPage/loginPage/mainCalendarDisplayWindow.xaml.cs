@@ -232,7 +232,7 @@ namespace loginPage
         private void patientPast_Click(object sender, RoutedEventArgs e)
         {
             pastAppt.Close();
-            pastAppt = new pastAppointments();
+            pastAppt = new pastAppointments(this);
             pastAppt.Show();
         }
 
@@ -1026,7 +1026,7 @@ namespace loginPage
                             return; //quit method on error
                         }
                     }
-
+                    selectedPatient.appointments.Add(appt);
                 }
                 else if (d1Dropdown.IsSelected)
                 {
@@ -1052,6 +1052,7 @@ namespace loginPage
                             return; //quit method on error
                         }
                     }
+                    selectedPatient.appointments.Add(appt);
                 }
                 else if (d2Dropdown.IsSelected)
                 {
@@ -1077,6 +1078,7 @@ namespace loginPage
                             return; //quit method on error
                         }
                     }
+                    selectedPatient.appointments.Add(appt);
                 }
                 else if (d3Dropdown.IsSelected)
                 {
@@ -1102,6 +1104,7 @@ namespace loginPage
                             return; //quit method on error
                         }
                     }
+                    selectedPatient.appointments.Add(appt);
                 }
                 else if (d4Dropdown.IsSelected)
                 {
@@ -1127,6 +1130,7 @@ namespace loginPage
                             return; //quit method on error
                         }
                     }
+                    selectedPatient.appointments.Add(appt);
                 }
                 else
                 {

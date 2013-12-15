@@ -49,7 +49,9 @@ namespace loginPage
         {
             this.caller = new pastAppointments();
             this.caller = input;
+            this.mainCal = ((pastAppointments)this.caller).caller;
             InitializeComponent();
+            displayPatients();
         }
 
         private void searchCancelButton_Click_1(object sender, RoutedEventArgs e)
@@ -94,7 +96,13 @@ namespace loginPage
                 {
                     pastAppointments temp = new pastAppointments();
                     temp = (pastAppointments)caller;
-                    temp.pastPatientName.Text="<"+patient.lastName+","+patient.firstName+">";
+                    if (searchPatLB.SelectedItem != null)
+                    {
+                        patient = (Patient)searchPatLB.SelectedItem;
+                        temp.selectedPatient = patient;
+                        temp.ShowPatient(patient);
+                    }
+                    temp.patientSelected = true;
                 }
                 
             }
