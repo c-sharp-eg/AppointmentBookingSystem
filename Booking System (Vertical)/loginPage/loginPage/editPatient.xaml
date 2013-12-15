@@ -28,7 +28,7 @@
             <ComboBoxItem Content="M" Name="editMale" />
             <ComboBoxItem Content="F" Name="editFemale" />
         </ComboBox>
-        <TextBlock Margin="232.456,0,234.1,148" TextWrapping="Wrap" Text="Notes" VerticalAlignment="Bottom" d:LayoutOverrides="Width"/>
+        <TextBlock Margin="232.456,0,234.1,148" TextWrapping="Wrap" VerticalAlignment="Bottom" d:LayoutOverrides="Width"><Run Text="Note"/><Run Language="en-ca" Text="s"/></TextBlock>
         <ScrollViewer Height="100" Margin="232.456,0,53.5,48" VerticalAlignment="Bottom" GotFocus="errorMsgNoPatientSelected">
             <TextBox TextWrapping="Wrap" Height="100" Width="209" Name="editNotes" />
         </ScrollViewer>
