@@ -109,13 +109,14 @@ namespace loginPage
         public void displayPatients()
         {
             List<Patient> patients;
+            List<Patient> sortedPatients;
             try
             {
                 mainCalendarDisplayWindow calandar;
                 calandar = (mainCalendarDisplayWindow)mainCal;
                 patients = calandar.patients;
-                
-                foreach (Patient p in patients)
+                sortedPatients = patients.OrderBy(o => o.lastName).ToList();
+                foreach (Patient p in sortedPatients)
                 {
                     string pFirstName = p.firstName;
                     string pLastName = p.lastName;
