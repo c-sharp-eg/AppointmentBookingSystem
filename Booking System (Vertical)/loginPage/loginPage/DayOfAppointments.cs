@@ -20,6 +20,26 @@ namespace loginPage
             this.date = date;
         }
 
+        public override string ToString()
+        {
+            string output="";
+            for (int i = 0; i < 23; i++)
+            {
+                if (d0[i] != null) output += d0[i] + "\t";
+                else output += "\t\t";
+                if (d1[i] != null) output += d0[i] + "\t";
+                else output += "\t\t";
+                if (d2[i] != null) output += d0[i] + "\t";
+                else output += "\t\t";
+                if (d3[i] != null) output += d0[i] + "\t";
+                else output += "\t\t";
+                if (d4[i] != null) output += d0[i] + "\t";
+                else output += "\t\t";
+                output += "\n";
+            }
+            return output;
+        }
+
         
 
     }

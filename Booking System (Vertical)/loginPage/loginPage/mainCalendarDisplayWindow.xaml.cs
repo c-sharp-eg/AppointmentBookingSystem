@@ -993,16 +993,28 @@ namespace loginPage
                     appt.doubleBooked = false;
                 }
 
+                //get and checktimeslot
+                int timeslot=-1;
+                try
+                {
+                    timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                }
+                catch (Exception err)
+                {
+                    var mb = MessageBox.Show("Error: No timeslot selected. Please select a timeslot.");
+                    return; //quit on error
+                }
+                //check if the stringto timeslot returned a valid index
+                if (appt.timeslot == -1)
+                {
+                    var mb = MessageBox.Show("Error(-1): No timeslot selected. Please select a timeslot.");
+                    return; //quit on error
+                }
+                
                 if (d0Dropdown.IsSelected)
                 {
                     appt.doctor = 0;
-                    appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
-                    //check if the stringto timeslot returned a valid index
-                    if (appt.timeslot == -1)
-                    {
-                        var mb = MessageBox.Show("Error:stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());");
-                    }
-                    
+                    appt.timeslot = timeslot;
                     appt.patient = this.selectedPatient;
                     appt.date = date;
                     //check if appointment already booked
@@ -1028,7 +1040,7 @@ namespace loginPage
                 else if (d1Dropdown.IsSelected)
                 {
                     appt.doctor = 1;
-                    appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                    appt.timeslot = timeslot;
                     appt.patient = this.selectedPatient;
                     appt.date = date;
                     //check if appointment already booked
@@ -1053,7 +1065,7 @@ namespace loginPage
                 else if (d2Dropdown.IsSelected)
                 {
                     appt.doctor = 2;
-                    appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                    appt.timeslot = timeslot;
                     appt.patient = this.selectedPatient;
                     appt.date = date;
                     //check if appointment already booked
@@ -1078,7 +1090,7 @@ namespace loginPage
                 else if (d3Dropdown.IsSelected)
                 {
                     appt.doctor = 3;
-                    appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                    appt.timeslot = timeslot;
                     appt.patient = this.selectedPatient;
                     appt.date = date;
                     //check if appointment already booked
@@ -1103,7 +1115,7 @@ namespace loginPage
                 else if (d4Dropdown.IsSelected)
                 {
                     appt.doctor = 4;
-                    appt.timeslot = stringToTimeslotInt(((ComboBoxItem)bookTime.SelectedItem).Content.ToString());
+                    appt.timeslot = timeslot;
                     appt.patient = this.selectedPatient;
                     appt.date = date;
                     //check if appointment already booked
@@ -1140,6 +1152,19 @@ namespace loginPage
             {
                 var mb = MessageBox.Show(err.ToString());
             }
+
+            bool containsSelectedDate = allAppointmentsDictionary.TryGetValue(date, out dayOfAppt);
+            if (!containsSelectedDate)
+            {
+                var mb = MessageBox.Show("No appointments for current day");
+                return; //quit the method on error
+            }
+            else
+            {
+                displayAppointments(dayOfAppt);
+                var mb = MessageBox.Show(dayOfAppt.ToString());
+            }
+            
 
         }// end book appointment
 
@@ -1181,6 +1206,73 @@ namespace loginPage
             bookAddButton.IsEnabled = false;
         }
 
+        public void displayAppointments(DayOfAppointments dayOfAppts)
+        {
+            string[] d0 = new string[23];
+            string[] d1 = new string[23];
+            string[] d2 = new string[23];
+            string[] d3 = new string[23];
+            string[] d4 = new string[23];
+
+            //for loop the timeslots
+            for (int i = 0; i<23; i++)
+            {
+                if (dayOfAppts.d0[i] != null)
+                {
+                    if (dayOfAppts.d0[i].doubleBooked)
+                        d0[i] = "" + dayOfAppts.d0[i].patient.lastName + ", " + dayOfAppts.d0[i].patient.lastName
+                               + "\n" + dayOfAppts.d0[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d0[i].doubleBookedAppt.patient.firstName;
+                    else
+                        d0[i] = "" + dayOfAppts.d0[i].patient.lastName + ", " + dayOfAppts.d0[i].patient.lastName;
+                }
+                else d0[i] = "";
+
+                if (dayOfAppts.d1[i] != null)
+                {
+                    if (dayOfAppts.d1[i].doubleBooked)
+                        d1[i] = "" + dayOfAppts.d1[i].patient.lastName + ", " + dayOfAppts.d1[i].patient.lastName
+                               + "\n" + dayOfAppts.d1[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d1[i].doubleBookedAppt.patient.firstName;
+                    else
+                        d1[i] = "" + dayOfAppts.d1[i].patient.lastName + ", " + dayOfAppts.d1[i].patient.lastName;
+                }
+                else d1[i] = "";
+
+                if (dayOfAppts.d2[i] != null)
+                {
+                    if (dayOfAppts.d2[i].doubleBooked)
+                        d2[i] = "" + dayOfAppts.d2[i].patient.lastName + ", " + dayOfAppts.d2[i].patient.lastName
+                               + "\n" + dayOfAppts.d2[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d2[i].doubleBookedAppt.patient.firstName;
+                    else
+                        d2[i] = "" + dayOfAppts.d2[i].patient.lastName + ", " + dayOfAppts.d2[i].patient.lastName;
+                }
+                else d2[i] = "";
+
+                if (dayOfAppts.d3[i] != null)
+                {
+                    if (dayOfAppts.d3[i].doubleBooked)
+                        d3[i] = "" + dayOfAppts.d3[i].patient.lastName + ", " + dayOfAppts.d3[i].patient.lastName
+                               + "\n" + dayOfAppts.d3[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d3[i].doubleBookedAppt.patient.firstName;
+                    else
+                        d3[i] = "" + dayOfAppts.d3[i].patient.lastName + ", " + dayOfAppts.d3[i].patient.lastName;
+                }
+                else d3[i] = "";
+
+                if (dayOfAppts.d4[i] != null)
+                {
+                    if (dayOfAppts.d4[i].doubleBooked)
+                        d4[i] = "" + dayOfAppts.d4[i].patient.lastName + ", " + dayOfAppts.d4[i].patient.lastName
+                               + "\n" + dayOfAppts.d4[i].doubleBookedAppt.patient.lastName + ", " + dayOfAppts.d4[i].doubleBookedAppt.patient.firstName;
+                    else
+                        d4[i] = "" + dayOfAppts.d4[i].patient.lastName + ", " + dayOfAppts.d4[i].patient.lastName;
+                }
+                else d4[i] = "";
+
+            }//end for loop (timeslots)
+
+            //update the display
+            this.updateMainCalander(d0, d1, d2, d3, d4);
+
+        }
 
 
     }
