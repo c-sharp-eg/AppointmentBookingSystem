@@ -332,7 +332,7 @@ namespace loginPage
 
         }
 
-        private void d0t0_IsMouseDirectlyOverChanged(object sender, DependencyPropertyChangedEventArgs e)
+        private void IsMouseDirectlyOverChanged(object sender, System.Windows.Input.MouseEventArgs e)
         {
             greenGradient.StartPoint = new Point(0.5, 0);
             greenGradient.EndPoint = new Point(0.5, 1);
@@ -341,7 +341,7 @@ namespace loginPage
             DataGridColumnHeader calButton = sender as DataGridColumnHeader;
             previousSlotOver = currentSlotOver;
             currentSlotOver = calButton;
-            if ((previousSlotOver != null) && (previousSlotOver.Background != greenGradient))
+            if ((previousSlotOver != null) && (previousSlotOver.Background != greenGradient) && (previousSlotOver != currentSlot))
             {
                 slotGrey.Color = Color.FromArgb(255, 239, 239, 239);
                 previousSlotOver.Background = slotGrey;
@@ -1353,6 +1353,9 @@ namespace loginPage
             d4t21.Content = "";
             d4t22.Content = "";
         }
+
+
+
 
         
 
