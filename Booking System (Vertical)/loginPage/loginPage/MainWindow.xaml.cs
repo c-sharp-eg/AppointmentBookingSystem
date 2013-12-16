@@ -19,6 +19,8 @@ namespace loginPage
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string USERNAME = "";
+        private string PASSWORD = "";
 
         protected override void OnClosed(EventArgs e)
         {
@@ -63,7 +65,7 @@ namespace loginPage
         {
             //hardcoded username/password
             //probably want this blank when we're testing
-            if ((usernameField.Text == "") && (passwordField.Password == ""))
+            if ((usernameField.Text == USERNAME) && (passwordField.Password == PASSWORD))
             {
                 statusText.Foreground = Brushes.Green;
                 statusText.Text = "Logging in...";
