@@ -90,6 +90,12 @@ namespace loginPage
                 fileLogOut_Click(sender, e);
         }
 
+        //booking a slot off
+        private void fileBookOff_Click(object sender, RoutedEventArgs e)
+        {
+            bookSelectedDateOff();
+        }
+        
         //logging out in file menu
         private void fileLogOut_Click(object sender, RoutedEventArgs e)
         {
@@ -1570,7 +1576,7 @@ namespace loginPage
         public void bookSelectedDateOff()
         {
             if (currentSlot == null) return; //check if no slot selected
-            if ((string)currentSlot.Content == "") return; //check if no appointment
+            if ((string)currentSlot.Content != "") return; //check if no appointment
 
             var GetInput = MessageBox.Show("Do you want to book this slot off?", "Confirm Deletion",MessageBoxButton.OKCancel);
             if (GetInput == MessageBoxResult.OK)
@@ -1632,6 +1638,8 @@ namespace loginPage
                 }
 
             }//end if messagebox selectiong was to book off
+
+            refreshDisplayDate();
         }//end bookSelected date off
 
     }
