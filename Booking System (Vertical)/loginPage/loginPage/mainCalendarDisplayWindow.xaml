@@ -54,7 +54,7 @@
                 	</MenuItem>
                 	<MenuItem Header="Appt" Width="52.913" x:Name="apptMenu">
                         <MenuItem Header="Check In" x:Name="apptCheckIn" Click="apptCheckIn_Click" InputGestureText="Ctrl+C"/>
-                        <MenuItem Header="Cancel Booking" x:Name="apptCancel" Click="apptCancel_Click" InputGestureText="Ctrl+Y"/>		
+                        <MenuItem Header="Cancel Booking" x:Name="apptCancel" Click="apptCancel_Click" InputGestureText="Ctrl+Y"/>
                 	</MenuItem>
                 	<MenuItem Header="Bill" Width="60.6" x:Name="billMenu">
                         <MenuItem Header="Open Billing" x:Name="billOpen" Click="billOpen_Click" InputGestureText="Ctrl+B"/>
