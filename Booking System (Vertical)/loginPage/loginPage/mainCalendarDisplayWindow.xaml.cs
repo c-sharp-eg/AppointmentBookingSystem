@@ -1758,7 +1758,7 @@ namespace loginPage
             if (currentSlot == null) return; //check if no slot selected
             if ((string)currentSlot.Content != "") return; //check if no appointment
 
-            var GetInput = MessageBox.Show("Do you want to book this slot off?", "Confirm Deletion",MessageBoxButton.OKCancel);
+            var GetInput = MessageBox.Show("Do you want to book this slot off?", "Confirm Book-Off",MessageBoxButton.OKCancel);
             if (GetInput == MessageBoxResult.OK)
             {
                 DateTime date = displayDate.Date;
