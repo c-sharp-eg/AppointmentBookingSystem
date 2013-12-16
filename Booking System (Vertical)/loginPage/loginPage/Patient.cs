@@ -24,7 +24,9 @@ namespace loginPage
         public string notes;
         public List<Appointment> appointments = new List<Appointment>();
 
-        
+        public Patient()
+        {
+        }
 
         public Patient(string firstName, string lastName, string sex,
                     string address, int areaCode, int phoneNumber, string country,
@@ -52,4 +54,14 @@ namespace loginPage
         }
 
     }
+
+    public class bookedOffPatient : Patient
+    {
+        public bookedOffPatient()
+        {
+            this.lastName = "BOOKED";
+            this.firstName = "OFF";
+        }
+            
+    }//end bookedOffPatient
 }

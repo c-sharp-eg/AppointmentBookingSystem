@@ -1566,8 +1566,73 @@ namespace loginPage
                 
         
         }//end updateappnotesforcurrentslot
-               
 
+        public void bookSelectedDateOff()
+        {
+            if (currentSlot == null) return; //check if no slot selected
+            if ((string)currentSlot.Content == "") return; //check if no appointment
+
+            var GetInput = MessageBox.Show("Do you want to book this slot off?", "Confirm Deletion",MessageBoxButton.OKCancel);
+            if (GetInput == MessageBoxResult.OK)
+            {
+                DateTime date = displayDate.Date;
+                DayOfAppointments dayOfAppt;
+                if (allAppointmentsDictionary.ContainsKey(date.ToShortDateString()))
+                {
+                    bool containsDate = allAppointmentsDictionary.TryGetValue(date.ToShortDateString(), out dayOfAppt);
+                    if (!containsDate)
+                    {
+                        var mb = MessageBox.Show("Error in lookup of dayOfAppt"); //should never happen
+                        return; //quit the method on error
+                    }
+                }
+                else
+                {
+                    dayOfAppt = new DayOfAppointments(date);
+                    allAppointmentsDictionary.Add(date.ToShortDateString(), dayOfAppt);
+                }
+                int doc = timeslotNametoDoctor(currentSlot.Name);
+                int slot =timeslotNametoIndex(currentSlot.Name);
+                ApptBookedOff appt = new ApptBookedOff(date, doc, slot);
+
+                if (doc == 0)
+                {
+                    if (dayOfAppt.d0[appt.timeslot] == null)
+                    {
+                        dayOfAppt.d0[appt.timeslot] = appt;
+                    }
+                }
+                else if (doc == 1)
+                {
+                    if (dayOfAppt.d1[appt.timeslot] == null)
+                    {
+                        dayOfAppt.d1[appt.timeslot] = appt;
+                    }
+                }
+                else if (doc == 2)
+                {
+                    if (dayOfAppt.d2[appt.timeslot] == null)
+                    {
+                        dayOfAppt.d2[appt.timeslot] = appt;
+                    }
+                }
+                else if (doc == 3)
+                {
+                    if (dayOfAppt.d3[appt.timeslot] == null)
+                    {
+                        dayOfAppt.d3[appt.timeslot] = appt;
+                    }
+                }
+                else if (doc == 4)
+                {
+                    if (dayOfAppt.d4[appt.timeslot] == null)
+                    {
+                        dayOfAppt.d4[appt.timeslot] = appt;
+                    }
+                }
+
+            }//end if messagebox selectiong was to book off
+        }//end bookSelected date off
 
     }
 

@@ -115,7 +115,7 @@ namespace loginPage
             this.doctor = doctor;
             this.timeslot = timeslot;
             this.notes = "THIS SLOT HAS BEEN BOOKED OFF.";
-            this.patient = null;
+            this.patient = new bookedOffPatient();
             this.date = date;
             this.doubleBooked = false;
             this.doubleBookedAppt = null;
