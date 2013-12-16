@@ -43,9 +43,10 @@
             <Canvas Width="1280" Height="962">
                 <Menu Canvas.Left="-2" Canvas.Top="0" Height="24" x:Name="menu" Width="1426">
                 	<MenuItem Header="File" Width="41.95" Height="22" x:Name="fileMenu">
-                		<MenuItem Header="Log Out" x:Name="fileLogOut" Click="fileLogOut_Click" InputGestureText="Ctrl+L" />
-                		<MenuItem Header="Exit" x:Name="fileExit" Click="fileExit_Click" />
                         <MenuItem Header="Book slot off" x:Name="fileBookOff" Click="fileBookOff_Click" InputGestureText="Ctrl+Z"/>
+                        <MenuItem Header="Log Out" x:Name="fileLogOut" Click="fileLogOut_Click" InputGestureText="Ctrl+L" />
+                		<MenuItem Header="Exit" x:Name="fileExit" Click="fileExit_Click" />
+
                 	</MenuItem>
                 	<MenuItem Header="Patient" Width="59.95" x:Name="patientMenu">
                         <MenuItem x:Name="patientNew" Header="New Patient" Click="patientNew_Click" InputGestureText="Ctrl+A"/>
