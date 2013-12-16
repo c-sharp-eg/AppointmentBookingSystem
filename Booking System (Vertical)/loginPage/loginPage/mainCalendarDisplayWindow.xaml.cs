@@ -296,7 +296,8 @@ namespace loginPage
             if (currentSlot.Content.ToString() != "")
             {
                 checkInButton.IsEnabled = true;
-                bookAddButton.IsEnabled = false;
+                //commented so double book is easier
+                //bookAddButton.IsEnabled = false;
             }
             else
             {
@@ -520,7 +521,7 @@ namespace loginPage
             if (timeslotNametoDoctor(currentSlot.Name) == 4)
                 bookDoctor.SelectedItem = d4Dropdown;
 
-
+            /*
             //updates the time dropdown
             tBooked.Visibility = System.Windows.Visibility.Collapsed;
             if (((string)currentSlot.Content) != "")
@@ -529,7 +530,9 @@ namespace loginPage
                 bookTime.SelectedItem = tBooked;
             }
             else
+
             {
+                */
                 if (timeslotNametoIndex(currentSlot.Name) == 0)
                     bookTime.SelectedItem = t0Dropdown;
                 if (timeslotNametoIndex(currentSlot.Name) == 1)
@@ -576,7 +579,7 @@ namespace loginPage
                     bookTime.SelectedItem = t21Dropdown;
                 if (timeslotNametoIndex(currentSlot.Name) == 22)
                     bookTime.SelectedItem = t22Dropdown;
-            }
+            //}
 
         }
 
@@ -1012,7 +1015,7 @@ namespace loginPage
                         }
                         else
                         {
-                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot.");
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot. If double booking please check \"double book\"");
                             return; //quit method on error
                         }
                     }
