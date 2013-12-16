@@ -283,16 +283,16 @@ namespace loginPage
         SolidColorBrush customGreen = new SolidColorBrush();
         LinearGradientBrush greenGradient = new LinearGradientBrush();
         SolidColorBrush slotGrey = new SolidColorBrush();
-        
+
 
         private void calendarDatesClicked(object sender, EventArgs e)
         {
             customGreen.Color = Color.FromArgb(255, 175, 255, 0);
 
-            greenGradient.StartPoint = new Point(0.5,0);
-            greenGradient.EndPoint = new Point(0.5,1);
-            greenGradient.GradientStops.Add(new GradientStop(Colors.LimeGreen,0.0));
-            greenGradient.GradientStops.Add(new GradientStop(Colors.Lime,1.0));
+            greenGradient.StartPoint = new Point(0.5, 0);
+            greenGradient.EndPoint = new Point(0.5, 1);
+            greenGradient.GradientStops.Add(new GradientStop(Colors.LimeGreen, 0.0));
+            greenGradient.GradientStops.Add(new GradientStop(Colors.Lime, 1.0));
 
             DataGridColumnHeader calButton = sender as DataGridColumnHeader;
             previousSlot = currentSlot;
@@ -343,10 +343,19 @@ namespace loginPage
             */
             updateBookBox();
             updateApptInfoBox();
-            
+
             //grey out the cancel appointment if text is empty
-            if (((string)currentSlot.Content) == "") apptCancel.IsEnabled = false;
-            else apptCancel.IsEnabled = true;
+            //grey out the book off slot if text not empty
+            if (((string)currentSlot.Content) == "")
+            {
+                apptCancel.IsEnabled = false;
+                fileBookOff.IsEnabled = true;
+            }
+            else
+            {
+                apptCancel.IsEnabled = true;
+                fileBookOff.IsEnabled = false;
+            }
         }
 
         private void IsMouseDirectlyOverChanged(object sender, System.Windows.Input.MouseEventArgs e)
