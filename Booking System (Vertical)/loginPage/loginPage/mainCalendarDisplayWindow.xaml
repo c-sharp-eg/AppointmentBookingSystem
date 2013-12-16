@@ -78,7 +78,6 @@
                 	<DatePicker Margin="18.001,154.666,40.002,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Name="bookDate" SelectedDateChanged="bookDate_SelectedDateChanged" />
                 	<TextBlock HorizontalAlignment="Left" Margin="20.999,0,0,224" TextWrapping="Wrap" Text="Time" VerticalAlignment="Bottom" Foreground="Black" />
                 	<ComboBox Margin="17.999,0,40.002,195" Height="24.42" VerticalAlignment="Bottom" Name="bookTime">
-                        //<ComboBoxItem Content="Booked" Style="{DynamicResource SimpleComboBoxItem}" Name="tBooked" Visibility="Hidden" />
                         <ComboBoxItem Content="8:00 - 8:20" Style="{DynamicResource SimpleComboBoxItem}" Name="t0Dropdown" />
                         <ComboBoxItem Content="8:20 - 8:40" Style="{DynamicResource SimpleComboBoxItem}" Name="t1Dropdown" />
                         <ComboBoxItem Content="8:40 - 9:00" Style="{DynamicResource SimpleComboBoxItem}" Name="t2Dropdown" />
