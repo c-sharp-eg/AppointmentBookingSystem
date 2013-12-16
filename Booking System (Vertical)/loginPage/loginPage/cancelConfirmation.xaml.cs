@@ -49,34 +49,76 @@ namespace loginPage
             {
                 appt = dayOfAppt.d0[timeslot];
                 dayOfAppt.d0[timeslot] = null;
+                //delete appointment from patient
+                foreach (Appointment app in appt.patient.appointments)
+                {
+                    if (app.Equals(appt))
+                        appt.patient.appointments.Remove(app);
+                }
+
+            
             }
             else if (doctor == 1)
             {
                 appt = dayOfAppt.d1[timeslot];
                 dayOfAppt.d1[timeslot] = null;
+                //delete appointment from patient
+                foreach (Appointment app in appt.patient.appointments)
+                {
+                    if (app.Equals(appt))
+                        appt.patient.appointments.Remove(app);
+                }
+
+            
             }
             else if (doctor == 2)
             {
                 appt = dayOfAppt.d2[timeslot];
                 dayOfAppt.d2[timeslot] = null;
+                //delete appointment from patient
+                foreach (Appointment app in appt.patient.appointments)
+                {
+                    if (app.Equals(appt))
+                        appt.patient.appointments.Remove(app);
+                }
+
+            
             }
             else if (doctor == 3)
             {
                 appt = dayOfAppt.d3[timeslot];
                 dayOfAppt.d3[timeslot] = null;
+                //delete appointment from patient
+                foreach (Appointment app in appt.patient.appointments)
+                {
+                    if (app.Equals(appt))
+                        appt.patient.appointments.Remove(app);
+                }
+
+            
             }
             else if (doctor == 4)
             {
                 appt = dayOfAppt.d4[timeslot];
                 dayOfAppt.d4[timeslot] = null;
+                //delete appointment from patient
+                foreach (Appointment app in appt.patient.appointments)
+                {
+                    if (app.Equals(appt))
+                        appt.patient.appointments.Remove(app);
+                }
+
+            
             }
             else
             {
                 var mb = MessageBox.Show("Error: doctor timeslot in cancelConfirmation");//should never happen
             }
 
+            //update display
             mainCal.refreshDisplayDate();
             mainCal.updateApptInfoBox();
+
             this.Close();
 
         }

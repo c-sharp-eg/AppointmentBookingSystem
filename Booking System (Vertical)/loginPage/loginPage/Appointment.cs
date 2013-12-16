@@ -92,6 +92,35 @@ namespace loginPage
        
         }
 
+        public bool Equals(Appointment other)
+        {
+            if (this.date.ToShortDateString() != other.date.ToShortDateString()) return false;
+            if (this.doctor != other.doctor) return false;
+            if (this.timeslot != other.timeslot) return false;
+            if (this.notes != other.notes) return false;
+            if ((this.patient.firstName != other.patient.firstName)||(this.patient.lastName!=other.patient.lastName)) return false;
+            if (this.doubleBooked != other.doubleBooked) return false;
+
+            return true;
+
+        }//end equals
+
+
+    }//end Appointment class
+
+    public class ApptBookedOff : Appointment
+    {
+        public ApptBookedOff(DateTime date, int doctor, int timeslot)
+        {
+            this.doctor = doctor;
+            this.timeslot = timeslot;
+            this.notes = "THIS SLOT HAS BEEN BOOKED OFF.";
+            this.patient = null;
+            this.date = date;
+            this.doubleBooked = false;
+            this.doubleBookedAppt = null;
+        }
 
     }
+
 }

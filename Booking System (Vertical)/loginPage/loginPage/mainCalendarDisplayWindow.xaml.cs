@@ -12,7 +12,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Effects;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
-using System.Windows.Input;
 
 namespace loginPage
 {
@@ -1425,7 +1424,9 @@ namespace loginPage
             }
             Appointment appt;
             string appt_note = null;
+            string appt2_note = null;
             Patient p=null;
+            Patient p2 = null;
             int doctor = timeslotNametoDoctor(currentSlot.Name);
             int timeslot = timeslotNametoIndex(currentSlot.Name);
             if (timeslot == -1)
@@ -1441,7 +1442,14 @@ namespace loginPage
                     appt = dayOfAppt.d0[timeslot];
                     appt_note = appt.notes;
                     if (appt!=null)
+                    {
                         p = appt.patient;
+                        if (appt.doubleBooked)
+                        {
+                            p2 = appt.doubleBookedAppt.patient;
+                            appt2_note = appt.doubleBookedAppt.notes;
+                        }
+                    }
                 }
                 else
                 {
@@ -1455,7 +1463,14 @@ namespace loginPage
                     appt = dayOfAppt.d1[timeslot];
                     appt_note = appt.notes;
                     if (appt != null)
+                    {
                         p = appt.patient;
+                        if (appt.doubleBooked)
+                        {
+                            p2 = appt.doubleBookedAppt.patient;
+                            appt2_note = appt.doubleBookedAppt.notes;
+                        }
+                    }
                 }
                 else
                 {
@@ -1469,7 +1484,14 @@ namespace loginPage
                     appt = dayOfAppt.d2[timeslot];
                     appt_note = appt.notes;
                     if (appt != null)
+                    {
                         p = appt.patient;
+                        if (appt.doubleBooked)
+                        {
+                            p2 = appt.doubleBookedAppt.patient;
+                            appt2_note = appt.doubleBookedAppt.notes;
+                        }
+                    }
                 }
                 else
                 {
@@ -1483,7 +1505,14 @@ namespace loginPage
                     appt = dayOfAppt.d3[timeslot];
                     appt_note = appt.notes;
                     if (appt != null)
+                    {
                         p = appt.patient;
+                        if (appt.doubleBooked)
+                        {
+                            p2 = appt.doubleBookedAppt.patient;
+                            appt2_note = appt.doubleBookedAppt.notes;
+                        }
+                    }
                 }
                 else
                 {
@@ -1497,7 +1526,14 @@ namespace loginPage
                     appt = dayOfAppt.d4[timeslot];
                     appt_note = appt.notes;
                     if (appt != null)
+                    {
                         p = appt.patient;
+                        if (appt.doubleBooked)
+                        {
+                            p2 = appt.doubleBookedAppt.patient;
+                            appt2_note = appt.doubleBookedAppt.notes;
+                        }
+                    }
                 }
                 else 
                 {
@@ -1509,14 +1545,24 @@ namespace loginPage
                 var mb = MessageBox.Show("Error: doctor timeslot in cancelConfirmation");//should never happen
             }
             
+            //set appointment notes
             if (appt_note != null)
-                AppointmentNotesTB.Text = appt_note;
+                AppointmentNotesTB.Text = "Appointment notes:\n"+appt_note;
             else
                 AppointmentNotesTB.Text = "No appointment selected";
+            if (p2 != null)
+                AppointmentNotesTB.Text += "\nDoubleBooked Notes: " + appt2_note;
             
             //set name
             if (p != null)
-                appInfoPatientTB.Text = p.lastName + ", " + p.firstName;
+            {
+                if (p2!=null)
+                    currentSlot.Content = p.lastName + ", " + p.firstName + "/" + p2.lastName + ", " + p2.firstName;
+                else
+                    currentSlot.Content = p.lastName + ", " + p.firstName;
+                
+                appInfoPatientTB.Text = currentSlot.Content.ToString();
+            }
                 
         
         }//end updateappnotesforcurrentslot
