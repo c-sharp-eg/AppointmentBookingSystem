@@ -118,3 +118,4 @@ C:\Users\Charles\Documents\GitHub\AppointmentBookingSystem\Booking System (Verti
 C:\Users\Charles\Documents\GitHub\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage.Properties.Resources.resources
 C:\Users\Charles\Documents\GitHub\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\loginPage.csproj.GenerateResource.Cache
 C:\Users\Charles\Documents\GitHub\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\bin\Debug\loginPage.exe.config
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\bin\Debug\loginPage.exe.config

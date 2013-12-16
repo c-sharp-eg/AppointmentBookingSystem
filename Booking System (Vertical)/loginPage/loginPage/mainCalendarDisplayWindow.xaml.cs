@@ -432,48 +432,10 @@ namespace loginPage
         {
             if (currentSlot.Content.ToString() != null)
             {
-                //set name
+                //blank name (updateAppnotesAndPatientForCurrnet slot should update
                 appInfoPatientTB.Text = currentSlot.Content.ToString();
-                
-                /*
-                //load appointment notes
-                DayOfAppointments dayOfAppt;
-                bool containsDate = allAppointmentsDictionary.TryGetValue(displayDate.ToShortDateString(), out dayOfAppt);
-                if (!containsDate)
-                {
-                    AppointmentNotesTB.Text = "No appointment selected";
-                    return; //quit the method on error
-                }
-                Appointment appt;
-                int doctor = timeslotNametoDoctor(currentSlot.Name);
-                int timeslot = timeslotNametoIndex(currentSlot.Name);
-
-                if (doctor == 0)
-                {
-                    appt = dayOfAppt.d0[timeslot];
-                    var mb = MessageBox.Show(appt.notes);
-                }
-                else if (doctor == 1)
-                {
-                    appt = dayOfAppt.d1[timeslot];
-                }
-                else if (doctor == 2)
-                {
-                    appt = dayOfAppt.d2[timeslot];
-                }
-                else if (doctor == 3)
-                {
-                    appt = dayOfAppt.d3[timeslot];
-                }
-                else if (doctor == 4)
-                {
-                    appt = dayOfAppt.d4[timeslot];
-                }
-                else
-                {
-                    var mb = MessageBox.Show("Error: doctor timeslot in cancelConfirmation");//should never happen
-                }
-                */
+                //update appointment notes
+                updateApptNotesAndPatientForCurrentSlot();
                 
             }
             else
@@ -949,8 +911,8 @@ namespace loginPage
                 case "t20": return 20;
                 case "t21": return 21;
                 case "t22": return 22;
+                default: return -1;
             }
-            return -1;
         }
         public int timeslotNametoDoctor(String name)
         {
@@ -986,7 +948,7 @@ namespace loginPage
                     bool containsDate= allAppointmentsDictionary.TryGetValue(date.ToShortDateString(),out dayOfAppt);
                     if (!containsDate)
                     {
-                        var mb = MessageBox.Show("Error in lookup of dayOfAppt");
+                        var mb = MessageBox.Show("Error in lookup of dayOfAppt"); //should never happen
                         return; //quit the method on error
                     }
 
@@ -1016,7 +978,20 @@ namespace loginPage
                     var mb = MessageBox.Show("Error: Timeslot is booked. To double book: manualy resect the timeslot and ensure \"double book\" is clicked.");
                     return; //quit on error
                 }
-                
+
+                //set appointment notes
+                if (bookNotes.Text != null)
+                    appt.notes = bookNotes.Text;
+                else
+                    appt.notes = "";
+
+                //check patient is not null
+                if (this.selectedPatient==null)
+                {
+                    var mb = MessageBox.Show("Error: no patient selected(null). Please select a patient.");
+                    return; //quit on error
+                }
+
                 if (d0Dropdown.IsSelected)
                 {
                     appt.doctor = 0;
@@ -1157,7 +1132,7 @@ namespace loginPage
 
                 //display message box with appointment
                 //var mb2 = MessageBox.Show(appt.ToString());
-
+   
 
             }
             catch (Exception err)
@@ -1433,10 +1408,116 @@ namespace loginPage
             d4t22.Content = "";
         }
 
+        public void updateApptNotesAndPatientForCurrentSlot()
+        {
+            if (currentSlot == null) return; //quit method if no current slot
+                        
+            //load appointment notes
+            DayOfAppointments dayOfAppt;
+            bool containsDate = allAppointmentsDictionary.TryGetValue(displayDate.ToShortDateString(), out dayOfAppt);
+            if (!containsDate)
+            {
+                AppointmentNotesTB.Text = "No appointment selected";
+                return; //quit the method if no appointments
+            }
+            Appointment appt;
+            string appt_note = null;
+            Patient p=null;
+            int doctor = timeslotNametoDoctor(currentSlot.Name);
+            int timeslot = timeslotNametoIndex(currentSlot.Name);
+            if (timeslot == -1)
+            {
+                var mb = MessageBox.Show("Error: timeslot is -1");//should never happen
+                return;
+            }
 
-
-
+            if (doctor == 0)
+            {
+                if (dayOfAppt.d0[timeslot] != null)
+                {
+                    appt = dayOfAppt.d0[timeslot];
+                    appt_note = appt.notes;
+                    if (appt!=null)
+                        p = appt.patient;
+                }
+                else
+                {
+                    AppointmentNotesTB.Text = "No appointment selected";
+                }
+            }
+            else if (doctor == 1)
+            {
+                if (dayOfAppt.d1[timeslot] != null)
+                {
+                    appt = dayOfAppt.d1[timeslot];
+                    appt_note = appt.notes;
+                    if (appt != null)
+                        p = appt.patient;
+                }
+                else
+                {
+                    AppointmentNotesTB.Text = "No appointment selected";
+                }
+            }
+            else if (doctor == 2)
+            {
+                if (dayOfAppt.d2[timeslot] != null)
+                {
+                    appt = dayOfAppt.d2[timeslot];
+                    appt_note = appt.notes;
+                    if (appt != null)
+                        p = appt.patient;
+                }
+                else
+                {
+                    AppointmentNotesTB.Text = "No appointment selected";
+                }
+            }
+            else if (doctor == 3)
+            {
+                if (dayOfAppt.d3[timeslot] != null)
+                {
+                    appt = dayOfAppt.d3[timeslot];
+                    appt_note = appt.notes;
+                    if (appt != null)
+                        p = appt.patient;
+                }
+                else
+                {
+                    AppointmentNotesTB.Text = "No appointment selected";
+                }
+            }
+            else if (doctor == 4)
+            {
+                if (dayOfAppt.d4[timeslot] != null)
+                {
+                    appt = dayOfAppt.d4[timeslot];
+                    appt_note = appt.notes;
+                    if (appt != null)
+                        p = appt.patient;
+                }
+                else 
+                {
+                    AppointmentNotesTB.Text = "No appointment selected";
+                }
+            }
+            else
+            {
+                var mb = MessageBox.Show("Error: doctor timeslot in cancelConfirmation");//should never happen
+            }
+            
+            if (appt_note != null)
+                AppointmentNotesTB.Text = appt_note;
+            else
+                AppointmentNotesTB.Text = "No appointment selected";
+            
+            //set name
+            if (p != null)
+                appInfoPatientTB.Text = p.lastName + ", " + p.firstName;
+                
         
+        }//end updateappnotesforcurrentslot
+               
 
 
     }

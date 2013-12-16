@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\Charles\Documents\GitHub\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\obj\x86\Debug\
 loginPage
 none
 false
 DEBUG;TRACE
-C:\Users\Charles\Documents\GitHub\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\App.xaml
+C:\Temp\AppointmentBookingSystem\Booking System (Vertical)\loginPage\loginPage\App.xaml
 8213747137
 
-161293948954
+16480659568
 13-441324218
 addPatient.xaml;billing.xaml;cancelConfirmation.xaml;mainCalendarDisplayWindow.xaml;editPatient.xaml;MainWindow.xaml;pastAppointments.xaml;searchPatient.xaml;
 
