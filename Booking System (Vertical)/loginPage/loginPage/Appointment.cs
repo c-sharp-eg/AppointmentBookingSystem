@@ -119,6 +119,7 @@ namespace loginPage
             this.date = date;
             this.doubleBooked = false;
             this.doubleBookedAppt = null;
+            this.doubleBookedAppt = new Appointment();
         }
 
     }
