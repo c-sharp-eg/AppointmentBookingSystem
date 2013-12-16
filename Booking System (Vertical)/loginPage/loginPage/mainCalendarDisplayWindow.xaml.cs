@@ -68,6 +68,7 @@ namespace loginPage
             apptCancel.IsEnabled = false;
             //just for display testing print random appointments
             addRandomPatients();
+            addRandomAppointments();
 
 
         }
@@ -447,17 +448,22 @@ namespace loginPage
 
         public void updateApptInfoBox()
         {
-            if (currentSlot.Content.ToString() != null)
+            try
             {
-                //blank name (updateAppnotesAndPatientForCurrnet slot should update
-                appInfoPatientTB.Text = currentSlot.Content.ToString();
-                //update appointment notes
-                updateApptNotesAndPatientForCurrentSlot();
-                
+                if (currentSlot.Content.ToString() != null)
+                {
+                    //blank name (updateAppnotesAndPatientForCurrnet slot should update
+                    appInfoPatientTB.Text = currentSlot.Content.ToString();
+                    //update appointment notes
+                    updateApptNotesAndPatientForCurrentSlot();
+                }
+                else
+                {
+                    appInfoPatientTB.Text = "";
+                }
             }
-            else
+            catch (Exception err)
             {
-                appInfoPatientTB.Text = "";
             }
 
             if (timeslotNametoDoctor(currentSlot.Name) == 0)
@@ -899,6 +905,169 @@ namespace loginPage
             patients.Add(p9);
             patients.Add(p10);
         }
+
+
+
+        public void addRandomAppointments()
+        {
+            DateTime start = new DateTime(2013, 12, 10);
+            Random gen = new Random();
+            int range = (DateTime.Today - start).Days;
+            DateTime randomDate = new DateTime();
+            Patient randomPatient;
+            int randomDoc;
+            int randomTS;
+            DayOfAppointments dayOfAppt;
+            Appointment appt = new Appointment(randomDate);
+            appt.notes = "";
+            for (int i = 0; i < 15; i++)
+            {
+                randomDate = start.AddDays(gen.Next(range));
+                randomPatient = patients[gen.Next(10)];
+                randomDoc = gen.Next(5);
+                randomTS = gen.Next(23);
+                appt.date = randomDate;
+                appt.patient = randomPatient;
+                appt.doctor = randomDoc;
+                appt.timeslot = randomTS;
+
+                if (allAppointmentsDictionary.ContainsKey(randomDate.ToShortDateString()))
+                {
+                    bool containsDate = allAppointmentsDictionary.TryGetValue(randomDate.ToShortDateString(), out dayOfAppt);
+                }
+                else
+                {
+                    dayOfAppt = new DayOfAppointments(randomDate);
+                    allAppointmentsDictionary.Add(randomDate.ToShortDateString(), dayOfAppt);
+                    appt.doubleBooked = false;
+                }
+                if (randomDoc == 0)
+                {
+                    if (dayOfAppt.d0[appt.timeslot] == null)
+                    {
+                        dayOfAppt.d0[appt.timeslot] = appt;
+                    }
+                    else
+                    {
+                        if ((dayOfAppt.d0[appt.timeslot].doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        {
+                            dayOfAppt.d0[appt.timeslot].doubleBookedAppt = appt;
+                            dayOfAppt.d0[appt.timeslot].doubleBooked = true;
+                        }
+                        else
+                        {
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot. If double booking please check \"double book\"");
+                            return; //quit method on error
+                        }
+                    }
+                    randomPatient.appointments.Add(appt);
+                }
+                else if (randomDoc == 1)
+                {
+                    //check if appointment already booked
+                    if (dayOfAppt.d1[appt.timeslot] == null)
+                    {
+                        dayOfAppt.d1[appt.timeslot] = appt;
+                    }
+                    else
+                    {
+                        if ((dayOfAppt.d1[appt.timeslot].doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        {
+                            dayOfAppt.d1[appt.timeslot].doubleBookedAppt = appt;
+                            dayOfAppt.d1[appt.timeslot].doubleBooked = true;
+                        }
+                        else
+                        {
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot.");
+                            return; //quit method on error
+                        }
+                    }
+                    randomPatient.appointments.Add(appt);
+                }
+                else if (randomDoc == 2)
+                {
+                    //check if appointment already booked
+                    if (dayOfAppt.d2[appt.timeslot] == null)
+                    {
+                        dayOfAppt.d2[appt.timeslot] = appt;
+                    }
+                    else
+                    {
+                        if ((dayOfAppt.d2[appt.timeslot].doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        {
+                            dayOfAppt.d2[appt.timeslot].doubleBookedAppt = appt;
+                            dayOfAppt.d2[appt.timeslot].doubleBooked = true;
+                        }
+                        else
+                        {
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot.");
+                            return; //quit method on error
+                        }
+                    }
+                    randomPatient.appointments.Add(appt);
+                }
+                else if (randomDoc == 3)
+                {
+                    //check if appointment already booked
+                    if (dayOfAppt.d3[appt.timeslot] == null)
+                    {
+                        dayOfAppt.d3[appt.timeslot] = appt;
+                    }
+                    else
+                    {
+                        if ((dayOfAppt.d3[appt.timeslot].doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        {
+                            dayOfAppt.d3[appt.timeslot].doubleBookedAppt = appt;
+                            dayOfAppt.d3[appt.timeslot].doubleBooked = true;
+                        }
+                        else
+                        {
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot.");
+                            return; //quit method on error
+                        }
+                    }
+                    randomPatient.appointments.Add(appt);
+                }
+                else if (randomDoc == 4)
+                {
+                    //check if appointment already booked
+                    if (dayOfAppt.d4[appt.timeslot] == null)
+                    {
+                        dayOfAppt.d4[appt.timeslot] = appt;
+                    }
+                    else
+                    {
+                        if ((dayOfAppt.d4[appt.timeslot].doubleBookedAppt == null) && (bookDouble.IsChecked == true))
+                        {
+                            dayOfAppt.d4[appt.timeslot].doubleBookedAppt = appt;
+                            dayOfAppt.d4[appt.timeslot].doubleBooked = true;
+                        }
+                        else
+                        {
+                            var mb = MessageBox.Show("Error. Cannot book appointment because another appointment is already booked for this timeslot.");
+                            return; //quit method on error
+                        }
+                    }
+                    randomPatient.appointments.Add(appt);
+                }
+
+                bool containsSelectedDate = allAppointmentsDictionary.TryGetValue(randomDate.ToShortDateString(), out dayOfAppt);
+                if (!containsSelectedDate)
+                {
+                    //var mb = MessageBox.Show("No appointments for current day");
+                    return; //quit the method on error
+                }
+                else
+                {
+                    displayAppointments(dayOfAppt);
+                }
+
+                //update appoinment info boxed
+                //updateApptInfoBox();
+            }
+        }
+            
+
 
 
         public int timeslotNametoIndex(String name)
