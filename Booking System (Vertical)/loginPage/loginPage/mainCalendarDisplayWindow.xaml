@@ -298,6 +298,7 @@
                     <TextBlock Background="White" Canvas.Left="259" Canvas.Top="38" Foreground="Black" Height="19" Name="appInfoDateTB" Text="" Width="131" />
                     <TextBlock Background="White" Canvas.Left="259" Canvas.Top="65" Foreground="Black" Height="19" Name="appInfoTimeTB" Text="" Width="131" />
                 </Canvas>
+                <Image Canvas.Left="1018" Canvas.Top="766" Height="172" Name="image1" Stretch="Fill" Width="180" Source="/loginPage;component/Images/medical-symbol-chrome.jpg" />
             </Canvas>
         </ScrollViewer>      
     </Grid>
