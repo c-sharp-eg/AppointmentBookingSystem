@@ -88,6 +88,8 @@ namespace loginPage
                 billOpen_Click(sender, e);
             else if ((e.Key == Key.L) && (Keyboard.Modifiers == ModifierKeys.Control))
                 fileLogOut_Click(sender, e);
+            else if ((e.Key == Key.Z) && (Keyboard.Modifiers == ModifierKeys.Control))
+                fileBookOff_Click(sender, e);
         }
 
         //booking a slot off
