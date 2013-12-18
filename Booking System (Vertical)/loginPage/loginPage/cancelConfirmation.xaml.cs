@@ -50,8 +50,13 @@ namespace loginPage
                 appt = dayOfAppt.d0[timeslot];
                 dayOfAppt.d0[timeslot] = null;
                 //delete appointment from patient
+
+                int numAppt = 0;
                 foreach (Appointment app in appt.patient.appointments)
+                    numAppt++;
+                for (int i = 0; i<numAppt;i++)
                 {
+                    Appointment app = appt.patient.appointments[i];
                     if (app.Equals(appt))
                         appt.patient.appointments.Remove(app);
                 }
@@ -63,8 +68,12 @@ namespace loginPage
                 appt = dayOfAppt.d1[timeslot];
                 dayOfAppt.d1[timeslot] = null;
                 //delete appointment from patient
+                int numAppt = 0;
                 foreach (Appointment app in appt.patient.appointments)
+                    numAppt++;
+                for (int i = 0; i < numAppt; i++)
                 {
+                    Appointment app = appt.patient.appointments[i];
                     if (app.Equals(appt))
                         appt.patient.appointments.Remove(app);
                 }
@@ -76,8 +85,12 @@ namespace loginPage
                 appt = dayOfAppt.d2[timeslot];
                 dayOfAppt.d2[timeslot] = null;
                 //delete appointment from patient
+                int numAppt = 0;
                 foreach (Appointment app in appt.patient.appointments)
+                    numAppt++;
+                for (int i = 0; i < numAppt; i++)
                 {
+                    Appointment app = appt.patient.appointments[i];
                     if (app.Equals(appt))
                         appt.patient.appointments.Remove(app);
                 }
@@ -89,8 +102,12 @@ namespace loginPage
                 appt = dayOfAppt.d3[timeslot];
                 dayOfAppt.d3[timeslot] = null;
                 //delete appointment from patient
+                int numAppt = 0;
                 foreach (Appointment app in appt.patient.appointments)
+                    numAppt++;
+                for (int i = 0; i < numAppt; i++)
                 {
+                    Appointment app = appt.patient.appointments[i];
                     if (app.Equals(appt))
                         appt.patient.appointments.Remove(app);
                 }
@@ -102,8 +119,12 @@ namespace loginPage
                 appt = dayOfAppt.d4[timeslot];
                 dayOfAppt.d4[timeslot] = null;
                 //delete appointment from patient
+                int numAppt = 0;
                 foreach (Appointment app in appt.patient.appointments)
+                    numAppt++;
+                for (int i = 0; i < numAppt; i++)
                 {
+                    Appointment app = appt.patient.appointments[i];
                     if (app.Equals(appt))
                         appt.patient.appointments.Remove(app);
                 }

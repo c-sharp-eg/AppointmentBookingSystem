@@ -68,7 +68,7 @@ namespace loginPage
             apptCancel.IsEnabled = false;
             //just for display testing print random appointments
             addRandomPatients();
-            addRandomAppointments();
+            //addRandomAppointments();
 
 
         }
